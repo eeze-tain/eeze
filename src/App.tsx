@@ -1,21 +1,33 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Box } from '@mui/material';
+import { Grid } from '@mui/material';
 import Navbar from './components/NavBar';
 import Home from './pages/Home';
 import About from './pages/About';
 
 const App: React.FC = () => {
   return (
-    <Box sx={{ display: 'flex' }}>
-      <Navbar />
-      <Box sx={{ flex: 1, padding: 2 }}>
+    <Grid container sx={{ height: '100vh', margin: 0, padding: 0 }}>
+      {/* Navbar spans 3 columns, is sticky */}
+      <Grid item xs={2} sx={{ position: 'sticky', top: 0, zIndex: 100 }}>
+        <Navbar />
+      </Grid>
+
+      {/* Content spans the remaining 9 columns and has background image */}
+      <Grid item xs={10} sx={{ 
+        height: '100vh', 
+        backgroundImage: 'url(/images/background.png)', 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center', 
+        overflowY: 'auto',
+        margin: 0
+      }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
-      </Box>
-    </Box>
+      </Grid>
+    </Grid>
   );
 };
 
