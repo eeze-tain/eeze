@@ -49,7 +49,7 @@ const Home: React.FC = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
-            <img src='/images/phone.png' alt="Phone Preview" style={{ width: '100%', maxWidth: '400px', padding: '8rem' }} />
+            <img src='/eeze/images/phone.png' alt="Phone Preview" style={{ width: '100%', maxWidth: '400px', padding: '8rem' }} />
           </Grid>
         </Grid>
       </motion.div>

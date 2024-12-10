@@ -16,7 +16,7 @@ const App: React.FC = () => {
       {/* Content spans the remaining 9 columns and has background image */}
       <Grid item xs={10} sx={{ 
         height: '100vh', 
-        backgroundImage: 'url(/images/background.png)', 
+        backgroundImage: 'url(/eeze/images/background.png)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center', 
         overflowY: 'auto',

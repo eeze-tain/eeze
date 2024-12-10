@@ -23,20 +23,20 @@ const Navbar: React.FC = () => {
     >
       {/* Logo */}
       <img
-        src="/svg/logo.svg"
+        src="/eeze/svg/logo.svg"
         alt="Logo"
         style={{ width: '200px', padding: '1rem' }}
       />
 
       {/* Navigation Buttons */}
       {[
-        { label: 'Overview', path: '/', icon: '/svg/desktop.svg' },
-        { label: 'Tournaments', path: '/tournaments', icon: '/svg/jump.svg' },
-        { label: 'Theme Customisation', path: '/theme', icon: '/svg/remind.svg' },
-        { label: 'Dynamic Rewards', path: '/rewards', icon: '/svg/cog.svg' },
-        { label: 'Exclusive Tournaments', path: '/exclusive', icon: '/svg/vip.svg' },
-        { label: 'Free Chips', path: '/freechips', icon: '/svg/gift.svg' },
-        { label: 'Roadmap 2025', path: '/roadmap', icon: '/svg/earth.svg' },
+        { label: 'Overview', path: '/', icon: '/eeze/svg/desktop.svg' },
+        { label: 'Tournaments', path: '/tournaments', icon: '/eeze/svg/jump.svg' },
+        { label: 'Theme Customisation', path: '/theme', icon: '/eeze/svg/remind.svg' },
+        { label: 'Dynamic Rewards', path: '/rewards', icon: '/eeze/svg/cog.svg' },
+        { label: 'Exclusive Tournaments', path: '/exclusive', icon: '/eeze/svg/vip.svg' },
+        { label: 'Free Chips', path: '/freechips', icon: '/eeze/svg/gift.svg' },
+        { label: 'Roadmap 2025', path: '/roadmap', icon: '/eeze/svg/earth.svg' },
       ].map((item) => (
         <Button
           key={item.label}
