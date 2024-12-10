@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.7af2add9.js",
-    "index.html": "/index.html",
-    "main.7af2add9.js.map": "/static/js/main.7af2add9.js.map"
+    "main.js": "/eeze/static/js/main.7af2add9.js",
+    "index.html": "/eeze/index.html",
+    "main.7af2add9.js.map": "/eeze/static/js/main.7af2add9.js.map"
   },
   "entrypoints": [
     "static/js/main.7af2add9.js"
