@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Grid } from '@mui/material';
 import Navbar from './components/NavBar';
 import Home from './pages/Home';
-import About from './pages/About';
+import Tournaments from './pages/Tournaments';
 
 const App: React.FC = () => {
   return (
@@ -23,8 +23,8 @@ const App: React.FC = () => {
         margin: 0
       }}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/eeze" element={<Home />} />
+          <Route path="/tournaments" element={<Tournaments />} />
         </Routes>
       </Grid>
     </Grid>
