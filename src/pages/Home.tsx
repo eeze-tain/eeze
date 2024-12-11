@@ -11,6 +11,9 @@ const Home: React.FC = () => {
         color: '#FFFFFF',
         fontFamily: 'Inter',
         overflowX: 'hidden', // Prevent horizontal overflow
+        '@media screen and (min-width: 2560px)': {
+          padding: '0rem 8rem', // Adjust padding for larger screen
+        },
         '@media screen and (min-width: 3200px)': {
           padding: '0rem 8rem', // Adjust padding for larger screen
         },
@@ -37,7 +40,11 @@ const Home: React.FC = () => {
                 sx={{
                   fontSize: '90px',
                   fontWeight: 'bold',
+                  marginTop: '-6rem',
                   marginBottom: 2,
+                  '@media screen and (min-width: 2560px)': {
+                    fontSize: '120px', // Scale font size for large screens
+                  },
                   '@media screen and (min-width: 3200px)': {
                     fontSize: '160px', // Scale font size for large screens
                   },
@@ -50,6 +57,9 @@ const Home: React.FC = () => {
                     fontSize: '90px',
                     fontWeight: 'bold',
                     marginBottom: 0,
+                    '@media screen and (min-width: 2560px)': {
+                      fontSize: '120px', // Scale font size for large screens
+                    },
                     '@media screen and (min-width: 3200px)': {
                       fontSize: '160px', // Scale font size for large screens
                     },
@@ -84,6 +94,10 @@ const Home: React.FC = () => {
                     borderRadius: '20px',
                     padding: '6px 16px',
                     fontSize: '1rem',
+                    '@media screen and (min-width: 2560px)': {
+                      padding: '12px 24px', // Adjust padding
+                      fontSize: '1.25rem', // Adjust font size
+                    },
                     '@media screen and (min-width: 3200px)': {
                       padding: '12px 24px', // Adjust padding
                       fontSize: '1.75rem', // Adjust font size
@@ -98,6 +112,9 @@ const Home: React.FC = () => {
             <Typography
               variant="subtitle1"
               sx={{
+                '@media screen and (min-width: 2560px)': {
+                  fontSize: '1.75rem', // Adjust font size
+                },
                 '@media screen and (min-width: 3200px)': {
                   fontSize: '2rem', // Adjust font size
                 },
@@ -114,7 +131,11 @@ const Home: React.FC = () => {
               sx={{
                 width: '100%',
                 maxWidth: '400px',
-                padding: '8rem',
+                padding: '0rem 8rem',
+                '@media screen and (min-width: 2560px)': {
+                  maxWidth: '600px',
+                  marginTop: '6.5rem',
+                },
                 '@media screen and (min-width: 3200px)': {
                   maxWidth: '800px',
                   marginTop: '6.5rem',
@@ -138,6 +159,9 @@ const Home: React.FC = () => {
             sx={{
               fontWeight: 'bold',
               marginBottom: 1,
+              '@media screen and (min-width: 2560px)': {
+                fontSize: '3rem', // Adjust font size
+              },
               '@media screen and (min-width: 3200px)': {
                 fontSize: '3.5rem', // Adjust font size
               },
@@ -152,25 +176,25 @@ const Home: React.FC = () => {
                 title: 'Boost Engagement',
                 description:
                   'Keep players excited with dynamic tournaments, real-time leaderboards, and evolving rewards systems.',
-                color: '#49E3CE',
+                color: '#22B1C3',
               },
               {
                 title: 'Increase Engagements',
                 description:
                   'Simplify operations with plug-and-play modules and interactive data tools to optimise costs and strategies.',
-                color: '#6CC2BD',
+                color: '#22B1C3',
               },
               {
                 title: 'Foster Loyalty',
                 description:
                   'Create tailored events and exclusive tournaments with compelling rewards to drive long-term retention.',
-                color: '#B684F9',
+                color: '#22B1C3',
               },
               {
                 title: 'Integrated Tournament Interface',
                 description:
                   'Enjoy a built-in tournament interface across all Eeze products for effortless gameplay and participation.',
-                color: '#F9D684',
+                color: '#22B1C3',
               },
             ].map((benefit) => (
               <Grid item xs={12} sm={6} key={benefit.title}>
@@ -179,6 +203,9 @@ const Home: React.FC = () => {
                   sx={{
                     color: benefit.color,
                     fontWeight: 'bold',
+                    '@media screen and (min-width: 2560px)': {
+                      fontSize: '2.25rem', // Adjust font size
+                    },
                     '@media screen and (min-width: 3200px)': {
                       fontSize: '2rem', // Adjust font size
                     },
@@ -189,6 +216,9 @@ const Home: React.FC = () => {
                 <Typography
                   variant="body1"
                   sx={{
+                    '@media screen and (min-width: 2560px)': {
+                      fontSize: '1.75rem', // Adjust font size
+                    },
                     '@media screen and (min-width: 3200px)': {
                       fontSize: '1.25rem', // Adjust font size
                     },
@@ -212,20 +242,32 @@ const Home: React.FC = () => {
         }}
       >
         <Typography
-          variant="h4"
+          variant="h3"
           sx={{
-            fontWeight: 'bold',
+            // fontFamily: 'Inter Tight',
+            fontWeight: 100,
+            letterSpacing: 1,
+            textAlign: 'left',
+            marginTop: '8rem',
+            fontStyle: 'normal',
             marginBottom: 2,
+            '@media screen and (min-width: 2560px)': {
+              // fontFamily: 'Inter Tight',
+              fontWeight: 100,
+              fontSize: '5.75rem', // Adjust font size
+            },
             '@media screen and (min-width: 3200px)': {
-              fontSize: '2.5rem', // Adjust font size
+              // fontFamily: 'Inter Tight',
+              fontWeight: 100,
+              fontSize: '5rem', // Adjust font size
             },
           }}
         >
           Our mission is to{' '}
-          <span style={{ color: '#49E3CE' }}>provide the tools</span> needed to{' '}
-          <span style={{ color: '#F9D684' }}>captivate players</span>,{' '}
-          <span style={{ color: '#6CC2BD' }}>drive growth</span>, and{' '}
-          <span style={{ color: '#B684F9' }}>enhance loyalty</span> through
+          <span style={{ fontWeight: 800 }}>provide the tools</span> needed to{' '}
+          <span style={{ fontWeight: 800 }}>captivate players</span>,{' '}
+          <span style={{ fontWeight: 800 }}>drive growth</span>, and{' '}
+          <span style={{ fontWeight: 800 }}>enhance loyalty</span> through
           gamification solutions.
         </Typography>
       </Box>

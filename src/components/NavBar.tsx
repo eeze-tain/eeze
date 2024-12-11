@@ -20,8 +20,13 @@ const Navbar: React.FC = () => {
         zIndex: 100,
         position: 'sticky', // Sticky Navbar
         top: 0,
-        '@media screen and (min-width: 3200px)': {
-          minHeight: '96vh',
+        '@media screen and (min-width: 2560px)': {
+          minHeight: '95.5vh',
+          padding: '2rem', // Larger padding for high-res screens
+          gap: '1rem',
+        },
+        '@media screen and (min-width: 5120px)': {
+          minHeight: '98vh',
           padding: '2rem', // Larger padding for high-res screens
           gap: '0rem',
         },
@@ -35,6 +40,11 @@ const Navbar: React.FC = () => {
         sx={{
           width: '200px',
           padding: '1rem',
+          '@media screen and (min-width: 2560px)': {
+            margin: '3rem 2rem 8rem 3rem',
+            padding: '1rem',
+            width: '300px', // Scale logo for large screens
+          },
           '@media screen and (min-width: 3200px)': {
             margin: '3rem 2rem 8rem 3rem',
             padding: '1rem',
@@ -67,6 +77,9 @@ const Navbar: React.FC = () => {
                 alt={`${item.label} Icon`}
                 sx={{
                   width: '25px',
+                  '@media screen and (min-width: 2560px)': {
+                    width: '45px', // Scale icon for large screens
+                  },
                   '@media screen and (min-width: 3200px)': {
                     width: '50px', // Scale icon for large screens
                   },
@@ -93,15 +106,22 @@ const Navbar: React.FC = () => {
                 color: '#FFFFFF',
                 border: '2px solid #FFF',
               },
+              '@media screen and (min-width: 2560px)': {
+                border: isActive ? '2px solid #FFF' : '2px solid transparent',
+                padding: '.75rem 1.5rem', // Larger padding
+              },
               '@media screen and (min-width: 3199px)': {
                 border: isActive ? '2px solid #FFF' : '2px solid transparent',
-                fontSize: '3rem', // Scale up text
                 padding: '1rem 2rem', // Larger padding
               },
             }}
           >
             <Typography
               sx={{
+                '@media screen and (min-width: 2560px)': {
+                  fontSize: '1.3rem', // Scale up text
+                  padding: '0.5rem 1rem', // Larger padding
+                },
                 '@media screen and (min-width: 3199px)': {
                   fontSize: '1.65rem', // Scale up text
                   padding: '1rem 2rem', // Larger padding
@@ -128,6 +148,11 @@ const Navbar: React.FC = () => {
           fontWeight: 'bold',
           '&:hover': {
             backgroundColor: '#2E9D9E',
+          },
+          '@media screen and (min-width: 2560px)': {
+            marginTop: '4rem',
+            fontSize: '1.65rem', // Scale up text
+            padding: '1rem 2rem', // Larger padding
           },
           '@media screen and (min-width: 3200px)': {
             marginTop: '4rem',
