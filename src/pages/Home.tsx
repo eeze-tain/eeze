@@ -7,7 +7,7 @@ const Home: React.FC = () => {
   return (
     <Box
       sx={{
-        padding: '0rem 4rem',
+        padding: '4rem 4rem',
         color: '#FFFFFF',
         fontFamily: 'Inter',
         overflowX: 'hidden', // Prevent horizontal overflow

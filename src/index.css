@@ -93,3 +93,46 @@ code {
   font-weight: 400;
   src: url('/eeze/fonts/inter-tight-v7-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+.carousel-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background: #2c003e; /* Purple background */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.slide {
+  position: relative;
+  text-align: center;
+}
+
+.slide-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.slide-title {
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+.slide-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
