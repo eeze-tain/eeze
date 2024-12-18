@@ -4,8 +4,10 @@ import { Grid } from '@mui/material';
 import Navbar from './components/NavBar';
 import Home from './pages/Home';
 import Tournaments from './pages/Tournaments';
+import ThemeCustomisation from './pages/ThemeCustomisation';
 
 const App: React.FC = () => {
+
   return (
     <Grid container sx={{ height: '100vh', margin: 0, padding: 0 }}>
       {/* Navbar spans 3 columns, is sticky */}
@@ -25,6 +27,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/eeze" element={<Home />} />
           <Route path="/tournaments" element={<Tournaments />} />
+          <Route path="/themes" element={<ThemeCustomisation />} />
         </Routes>
       </Grid>
     </Grid>

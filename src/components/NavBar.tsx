@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
       {[
         { label: 'Overview', path: '/eeze', icon: '/eeze/svg/desktop.svg' },
         { label: 'Tournaments', path: '/tournaments', icon: '/eeze/svg/jump.svg' },
-        { label: 'Theme Customisation', path: '/theme', icon: '/eeze/svg/remind.svg' },
+        { label: 'Theme Customisation', path: '/themes', icon: '/eeze/svg/remind.svg' },
         { label: 'Dynamic Rewards', path: '/rewards', icon: '/eeze/svg/cog.svg' },
         { label: 'Exclusive Tournaments', path: '/exclusive', icon: '/eeze/svg/vip.svg' },
         { label: 'Free Chips', path: '/freechips', icon: '/eeze/svg/gift.svg' },
