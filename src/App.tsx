@@ -5,6 +5,8 @@ import Navbar from './components/NavBar';
 import Home from './pages/Home';
 import Tournaments from './pages/Tournaments';
 import ThemeCustomisation from './pages/ThemeCustomisation';
+import DynamicRewards from './pages/DynamicRewards';
+import ExclusiveTournament from './pages/ExclusiveTournaments';
 
 const App: React.FC = () => {
 
@@ -28,6 +30,8 @@ const App: React.FC = () => {
           <Route path="/eeze" element={<Home />} />
           <Route path="/tournaments" element={<Tournaments />} />
           <Route path="/themes" element={<ThemeCustomisation />} />
+          <Route path="/rewards" element={<DynamicRewards />} />
+          <Route path="/exclusive" element={<ExclusiveTournament />} />
         </Routes>
       </Grid>
     </Grid>

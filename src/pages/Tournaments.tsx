@@ -97,10 +97,15 @@ const Tournaments: React.FC = () => {
                 requirements
               </span>{' '}
               to build excitement before they go live.{' '}
+              <br></br>
+              <br></br>
               <span style={{ fontWeight: 800 }}>
                 Create exclusivity by limiting player spots
               </span>
-              , available on a first-come, first served basis. Keep players
+              , available on a first-come, first served basis. 
+              <br></br>
+              <br></br>
+              Keep players
               engaged with{' '}
               <span style={{ fontWeight: 800 }}>customisable mechanics</span>{' '}
               like <span style={{ fontWeight: 800 }}>score calculation</span>{' '}

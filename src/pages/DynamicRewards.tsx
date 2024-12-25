@@ -52,7 +52,7 @@ const DynamicRewards: React.FC = () => {
                   },
                 }}
               >
-                Customisable <br />{' '}
+                Dynamic <br />{' '}
                 <Typography
                   variant="h3"
                   sx={{
@@ -68,9 +68,8 @@ const DynamicRewards: React.FC = () => {
                   }}
                   color="#D3B1FF"
                 >
-                  Tournament
+                  Rewards
                 </Typography>{' '}
-                Features
               </Typography>
             </Box>
           </Grid>
@@ -91,21 +90,24 @@ const DynamicRewards: React.FC = () => {
                 },
               }}
             >
-              Easily set up DynamicRewards with{' '}
-              <span style={{ fontWeight: 800 }}>
-                flexible Promotion and Registration phases, including bet/win
-                requirements
-              </span>{' '}
-              to build excitement before they go live.{' '}
-              <span style={{ fontWeight: 800 }}>
-                Create exclusivity by limiting player spots
-              </span>
-              , available on a first-come, first served basis. Keep players
-              engaged with{' '}
-              <span style={{ fontWeight: 800 }}>customisable mechanics</span>{' '}
-              like <span style={{ fontWeight: 800 }}>score calculation</span>{' '}
-              and round{' '}
-              <span style={{ fontWeight: 800 }}>qualification strategies</span>.
+              <span style={{ fontWeight: 800 }}>Budget</span> and{' '}
+              <span style={{ fontWeight: 800 }}>scale prizes</span> according to
+              player participation, ensuring a balance between{' '}
+              <span style={{ fontWeight: 800 }}>increased engagement</span> and{' '}
+              <span style={{ fontWeight: 800 }}>cost efficiency</span>.
+              <br></br>
+              <br></br>
+              Effortlessly set up dynamic cash rewards by choosing{' '}
+              <span style={{ fontWeight: 800 }}>triggers, stages,</span> and{' '}
+              <span style={{ fontWeight: 800 }}>reward increases</span>. Preview
+              the prize pool to{' '}
+              <span style={{ fontWeight: 800 }}>match your budget</span>.
+              <br></br>
+              <br></br>
+              <span style={{ fontWeight: 800 }}>Boost engagement</span> while
+              managing costs and{' '}
+              <span style={{ fontWeight: 800 }}>optimising GGR</span> with this
+              simple configuration.
             </Typography>
           </Grid>
         </Grid>
@@ -134,7 +136,10 @@ const DynamicRewards: React.FC = () => {
             Tournament UI
           </Typography>
           <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
-          <Carousel settings={frontEndCourselSettings} slides={frontEndSlides} />
+          <Carousel
+            settings={frontEndCourselSettings}
+            slides={frontEndSlides}
+          />
         </Box>
       </motion.div>
       {/* Hero Section - Back End Carousel */}
@@ -172,32 +177,21 @@ const DynamicRewards: React.FC = () => {
 const frontEndSlides = [
   {
     number: '1',
-    title: 'Live Widget',
+    title: 'Promotion - Dynamic Prize',
     image: '/eeze/images/live-widget.png',
   },
   {
     number: '2',
-    title: 'Default Widget',
+    title: 'Live Tournamet - Dynamic Prize',
     image: '/eeze/images/default-widget.png',
   },
-  {
-    number: '3',
-    title: 'Leaderboard',
-    image: '/eeze/images/leaderboard.png',
-  },
-  {
-    number: '4',
-    title: 'Registration',
-    image: '/eeze/images/registration.png',
-  },
-  // { number: "5", title: "Limited Widget", image: "/eeze/images/final.png" },
 ];
 
 const frontEndCourselSettings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 3,
+  slidesToShow: 2,
   slidesToScroll: 1,
   arrows: true,
 };
@@ -206,14 +200,14 @@ const frontEndCourselSettings = {
 const backEndSlides = [
   {
     number: '1',
-    title: 'Tournament List',
+    title: 'Setting Up Dynamic Rewards',
     image: '/eeze/images/tournament-list.png',
   },
   {
     number: '2',
-    title: 'Creating New Tournament',
+    title: 'Configuring Different Stages & Results',
     image: '/eeze/images/create-new-tournament.png',
-  }
+  },
 ];
 
 const backEndCourselSettings = {

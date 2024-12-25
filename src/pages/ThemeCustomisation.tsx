@@ -1,16 +1,7 @@
-import React, { useCallback, useState } from 'react';
-import { FormProvider } from 'react-hook-form';
+import React, { useState } from 'react';
+// import { FormProvider } from 'react-hook-form';
 
-import {
-  Box,
-  Typography,
-  Grid,
-  Button,
-  Divider,
-  FormControlLabel,
-  useTheme,
-  Alert,
-} from '@mui/material';
+import { Box, Typography, Grid, Divider, useTheme } from '@mui/material';
 
 import GridItem from './components/GridItem';
 import MobilePreview from './components/MobilePreview';
@@ -24,13 +15,13 @@ import { motion } from 'framer-motion';
 import LinearGradient from '../components/LinearGradient';
 
 const ThemeCustomisation: React.FC = (props: any) => {
-  const { form, onCancel, onNext, onBack, newCustomTheme, setNewCustomTheme } =
-    props;
+  // const { form, onCancel, onNext, onBack, newCustomTheme, setNewCustomTheme } =
+  //   props;
   // const { handleSubmit, getValues, reset, watch } = form;
 
   // const [alertMessage, setAlertMessage] = useState('');
 
-  const theme = useTheme();
+  // const theme = useTheme();
   // const postMutation = usePostCustomThemeMutation();
   // const awsUploadAssetMutation = useAwsAssetUploadMutation();
 
@@ -43,13 +34,13 @@ const ThemeCustomisation: React.FC = (props: any) => {
     'data.logo.backgroundColor': '#FF5733',
     'data.main.secondaryColor': '#33FFBD',
     'data.widget.secondaryBackgroundColor': '#33FFBD',
-    'data.main.primaryColor': '#337BFF'
+    'data.main.primaryColor': '#337BFF',
   });
 
   const updateColors = (updates: { [key: string]: string }) => {
     setColors((prevColors) => ({
       ...prevColors,
-      ...updates
+      ...updates,
     }));
   };
 
@@ -102,7 +93,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
                     },
                   }}
                 >
-                  Customisable <br />{' '}
+                  Theme <br />{' '}
                   <Typography
                     variant="h3"
                     sx={{
@@ -118,9 +109,8 @@ const ThemeCustomisation: React.FC = (props: any) => {
                     }}
                     color="#D3B1FF"
                   >
-                    Tournament
+                    Customisation
                   </Typography>{' '}
-                  Features
                 </Typography>
               </Box>
             </Grid>
@@ -179,44 +169,13 @@ const ThemeCustomisation: React.FC = (props: any) => {
 
           <GridItem border={'none'}>
             <Box display="flex" flexDirection="column">
-              {/* Hero Section - Front End Carousel */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
                 {/* Key Benefits Section */}
-                <Box sx={{ marginTop: 6 }}>
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      fontWeight: 'bold',
-                      marginBottom: 1,
-                      '@media screen and (min-width: 2560px)': {
-                        fontSize: '3rem', // Adjust font size
-                      },
-                      '@media screen and (min-width: 3200px)': {
-                        fontSize: '3.5rem', // Adjust font size
-                      },
-                    }}
-                  >
-                    Explore
-                  </Typography>
-                  <LinearGradient
-                    height={'4px'}
-                    width={'25%'}
-                    marginBottom={'4rem'}
-                  />
-                </Box>
-              </motion.div>
-              {/* Hero Section - Back End Carousel */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                {/* Key Benefits Section */}
-                <Box sx={{ marginTop: '20rem' }}>
+                <Box sx={{ marginTop: '0rem' }}>
                   <Typography
                     variant="h4"
                     sx={{
@@ -237,16 +196,32 @@ const ThemeCustomisation: React.FC = (props: any) => {
                     width={'25%'}
                     marginBottom={'4rem'}
                   />
-                                      <BasicColorsSettings
-        mainThemeColor={colors['data.main.backgroundColor']}
-        secondaryThemeColor={colors['data.main.secondaryColor']}
-        CTATextColor={colors['data.main.primaryColor']}
-        setColors={updateColors}
-      />
-
+                                    <Typography
+                    variant="h4"
+                    sx={{
+                      fontWeight: 'bold',
+                      marginBottom: 1,
+                      '@media screen and (min-width: 2560px)': {
+                        fontSize: '2.5rem', // Adjust font size
+                      },
+                      '@media screen and (min-width: 3200px)': {
+                        fontSize: '3rem', // Adjust font size
+                      },
+                    }}
+                  >
+                    Adjust the slider to select a colour:
+                  </Typography>
+                  <BasicColorsSettings
+                    mainThemeColor={colors['data.main.backgroundColor']}
+                    secondaryThemeColor={colors['data.main.secondaryColor']}
+                    CTATextColor={colors['data.main.primaryColor']}
+                    setColors={updateColors}
+                  />
                 </Box>
               </motion.div>
-
+              {/* Hero Section - Front End Carousel */}
+              {/* Hero Section - Back End Carousel */}
+              
 
               {/* <Grid item xs={12} md={12}>
                       <RadioLogoSelector />
