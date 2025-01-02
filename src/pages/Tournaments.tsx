@@ -17,7 +17,9 @@ const Tournaments: React.FC = () => {
           padding: '0rem 8rem', // Adjust padding for larger screen
         },
         '@media screen and (min-width: 3200px)': {
+          marginTop: '8rem',
           padding: '0rem 8rem', // Adjust padding for larger screen
+          marginLeft: '3rem',
         },
       }}
     >
@@ -48,7 +50,8 @@ const Tournaments: React.FC = () => {
                     fontSize: '120px', // Scale font size for large screens
                   },
                   '@media screen and (min-width: 3200px)': {
-                    fontSize: '160px', // Scale font size for large screens
+                    marginTop: '-2rem',
+                    fontSize: '180px', // Scale font size for large screens
                   },
                 }}
               >
@@ -63,7 +66,7 @@ const Tournaments: React.FC = () => {
                       fontSize: '120px', // Scale font size for large screens
                     },
                     '@media screen and (min-width: 3200px)': {
-                      fontSize: '160px', // Scale font size for large screens
+                      fontSize: '180px', // Scale font size for large screens
                     },
                   }}
                   color="#D3B1FF"

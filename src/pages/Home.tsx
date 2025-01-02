@@ -9,14 +9,17 @@ const Home: React.FC = () => {
       sx={{
         color: '#FFFFFF',
         fontFamily: 'Inter',
+        padding: '0rem 4rem',
         marginTop: '0rem',
-        marginLeft: '3rem',
+        marginLeft: '0rem', 
         overflowX: 'hidden', // Prevent horizontal overflow
         '@media screen and (min-width: 2560px)': {
           padding: '0rem 8rem', // Adjust padding for larger screen
         },
         '@media screen and (min-width: 3200px)': {
+          marginTop: '0rem',
           padding: '0rem 8rem', // Adjust padding for larger screen
+          marginLeft: '3rem',
         },
       }}
     >
@@ -41,13 +44,13 @@ const Home: React.FC = () => {
                 sx={{
                   fontSize: '90px',
                   fontWeight: 'bold',
+                  marginTop: '-6rem',
                   '@media screen and (min-width: 2560px)': {
                     fontSize: '120px', // Scale font size for large screens
                   },
                   '@media screen and (min-width: 3200px)': {
                     marginTop: '-2rem',
                     fontSize: '180px', // Scale font size for large screens
-                    lineHeight: '100%'
                   },
                 }}
               >
@@ -63,7 +66,6 @@ const Home: React.FC = () => {
                     },
                     '@media screen and (min-width: 3200px)': {
                       fontSize: '180px', // Scale font size for large screens
-                      lineHeight: '100%'
                     },
                   }}
                   color="#D3B1FF"
@@ -79,8 +81,10 @@ const Home: React.FC = () => {
                 gap: 1,
                 flexWrap: 'wrap',
                 marginBottom: 2,
+                '@media screen and (min-width: 3200px)': {
                 marginTop: '3rem',
-                width: '125%',
+                width: '125%'
+                }
               }}
             >
               {[
@@ -97,9 +101,9 @@ const Home: React.FC = () => {
                     textTransform: 'none',
                     borderRadius: '10px',
                     padding: '6px 16px',
-                    marginX: '1rem',
-                    marginY: '1rem',
                     fontSize: '1rem',
+                    marginX: '0.5rem',
+                    marginY: '0.5rem',
                     '@media screen and (min-width: 2560px)': {
                       padding: '12px 24px', // Adjust padding
                       fontSize: '1.25rem', // Adjust font size
@@ -107,6 +111,8 @@ const Home: React.FC = () => {
                     '@media screen and (min-width: 3200px)': {
                       padding: '12px 24px', // Adjust padding
                       fontSize: '4rem', // Adjust font size
+                      marginX: '1rem',
+                      marginY: '1rem'
                     },
                     '&:hover': { backgroundColor: '#8E53F4' },
                   }}
@@ -118,6 +124,7 @@ const Home: React.FC = () => {
             <Typography
               variant="subtitle1"
               sx={{
+                fontSize: '1.25rem',
                 '@media screen and (min-width: 2560px)': {
                   fontSize: '1.75rem', // Adjust font size
                 },
@@ -137,7 +144,7 @@ const Home: React.FC = () => {
               sx={{
                 width: '100%',
                 maxWidth: '400px',
-                padding: '0rem 20rem',
+                padding: '8rem 2rem',
                 '@media screen and (min-width: 2560px)': {
                   maxWidth: '600px',
                   marginTop: '6.5rem',
@@ -145,6 +152,7 @@ const Home: React.FC = () => {
                 '@media screen and (min-width: 3200px)': {
                   maxWidth: '950px',
                   marginTop: '10rem',
+                  padding: '0rem 20rem'
                 },
               }}
             />
@@ -165,7 +173,7 @@ const Home: React.FC = () => {
             sx={{
               fontWeight: 'bold',
               marginBottom: 1,
-              '@media screen and (min-width: 2560px)': {
+              '@media screen and (min-width: 2520px)': {
                 fontSize: '3rem', // Adjust font size
               },
               '@media screen and (min-width: 3200px)': {
@@ -175,7 +183,7 @@ const Home: React.FC = () => {
           >
             Key Benefits
           </Typography>
-          <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'}/>
+          {/* <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'}/> */}
           <Grid container spacing={4}>
             {[
               {
