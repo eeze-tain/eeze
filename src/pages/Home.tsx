@@ -139,7 +139,7 @@ const Home: React.FC = () => {
           <Grid item xs={12} md={6}>
             <Box
               component="img"
-              src="/eeze/images/phone.png"
+              src="/images/phone.png"
               alt={`Mobile Phone Preview`}
               sx={{
                 width: '100%',

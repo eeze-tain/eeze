@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
       {/* Logo */}
       <Box
         component="img"
-        src="/eeze/svg/logo.svg"
+        src="/svg/logo.svg"
         alt="Logo"
         sx={{
           margin: '1.75rem 0rem 1.75rem 2rem',
@@ -56,13 +56,13 @@ const Navbar: React.FC = () => {
 
       {/* Navigation Buttons */}
       {[
-        { label: 'Overview', path: '/eeze', icon: '/eeze/svg/desktop.svg' },
-        { label: 'Tournaments', path: '/tournaments', icon: '/eeze/svg/jump.svg' },
-        { label: 'Theme Customisation', path: '/themes', icon: '/eeze/svg/remind.svg' },
-        { label: 'Dynamic Rewards', path: '/rewards', icon: '/eeze/svg/cog.svg' },
-        { label: 'Exclusive Tournaments', path: '/exclusive', icon: '/eeze/svg/vip.svg' },
-        { label: 'Free Chips', path: '/freechips', icon: '/eeze/svg/gift.svg' },
-        { label: 'Roadmap 2025', path: '/roadmap', icon: '/eeze/svg/earth.svg' },
+        { label: 'Overview', path: '/', icon: '/svg/desktop.svg' },
+        { label: 'Tournaments', path: '/tournaments', icon: '/svg/jump.svg' },
+        { label: 'Theme Customisation', path: '/themes', icon: '/svg/remind.svg' },
+        { label: 'Dynamic Rewards', path: '/rewards', icon: '/svg/cog.svg' },
+        { label: 'Exclusive Tournaments', path: '/exclusive', icon: '/svg/vip.svg' },
+        { label: 'Free Chips', path: '/freechips', icon: '/svg/gift.svg' },
+        { label: 'Roadmap 2025', path: '/roadmap', icon: '/svg/earth.svg' },
       ].map((item) => {
         const isActive = location.pathname === item.path; // Check if the current path matches the button's path
 
@@ -170,7 +170,7 @@ const Navbar: React.FC = () => {
         startIcon={
           <Box
             component="img"
-            src={'/eeze/svg/phone.svg'}
+            src={'/svg/phone.svg'}
             alt={`Phone Icon`}
             sx={{
               width: '25px',

@@ -181,22 +181,22 @@ const frontEndSlides = [
   {
     number: '1',
     title: 'Live Widget',
-    image: '/eeze/images/live-widget.png',
+    image: '/images/live-widget.png',
   },
   {
     number: '2',
     title: 'Default Widget',
-    image: '/eeze/images/default-widget.png',
+    image: '/images/default-widget.png',
   },
   {
     number: '3',
     title: 'Leaderboard',
-    image: '/eeze/images/leaderboard.png',
+    image: '/images/leaderboard.png',
   },
   {
     number: '4',
     title: 'Registration',
-    image: '/eeze/images/registration.png',
+    image: '/images/registration.png',
   },
   // { number: "5", title: "Limited Widget", image: "/eeze/images/final.png" },
 ];
@@ -215,12 +215,12 @@ const backEndSlides = [
   {
     number: '1',
     title: 'Tournament List',
-    image: '/eeze/images/tournament-list.png',
+    image: '/images/tournament-list.png',
   },
   {
     number: '2',
     title: 'Creating New Tournament',
-    image: '/eeze/images/create-new-tournament.png',
+    image: '/images/create-new-tournament.png',
   }
 ];
 

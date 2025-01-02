@@ -20,14 +20,14 @@ const App: React.FC = () => {
       {/* Content spans the remaining 9 columns and has background image */}
       <Grid item xs={9.75} sx={{ 
         height: '100vh', 
-        backgroundImage: 'url(/eeze/images/background.png)', 
+        backgroundImage: 'url(/images/background.png)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center', 
         overflowY: 'auto',
         margin: 0
       }}>
         <Routes>
-          <Route path="/eeze" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/tournaments" element={<Tournaments />} />
           <Route path="/themes" element={<ThemeCustomisation />} />
           <Route path="/rewards" element={<DynamicRewards />} />

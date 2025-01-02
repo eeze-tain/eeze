@@ -178,12 +178,12 @@ const frontEndSlides = [
   {
     number: '1',
     title: 'Promotion - Dynamic Prize',
-    image: '/eeze/images/live-widget.png',
+    image: '/images/live-widget.png',
   },
   {
     number: '2',
     title: 'Live Tournamet - Dynamic Prize',
-    image: '/eeze/images/default-widget.png',
+    image: '/images/default-widget.png',
   },
 ];
 
@@ -201,12 +201,12 @@ const backEndSlides = [
   {
     number: '1',
     title: 'Setting Up Dynamic Rewards',
-    image: '/eeze/images/tournament-list.png',
+    image: '/images/tournament-list.png',
   },
   {
     number: '2',
     title: 'Configuring Different Stages & Results',
-    image: '/eeze/images/create-new-tournament.png',
+    image: '/images/create-new-tournament.png',
   },
 ];
 

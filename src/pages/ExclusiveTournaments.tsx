@@ -192,22 +192,22 @@ const frontEndSlides = [
   {
     number: '1',
     title: 'Leaderboard',
-    image: '/eeze/images/live-widget.png',
+    image: '/images/live-widget.png',
   },
   {
     number: '2',
     title: 'Promotion',
-    image: '/eeze/images/default-widget.png',
+    image: '/images/default-widget.png',
   },
   {
     number: '3',
     title: 'Win/Bet Criteria',
-    image: '/eeze/images/leaderboard.png',
+    image: '/images/leaderboard.png',
   },
   {
     number: '4',
     title: 'Winner Layout',
-    image: '/eeze/images/registration.png',
+    image: '/images/registration.png',
   },
 ];
 
@@ -225,12 +225,12 @@ const backEndSlides = [
   {
     number: '1',
     title: 'Player Segmentation - Tagging',
-    image: '/eeze/images/tournament-list.png',
+    image: '/images/tournament-list.png',
   },
   {
     number: '2',
     title: 'Setting Up Player Group With Filters',
-    image: '/eeze/images/create-new-tournament.png',
+    image: '/images/create-new-tournament.png',
   },
 ];
 
