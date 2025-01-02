@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   return (
     <Box
       sx={{
-        minHeight: '93.5vh',
+        minHeight: '94.55vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
