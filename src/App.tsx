@@ -13,12 +13,12 @@ const App: React.FC = () => {
   return (
     <Grid container sx={{ height: '100vh', margin: 0, padding: 0 }}>
       {/* Navbar spans 3 columns, is sticky */}
-      <Grid item xs={2} sx={{ position: 'sticky', top: 0, zIndex: 100 }}>
+      <Grid item xs={2.25} sx={{ position: 'sticky', top: 0, zIndex: 100 }}>
         <Navbar />
       </Grid>
 
       {/* Content spans the remaining 9 columns and has background image */}
-      <Grid item xs={10} sx={{ 
+      <Grid item xs={9.75} sx={{ 
         height: '100vh', 
         backgroundImage: 'url(/eeze/images/background.png)', 
         backgroundSize: 'cover', 

@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: '1rem',
+        padding: '2rem',
         gap: '0rem',
         background: 'linear-gradient(180deg, #34175D 0%, #2A1545 100%)',
         boxShadow: '20px 0px 40px 0px rgba(34, 5, 60, 0.25)',
@@ -20,15 +20,15 @@ const Navbar: React.FC = () => {
         zIndex: 100,
         position: 'sticky', // Sticky Navbar
         top: 0,
-        '@media screen and (min-width: 2560px)': {
-          minHeight: '95.5vh',
-          padding: '2rem', // Larger padding for high-res screens
+        // '@media screen and (min-width: 2520px)': {
+        //   minHeight: '95.5vh',
+        //   padding: '2rem', // Larger padding for high-res screens
+        //   gap: '1rem',
+        // },
+        '@media screen and (min-width: 2520px)': {
+          minHeight: '99vh',
+          paddingX: '5.5rem', // Larger padding for high-res screens
           gap: '1rem',
-        },
-        '@media screen and (min-width: 5120px)': {
-          minHeight: '98vh',
-          padding: '2rem', // Larger padding for high-res screens
-          gap: '0rem',
         },
       }}
     >
@@ -40,15 +40,15 @@ const Navbar: React.FC = () => {
         sx={{
           width: '200px',
           padding: '1rem',
-          '@media screen and (min-width: 2560px)': {
-            margin: '3rem 2rem 8rem 3rem',
+          // '@media screen and (min-width: 2520px)': {
+          //   margin: '3rem 2rem 8rem 3rem',
+          //   padding: '1rem',
+          //   width: '300px', // Scale logo for large screens
+          // },
+          '@media screen and (min-width: 2520px)': {
+            margin: '6.5rem 0rem 8rem 4rem',
             padding: '1rem',
-            width: '300px', // Scale logo for large screens
-          },
-          '@media screen and (min-width: 3200px)': {
-            margin: '3rem 2rem 8rem 3rem',
-            padding: '1rem',
-            width: '350px', // Scale logo for large screens
+            width: '650px', // Scale logo for large screens
           },
         }}
       />
@@ -70,34 +70,18 @@ const Navbar: React.FC = () => {
             key={item.label}
             component={Link}
             to={item.path}
-            startIcon={
-              <Box
-                component="img"
-                src={item.icon}
-                alt={`${item.label} Icon`}
-                sx={{
-                  width: '25px',
-                  '@media screen and (min-width: 2560px)': {
-                    width: '45px', // Scale icon for large screens
-                  },
-                  '@media screen and (min-width: 3200px)': {
-                    width: '50px', // Scale icon for large screens
-                  },
-                }}
-              />
-            }
             sx={{
               color: isActive ? '#FFFFFF' : '#CCCCCC',
               textTransform: 'none',
               fontFamily: 'Inter',
-              fontSize: '24px',
+              fontSize: '30px',
               fontStyle: 'normal',
               fontWeight: 700,
               textAlign: 'center',
               lineHeight: 'normal',
-              justifyContent: 'flex-start',
+              justifyContent: 'center',
               width: '100%',
-              margin: '1rem 1rem 1rem 1rem',
+              margin: '1rem 3rem 4rem 3rem',
               padding: '1rem 1rem',
               borderRadius: '50px',
               border: isActive ? '2px solid #FFF' : '2px solid transparent',
@@ -106,25 +90,42 @@ const Navbar: React.FC = () => {
                 color: '#FFFFFF',
                 border: '2px solid #FFF',
               },
-              '@media screen and (min-width: 2560px)': {
+              '@media screen and (min-width: 2520px)': {
                 border: isActive ? '2px solid #FFF' : '2px solid transparent',
                 padding: '.75rem 1.5rem', // Larger padding
               },
               '@media screen and (min-width: 3199px)': {
                 border: isActive ? '2px solid #FFF' : '2px solid transparent',
-                padding: '1rem 2rem', // Larger padding
+                padding: '3.25rem', // Larger padding
               },
             }}
+            startIcon={
+              <Box
+                component="img"
+                src={item.icon}
+                alt={`${item.label} Icon`}
+                sx={{
+                  width: '25px',
+                  // '@media screen and (min-width: 2520px)': {
+                  //   width: '45px', // Scale icon for large screens
+                  // },
+                  '@media screen and (min-width: 2520px)': {
+                    minWidth: '3.5rem', // Scale icon for large screens
+                    
+                  },
+                }}
+              />
+            }
           >
             <Typography
               sx={{
-                '@media screen and (min-width: 2560px)': {
+                '@media screen and (min-width: 2520px)': {
                   fontSize: '1.3rem', // Scale up text
                   padding: '0.5rem 1rem', // Larger padding
                 },
                 '@media screen and (min-width: 3199px)': {
-                  fontSize: '1.65rem', // Scale up text
-                  padding: '1rem 2rem', // Larger padding
+                  fontSize: '2.5rem', // Scale up text
+                  padding: '0rem 2rem', // Larger padding
                 },
               }}
             >
@@ -143,25 +144,45 @@ const Navbar: React.FC = () => {
           color: '#FFFFFF',
           borderRadius: '25px',
           width: '100%',
+          fontSize: '30px',
           padding: '12px 16px',
           textTransform: 'none',
-          fontWeight: 'bold',
+          fontWeight: 'normal',
           '&:hover': {
             backgroundColor: '#2E9D9E',
           },
-          '@media screen and (min-width: 2560px)': {
+          // '@media screen and (min-width: 2520px)': {
+          //   marginTop: '4rem',
+          //   fontSize: '1.65rem', // Scale up text
+          //   padding: '1rem 2rem', // Larger padding
+          // },
+          '@media screen and (min-width: 2520px)': {
             marginTop: '4rem',
-            fontSize: '1.65rem', // Scale up text
-            padding: '1rem 2rem', // Larger padding
-          },
-          '@media screen and (min-width: 3200px)': {
-            marginTop: '4rem',
-            fontSize: '1.65rem', // Scale up text
-            padding: '1.5rem 2rem', // Larger padding
+            // fontSize: '1.65rem', // Scale up text
+            padding: '3.5rem', // Larger padding
+            fontSize: '2.5rem', // Scale up text
+            // padding: '0rem 2rem', // Larger padding
           },
         }}
+        startIcon={
+          <Box
+            component="img"
+            src={'/eeze/svg/phone.svg'}
+            alt={`Phone Icon`}
+            sx={{
+              width: '25px',
+              // '@media screen and (min-width: 2520px)': {
+              //   width: '45px', // Scale icon for large screens
+              // },
+              '@media screen and (min-width: 2520px)': {
+                minWidth: '3.5rem', // Scale icon for large screens
+                
+              },
+            }}
+          />
+        }
       >
-        Book A Call
+        BOOK A CALL
       </Button>
     </Box>
   );

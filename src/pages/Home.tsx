@@ -7,9 +7,10 @@ const Home: React.FC = () => {
   return (
     <Box
       sx={{
-        padding: '4rem 4rem',
         color: '#FFFFFF',
         fontFamily: 'Inter',
+        marginTop: '0rem',
+        marginLeft: '3rem',
         overflowX: 'hidden', // Prevent horizontal overflow
         '@media screen and (min-width: 2560px)': {
           padding: '0rem 8rem', // Adjust padding for larger screen
@@ -30,7 +31,7 @@ const Home: React.FC = () => {
             <Box
               sx={{
                 display: 'flex',
-                gap: 1,
+                gap: 3,
                 flexWrap: 'wrap',
                 marginBottom: 2,
               }}
@@ -40,13 +41,13 @@ const Home: React.FC = () => {
                 sx={{
                   fontSize: '90px',
                   fontWeight: 'bold',
-                  marginTop: '-6rem',
-                  marginBottom: 2,
                   '@media screen and (min-width: 2560px)': {
                     fontSize: '120px', // Scale font size for large screens
                   },
                   '@media screen and (min-width: 3200px)': {
-                    fontSize: '160px', // Scale font size for large screens
+                    marginTop: '-2rem',
+                    fontSize: '180px', // Scale font size for large screens
+                    lineHeight: '100%'
                   },
                 }}
               >
@@ -61,7 +62,8 @@ const Home: React.FC = () => {
                       fontSize: '120px', // Scale font size for large screens
                     },
                     '@media screen and (min-width: 3200px)': {
-                      fontSize: '160px', // Scale font size for large screens
+                      fontSize: '180px', // Scale font size for large screens
+                      lineHeight: '100%'
                     },
                   }}
                   color="#D3B1FF"
@@ -77,6 +79,8 @@ const Home: React.FC = () => {
                 gap: 1,
                 flexWrap: 'wrap',
                 marginBottom: 2,
+                marginTop: '3rem',
+                width: '125%',
               }}
             >
               {[
@@ -88,11 +92,13 @@ const Home: React.FC = () => {
                 <Button
                   key={tag}
                   sx={{
-                    backgroundColor: '#6E38D9',
+                    backgroundColor: '#5912FF',
                     color: '#FFFFFF',
                     textTransform: 'none',
-                    borderRadius: '20px',
+                    borderRadius: '10px',
                     padding: '6px 16px',
+                    marginX: '1rem',
+                    marginY: '1rem',
                     fontSize: '1rem',
                     '@media screen and (min-width: 2560px)': {
                       padding: '12px 24px', // Adjust padding
@@ -100,7 +106,7 @@ const Home: React.FC = () => {
                     },
                     '@media screen and (min-width: 3200px)': {
                       padding: '12px 24px', // Adjust padding
-                      fontSize: '1.75rem', // Adjust font size
+                      fontSize: '4rem', // Adjust font size
                     },
                     '&:hover': { backgroundColor: '#8E53F4' },
                   }}
@@ -116,7 +122,7 @@ const Home: React.FC = () => {
                   fontSize: '1.75rem', // Adjust font size
                 },
                 '@media screen and (min-width: 3200px)': {
-                  fontSize: '2rem', // Adjust font size
+                  fontSize: '4rem', // Adjust font size
                 },
               }}
             >
@@ -131,14 +137,14 @@ const Home: React.FC = () => {
               sx={{
                 width: '100%',
                 maxWidth: '400px',
-                padding: '0rem 8rem',
+                padding: '0rem 20rem',
                 '@media screen and (min-width: 2560px)': {
                   maxWidth: '600px',
                   marginTop: '6.5rem',
                 },
                 '@media screen and (min-width: 3200px)': {
-                  maxWidth: '800px',
-                  marginTop: '6.5rem',
+                  maxWidth: '950px',
+                  marginTop: '10rem',
                 },
               }}
             />
@@ -163,7 +169,7 @@ const Home: React.FC = () => {
                 fontSize: '3rem', // Adjust font size
               },
               '@media screen and (min-width: 3200px)': {
-                fontSize: '3.5rem', // Adjust font size
+                fontSize: '5rem', // Adjust font size
               },
             }}
           >
@@ -207,7 +213,7 @@ const Home: React.FC = () => {
                       fontSize: '2.25rem', // Adjust font size
                     },
                     '@media screen and (min-width: 3200px)': {
-                      fontSize: '2rem', // Adjust font size
+                      fontSize: '5rem', // Adjust font size
                     },
                   }}
                 >
@@ -220,7 +226,7 @@ const Home: React.FC = () => {
                       fontSize: '1.75rem', // Adjust font size
                     },
                     '@media screen and (min-width: 3200px)': {
-                      fontSize: '1.25rem', // Adjust font size
+                      fontSize: '4rem', // Adjust font size
                     },
                   }}
                 >
@@ -248,7 +254,7 @@ const Home: React.FC = () => {
             fontWeight: 100,
             letterSpacing: 1,
             textAlign: 'left',
-            marginTop: '8rem',
+            marginTop: '14rem',
             fontStyle: 'normal',
             marginBottom: 2,
             '@media screen and (min-width: 2560px)': {
@@ -259,7 +265,8 @@ const Home: React.FC = () => {
             '@media screen and (min-width: 3200px)': {
               // fontFamily: 'Inter Tight',
               fontWeight: 100,
-              fontSize: '5rem', // Adjust font size
+              fontSize: '180px', // Adjust font size
+              lineHeight: '150%'
             },
           }}
         >
