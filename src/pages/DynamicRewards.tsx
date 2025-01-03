@@ -12,13 +12,7 @@ const DynamicRewards: React.FC = () => {
         color: '#FFFFFF',
         fontFamily: 'Inter',
         overflowX: 'hidden', // Prevent horizontal overflow
-        marginTop: '-2rem',
-        '@media screen and (min-width: 2560px)': {
-          padding: '0rem 8rem', // Adjust padding for larger screen
-        },
-        '@media screen and (min-width: 3200px)': {
-          padding: '0rem 8rem', // Adjust padding for larger screen
-        },
+        marginTop: '-2rem'
       }}
     >
       {/* Hero Section */}
@@ -40,7 +34,7 @@ const DynamicRewards: React.FC = () => {
               <Typography
                 variant="h3"
                 sx={{
-                  fontSize: '90px',
+                  fontSize: '80px',
                   fontWeight: 'bold',
                   marginTop: '6rem',
                   marginBottom: 2,
@@ -56,15 +50,8 @@ const DynamicRewards: React.FC = () => {
                 <Typography
                   variant="h3"
                   sx={{
-                    fontSize: '90px',
+                    fontSize: '80px',
                     fontWeight: 'bold',
-                    marginBottom: 0,
-                    '@media screen and (min-width: 2560px)': {
-                      fontSize: '120px', // Scale font size for large screens
-                    },
-                    '@media screen and (min-width: 3200px)': {
-                      fontSize: '160px', // Scale font size for large screens
-                    },
                   }}
                   color="#D3B1FF"
                 >
@@ -82,6 +69,9 @@ const DynamicRewards: React.FC = () => {
               sx={{
                 fontWeight: 100,
                 alignSelf: 'right',
+                fontSize: '1.75rem',
+                lineHeight: '100%',
+                marginBottom: '2rem',
                 '@media screen and (min-width: 2560px)': {
                   fontSize: '1.75rem', // Adjust font size
                 },
@@ -124,7 +114,7 @@ const DynamicRewards: React.FC = () => {
             variant="h4"
             sx={{
               fontWeight: 'bold',
-              marginBottom: 1,
+              marginBottom: '2rem',
               '@media screen and (min-width: 2560px)': {
                 fontSize: '3rem', // Adjust font size
               },
@@ -135,7 +125,7 @@ const DynamicRewards: React.FC = () => {
           >
             Tournament UI
           </Typography>
-          <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
+          {/* <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} /> */}
           <Carousel
             settings={frontEndCourselSettings}
             slides={frontEndSlides}
@@ -149,17 +139,14 @@ const DynamicRewards: React.FC = () => {
         transition={{ duration: 0.6 }}
       >
         {/* Key Benefits Section */}
-        <Box sx={{ marginTop: '20rem' }}>
+        <Box sx={{ marginTop: '7rem' }}>
           <Typography
             variant="h4"
             sx={{
               fontWeight: 'bold',
-              marginBottom: 1,
+              marginBottom: 5,
               '@media screen and (min-width: 2560px)': {
                 fontSize: '3rem', // Adjust font size
-              },
-              '@media screen and (min-width: 3200px)': {
-                fontSize: '3.5rem', // Adjust font size
               },
             }}
           >

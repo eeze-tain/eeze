@@ -5,26 +5,26 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Box, Typography } from '@mui/material';
 
 const Carousel = ({
-    slides,
-    settings
+  slides,
+  settings,
+  imgWidth,
 }: {
-    slides: any,
-    settings: any
+  slides: any;
+  settings: any;
+  imgWidth?: string | number;
 }) => {
-
   const slideNumbers = (number) => {
-
     switch (number) {
       case '1':
         return styles.one;
-        case '2':
-          return styles.two;
-          case '3':
+      case '2':
+        return styles.two;
+      case '3':
         return styles.three;
-        case '4':
+      case '4':
         return styles.four;
     }
-  }
+  };
 
   return (
     <Box
@@ -41,26 +41,35 @@ const Carousel = ({
               <div style={{ display: 'inline-flex' }}>
                 <div className="slide-number" style={styles.slideNumber}></div>
                 <span style={slideNumbers(slide.number)}>
-                  <Typography sx={{
-                    fontSize: '1.75rem',
-                    marginTop: '0px',
-                    marginLeft: '7px'
-                  }}>
-                  {slide.number}
+                  <Typography
+                    sx={{
+                      fontSize: '1.75rem',
+                      marginTop: '0px',
+                      marginLeft: '7px',
+                    }}
+                  >
+                    {slide.number}
                   </Typography>
-                  </span>
+                </span>
                 <div className="slide-title" style={styles.slideTitle}>
-                  <Typography sx={{
-                    fontSize: '2rem',
-                    // fontWeight: 800,
-                    marginBottom: '1rem'
-                  }}>
-                  {slide.title}
+                  <Typography
+                    sx={{
+                      fontSize: '2rem',
+                      // fontWeight: 800,
+                      marginBottom: '1rem',
+                    }}
+                  >
+                    {slide.title}
                   </Typography>
                 </div>
               </div>
             </div>
-            <img src={slide.image} alt={slide.title} className="slide-image" />
+            <img
+              src={slide.image}
+              alt={slide.title}
+              style={{ transform: `scale(${imgWidth})` }}
+              className="slide-image"
+            />
           </div>
         ))}
       </Slider>
@@ -113,7 +122,7 @@ const styles = {
   slideTitle: {
     color: '#FFF',
     fontSize: '32px',
-    fontStyle: 'normal', 
+    fontStyle: 'normal',
     lineHeight: '100%',
     marginLeft: '2rem',
     marginTop: '.5rem',

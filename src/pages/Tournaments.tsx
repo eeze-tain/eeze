@@ -64,21 +64,18 @@ const Tournaments: React.FC = () => {
                 color: '#2FD093',
                 alignSelf: 'right',
                 fontSize: '2.5rem',
-                textTransform:'uppercase',
+                textTransform: 'uppercase',
                 fontStyle: 'italic',
-                marginTop: '15rem'
+                marginTop: '15rem',
               }}
             >
               <span style={{ fontWeight: 800 }}>
-              Unleash Competitive Spirit with Real-time, Engaging Tournaments
+                Unleash Competitive Spirit with Real-time, Engaging Tournaments
               </span>
             </Typography>
           </Grid>
-          <Grid item xs={12} md={6}>
-
-          </Grid>
-          <Grid item xs={12} md={6}>
-          </Grid>
+          <Grid item xs={12} md={6}></Grid>
+          <Grid item xs={12} md={6}></Grid>
         </Grid>
       </motion.div>
       {/* Hero Section - Front End Carousel */}
@@ -88,25 +85,23 @@ const Tournaments: React.FC = () => {
         transition={{ duration: 0.6 }}
       >
         {/* Key Benefits Section */}
-        <Box sx={{ marginTop: 6 }} >
+        <Box sx={{ marginTop: 6 }}>
           <Typography
             variant="h4"
             sx={{
               fontWeight: 'bold',
               marginBottom: '2rem',
-              '@media screen and (min-width: 2560px)': {
-                fontSize: '3rem', // Adjust font size
-              },
-              '@media screen and (min-width: 3200px)': {
-                fontSize: '3.5rem', // Adjust font size
-              },
+              fontSize: '3rem'
             }}
           >
             Tournament UI
           </Typography>
           {/* <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} /> */}
           {/* <Box sx={{marginLeft: '-10%', transform: 'scale(80%)'}}> */}
-          <Carousel settings={frontEndCourselSettings} slides={frontEndSlides} />
+          <Carousel
+            settings={frontEndCourselSettings}
+            slides={frontEndSlides}
+          />
           {/* </Box> */}
         </Box>
       </motion.div>
@@ -124,7 +119,7 @@ const Tournaments: React.FC = () => {
               marginBottom: 5,
               '@media screen and (min-width: 2560px)': {
                 fontSize: '3rem', // Adjust font size
-              }
+              },
             }}
           >
             Back Office
@@ -182,7 +177,7 @@ const backEndSlides = [
     number: '2',
     title: 'Creating New Tournament',
     image: '/images/create-new-tournament.png',
-  }
+  },
 ];
 
 const backEndCourselSettings = {
