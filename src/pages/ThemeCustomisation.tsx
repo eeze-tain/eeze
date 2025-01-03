@@ -12,21 +12,8 @@ import BasicColorsSettings from './containers/BasicColorsSettings';
 // import RadioLogoSelector from './containers/RadioLogoSelector';
 
 import { motion } from 'framer-motion';
-import LinearGradient from '../components/LinearGradient';
 
 const ThemeCustomisation: React.FC = (props: any) => {
-  // const { form, onCancel, onNext, onBack, newCustomTheme, setNewCustomTheme } =
-  //   props;
-  // const { handleSubmit, getValues, reset, watch } = form;
-
-  // const [alertMessage, setAlertMessage] = useState('');
-
-  // const theme = useTheme();
-  // const postMutation = usePostCustomThemeMutation();
-  // const awsUploadAssetMutation = useAwsAssetUploadMutation();
-
-  // const themeFormId = form.getValues('id');
-  // const middleColumnDisabled = themeFormId === newCustomTheme?.id;
 
   const [colors, setColors] = useState({
     'data.main.backgroundColor': '#FF5733',
@@ -45,7 +32,6 @@ const ThemeCustomisation: React.FC = (props: any) => {
   };
 
   return (
-    // <FormProvider {...form}>
     <>
       <Box
         sx={{
@@ -53,13 +39,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
           color: '#FFFFFF',
           fontFamily: 'Inter',
           overflowX: 'hidden', // Prevent horizontal overflow
-          marginTop: '-2rem',
-          '@media screen and (min-width: 2560px)': {
-            padding: '0rem 8rem', // Adjust padding for larger screen
-          },
-          '@media screen and (min-width: 3200px)': {
-            padding: '0rem 8rem', // Adjust padding for larger screen
-          },
+          marginTop: '-2rem'
         }}
       >
         {/* Hero Section */}
@@ -189,13 +169,14 @@ const ThemeCustomisation: React.FC = (props: any) => {
                       },
                     }}
                   >
-                    Color
+                    Play Around!
                   </Typography>
-                  <LinearGradient
+                  {/* <LinearGradient
                     height={'4px'}
                     width={'25%'}
                     marginBottom={'4rem'}
-                  />
+                  /> */}
+                  <br></br>
                                     <Typography
                     variant="h4"
                     sx={{
@@ -243,11 +224,15 @@ const ThemeCustomisation: React.FC = (props: any) => {
             <Box>
               <Divider style={{ width: '100%', marginBottom: '16px' }} />
               <MobilePreview
-                primaryColor={undefined}
-                secondaryColor={undefined}
-                backgroundColor={undefined}
+                primaryColor={colors['data.main.primaryColor']}
+                secondaryColor={colors['data.main.secondaryColor']}
+                backgroundColor={colors['data.main.backgroundColor']}
               >
-                <LeaderboardPreview />
+                <LeaderboardPreview
+                  primaryColor={colors['data.main.primaryColor']}
+                  secondaryColor={colors['data.main.secondaryColor']}
+                  backgroundColor={colors['data.main.backgroundColor']}
+                />
               </MobilePreview>
             </Box>
           </GridItem>
@@ -255,9 +240,9 @@ const ThemeCustomisation: React.FC = (props: any) => {
             <Box>
               <Divider style={{ width: '100%', marginBottom: '16px' }} />
               <MobilePreview
-                primaryColor={undefined}
-                secondaryColor={undefined}
-                backgroundColor={undefined}
+                primaryColor={colors['data.main.primaryColor']}
+                secondaryColor={colors['data.main.secondaryColor']}
+                backgroundColor={colors['data.main.backgroundColor']}
               >
                 <WidgetScorePreview />
               </MobilePreview>
@@ -265,9 +250,9 @@ const ThemeCustomisation: React.FC = (props: any) => {
             <Box>
               <Divider style={{ width: '100%', marginBottom: '16px' }} />
               <MobilePreview
-                primaryColor={undefined}
-                secondaryColor={undefined}
-                backgroundColor={undefined}
+                primaryColor={colors['data.main.primaryColor']}
+                secondaryColor={colors['data.main.secondaryColor']}
+                backgroundColor={colors['data.main.backgroundColor']}
               >
                 <LogoPreview />
               </MobilePreview>
@@ -276,7 +261,6 @@ const ThemeCustomisation: React.FC = (props: any) => {
         </Grid>
       </Box>
     </>
-    // </FormProvider>
   );
 };
 

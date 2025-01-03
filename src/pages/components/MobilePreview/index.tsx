@@ -2,6 +2,7 @@ import { BatteryFull, Wifi } from '@mui/icons-material';
 import { Box, Grid, useTheme } from '@mui/material';
 
 import CoreUi from './asset/CoreUI.png';
+import { useEffect } from 'react';
 
 const MobilePreview = ({ primaryColor, secondaryColor, backgroundColor, children }) => {
   const theme = useTheme();
@@ -14,7 +15,8 @@ const MobilePreview = ({ primaryColor, secondaryColor, backgroundColor, children
         minHeight: '300px',
         borderRadius: '20px',
         border: `2px solid ${theme.palette.mode === 'dark' ? 'white' : 'black'}`,
-        backgroundColor: backgroundColor,
+        backgroundColor: 'white',
+        color: 'black',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
         position: 'relative',
         display: 'flex',
@@ -26,7 +28,7 @@ const MobilePreview = ({ primaryColor, secondaryColor, backgroundColor, children
         style={{
           height: '40px',
           width: '100%',
-          backgroundColor: primaryColor,
+          // backgroundColor: primaryColor,
           borderTopLeftRadius: '20px',
           borderTopRightRadius: '20px',
           display: 'flex',

@@ -12,15 +12,7 @@ const Tournaments: React.FC = () => {
         color: '#FFFFFF',
         fontFamily: 'Inter',
         overflowX: 'hidden', // Prevent horizontal overflow
-        marginTop: '-2rem',
-        '@media screen and (min-width: 2560px)': {
-          padding: '0rem 8rem', // Adjust padding for larger screen
-        },
-        '@media screen and (min-width: 3200px)': {
-          marginTop: '8rem',
-          padding: '0rem 8rem', // Adjust padding for larger screen
-          marginLeft: '3rem',
-        },
+        marginTop: '0rem',
       }}
     >
       {/* Hero Section */}
@@ -42,32 +34,18 @@ const Tournaments: React.FC = () => {
               <Typography
                 variant="h3"
                 sx={{
-                  fontSize: '90px',
+                  fontSize: '80px',
                   fontWeight: 'bold',
-                  marginTop: '6rem',
+                  marginTop: '4rem',
                   marginBottom: 2,
-                  '@media screen and (min-width: 2560px)': {
-                    fontSize: '120px', // Scale font size for large screens
-                  },
-                  '@media screen and (min-width: 3200px)': {
-                    marginTop: '-2rem',
-                    fontSize: '180px', // Scale font size for large screens
-                  },
                 }}
               >
                 Customisable <br />{' '}
                 <Typography
                   variant="h3"
                   sx={{
-                    fontSize: '90px',
+                    fontSize: '80px',
                     fontWeight: 'bold',
-                    marginBottom: 0,
-                    '@media screen and (min-width: 2560px)': {
-                      fontSize: '120px', // Scale font size for large screens
-                    },
-                    '@media screen and (min-width: 3200px)': {
-                      fontSize: '180px', // Scale font size for large screens
-                    },
                   }}
                   color="#D3B1FF"
                 >
@@ -77,44 +55,29 @@ const Tournaments: React.FC = () => {
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}></Grid>
-          <Grid item xs={12} md={6}></Grid>
           <Grid item xs={12} md={6}>
             <Typography
               width={'100%'}
               variant="subtitle1"
               sx={{
                 fontWeight: 100,
+                color: '#2FD093',
                 alignSelf: 'right',
-                '@media screen and (min-width: 2560px)': {
-                  fontSize: '1.75rem', // Adjust font size
-                },
-                '@media screen and (min-width: 3200px)': {
-                  fontSize: '2rem', // Adjust font size
-                },
+                fontSize: '2.5rem',
+                textTransform:'uppercase',
+                fontStyle: 'italic',
+                marginTop: '15rem'
               }}
             >
-              Easily set up tournaments with{' '}
               <span style={{ fontWeight: 800 }}>
-                flexible Promotion and Registration phases, including bet/win
-                requirements
-              </span>{' '}
-              to build excitement before they go live.{' '}
-              <br></br>
-              <br></br>
-              <span style={{ fontWeight: 800 }}>
-                Create exclusivity by limiting player spots
+              Unleash Competitive Spirit with Real-time, Engaging Tournaments
               </span>
-              , available on a first-come, first served basis. 
-              <br></br>
-              <br></br>
-              Keep players
-              engaged with{' '}
-              <span style={{ fontWeight: 800 }}>customisable mechanics</span>{' '}
-              like <span style={{ fontWeight: 800 }}>score calculation</span>{' '}
-              and round{' '}
-              <span style={{ fontWeight: 800 }}>qualification strategies</span>.
             </Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+
+          </Grid>
+          <Grid item xs={12} md={6}>
           </Grid>
         </Grid>
       </motion.div>
@@ -141,7 +104,7 @@ const Tournaments: React.FC = () => {
           >
             Tournament UI
           </Typography>
-          <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
+          {/* <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} /> */}
           <Carousel settings={frontEndCourselSettings} slides={frontEndSlides} />
         </Box>
       </motion.div>
@@ -151,12 +114,12 @@ const Tournaments: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Key Benefits Section */}
         <Box sx={{ marginTop: '20rem' }}>
           <Typography
             variant="h4"
             sx={{
               fontWeight: 'bold',
+              fontFamily: 'Inter',
               marginBottom: 1,
               '@media screen and (min-width: 2560px)': {
                 fontSize: '3rem', // Adjust font size
@@ -168,7 +131,7 @@ const Tournaments: React.FC = () => {
           >
             Back Office
           </Typography>
-          <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
+          {/* <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} /> */}
           <Carousel settings={backEndCourselSettings} slides={backEndSlides} />
         </Box>
       </motion.div>

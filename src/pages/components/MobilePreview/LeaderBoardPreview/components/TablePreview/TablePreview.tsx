@@ -1,10 +1,7 @@
-import { useFormContext } from 'react-hook-form';
-
-import { Table, TableBody, TableRow, TableCell, Box } from '@mui/material';
-
+import { Table, TableBody, TableRow, TableCell, TableHead, Box } from '@mui/material';
 import { starSvg } from '../../../asset';
 
-const data = [
+const defaultData = [
   { id: 4, name: 'player_100V515EL', score: 5984 },
   { id: 5, name: 'player_XU43VEIB', score: 5894 },
   { id: 6, name: 'player_352106X', score: 5881 },
@@ -12,18 +9,13 @@ const data = [
   { id: 8, name: 'player_34N1XLF4', score: 5791 },
   { id: 143, name: 'You', score: 2560 }
 ];
-const TablePreview = () => {
-  // const { watch } = useFormContext();
-  // const formData = watch('data.main');
-  // const fontColor = formData?.fontColor || 'white';
-  // const iconColor = formData?.iconsColor || 'white';
-  // const secondaryColor = formData?.secondaryColor || '#03A6F7';
 
-  // ACTIVE COLOR VALUE
-  const fontColor ='white';
-  const iconColor = 'white';
-  const secondaryColor = '#03A6F7';
-
+const TablePreview = ({
+  data = defaultData,
+  fontColor = 'white',
+  iconColor = 'white',
+  secondaryColor = '#03A6F7'
+}: any) => {
   const cellStyles = (isYou = false) => ({
     fontSize: '12px',
     fontWeight: isYou ? 600 : 400,
@@ -46,6 +38,13 @@ const TablePreview = () => {
   return (
     <Box sx={{ overflowX: 'auto' }}>
       <Table sx={{ minWidth: 300, borderCollapse: 'collapse' }}>
+        <TableHead>
+          <TableRow sx={{ backgroundColor: secondaryColor }}>
+            <TableCell sx={cellStyles()}><strong>ID</strong></TableCell>
+            <TableCell sx={cellStyles()}><strong>Name</strong></TableCell>
+            <TableCell sx={cellStyles()}><strong>Score</strong></TableCell>
+          </TableRow>
+        </TableHead>
         <TableBody>
           {data.map(({ id, name, score }, index) => (
             <TableRow
@@ -53,10 +52,16 @@ const TablePreview = () => {
               sx={{
                 height: '24px',
                 backgroundColor: id === 143 ? rowBg[2] : index % 2 === 0 ? rowBg[0] : rowBg[1]
-              }}>
-              <TableCell sx={cellStyles(id === 143)}>{id}</TableCell>
-              <TableCell sx={cellStyles(id === 143)}>{name}</TableCell>
-              <TableCell sx={cellStyles(id === 143)}>
+              }}
+              role="row"
+            >
+              <TableCell sx={cellStyles(id === 143)} role="cell" aria-label={`ID: ${id}`}>
+                {id}
+              </TableCell>
+              <TableCell sx={cellStyles(id === 143)} role="cell" aria-label={`Name: ${name}`}>
+                {name}
+              </TableCell>
+              <TableCell sx={cellStyles(id === 143)} role="cell" aria-label={`Score: ${score}`}>
                 <Box sx={flexStyles}>
                   {starSvg(iconColor)} {score}
                 </Box>
