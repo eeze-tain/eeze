@@ -49,9 +49,17 @@ const Navbar: React.FC = () => {
       {[
         { label: 'Overview', path: '/', icon: '/svg/desktop.svg' },
         { label: 'Tournaments', path: '/tournaments', icon: '/svg/jump.svg' },
-        { label: 'Theme Customisation', path: '/themes', icon: '/svg/remind.svg' },
+        {
+          label: 'Theme Customisation',
+          path: '/themes',
+          icon: '/svg/remind.svg',
+        },
         { label: 'Dynamic Rewards', path: '/rewards', icon: '/svg/cog.svg' },
-        { label: 'Exclusive Tournaments', path: '/exclusive', icon: '/svg/vip.svg' },
+        {
+          label: 'Exclusive Tournaments',
+          path: '/exclusive',
+          icon: '/svg/vip.svg',
+        },
         { label: 'Free Chips', path: '/freechips', icon: '/svg/gift.svg' },
         { label: 'Roadmap 2025', path: '/roadmap', icon: '/svg/earth.svg' },
       ].map((item) => {
@@ -73,23 +81,14 @@ const Navbar: React.FC = () => {
               lineHeight: 'normal',
               justifyContent: 'center',
               width: '100%',
-              margin: '1rem 3rem 1rem 3rem',
-              padding: '1rem 1rem',
+              margin: '1.25rem 3rem 1.25rem 3rem',
+              padding: '1.2rem 1rem',
               borderRadius: '20px',
               border: isActive ? '2px solid #FFF' : '2px solid transparent',
               backgroundColor: isActive ? '#4A2289' : '#4A2289',
               '&:hover': {
                 color: '#FFFFFF',
                 border: '2px solid #FFF',
-              },
-              '@media screen and (min-width: 2520px)': {
-                border: isActive ? '2px solid #FFF' : '2px solid transparent',
-                padding: '.75rem 1.5rem', // Larger padding
-              },
-              '@media screen and (min-width: 3200px)': {
-                border: isActive ? '2px solid #FFF' : '2px solid transparent',
-                margin: '1rem 3rem 4rem 3rem',
-                padding: '3.25rem', // Larger padding
               },
             }}
             startIcon={
@@ -98,20 +97,14 @@ const Navbar: React.FC = () => {
                 src={item.icon}
                 alt={`${item.label} Icon`}
                 sx={{
-                  width: '25px',
-                  // '@media screen and (min-width: 2520px)': {
-                  //   width: '45px', // Scale icon for large screens
-                  // },
-                  '@media screen and (min-width: 3200px)': {
-                    minWidth: '3.5rem', // Scale icon for large screens
-                    
-                  },
+                  width: '25px'
                 }}
               />
             }
           >
             <Typography
               sx={{
+                fontSize: '1.1rem',
                 '@media screen and (min-width: 2520px)': {
                   fontSize: '1.3rem', // Scale up text
                   padding: '0.5rem 1rem', // Larger padding
@@ -131,31 +124,19 @@ const Navbar: React.FC = () => {
       {/* Call to Action Button */}
       <Button
         sx={{
-          background:
-            'linear-gradient(88deg, rgba(29, 98, 217, 0.60) 11.29%, rgba(26, 154, 232, 0.60) 45.38%, rgba(31, 167, 212, 0.60) 50.95%, rgba(37, 185, 184, 0.60) 60.28%, rgba(43, 199, 162, 0.60) 70.38%, rgba(46, 208, 147, 0.60) 81.47%, rgba(48, 214, 138, 0.60) 94.33%, rgba(49, 216, 135, 0.60) 113.04%)',
+          // background:
+          //   'linear-gradient(88deg, rgba(29, 98, 217, 0.60) 11.29%, rgba(26, 154, 232, 0.60) 45.38%, rgba(31, 167, 212, 0.60) 50.95%, rgba(37, 185, 184, 0.60) 60.28%, rgba(43, 199, 162, 0.60) 70.38%, rgba(46, 208, 147, 0.60) 81.47%, rgba(48, 214, 138, 0.60) 94.33%, rgba(49, 216, 135, 0.60) 113.04%)',
+          background: 'rgba(48, 169, 119, 0.70)',
           color: '#FFFFFF',
           borderRadius: '20px',
           width: '100%',
           fontSize: '30px',
-          padding: '1rem 1rem',
-          marginTop: '1rem',
+          padding: '1.2rem 1rem',
+          marginTop: '1.25rem',
           textTransform: 'none',
           fontWeight: 'normal',
-          // fontSize: '1.65rem', // Scale up text
           '&:hover': {
             backgroundColor: '#2E9D9E',
-          },
-          // '@media screen and (min-width: 2520px)': {
-          //   marginTop: '4rem',
-          //   fontSize: '1.65rem', // Scale up text
-          //   padding: '1rem 2rem', // Larger padding
-          // },
-          '@media screen and (min-width: 3200px)': {
-            marginTop: '4rem',
-            // fontSize: '1.65rem', // Scale up text
-            padding: '3.5rem', // Larger padding
-            fontSize: '2.5rem', // Scale up text
-            // padding: '0rem 2rem', // Larger padding
           },
         }}
         startIcon={
@@ -166,25 +147,17 @@ const Navbar: React.FC = () => {
             sx={{
               width: '25px',
               minWidth: '25px',
-              // '@media screen and (min-width: 2520px)': {
-              //   width: '45px', // Scale icon for large screens
-              // },
-              '@media screen and (min-width: 3200px)': {
-                minWidth: '3.5rem', // Scale icon for large screens
-              },
             }}
           />
         }
       >
-                    <Typography
-              sx={{
-                '@media screen and (min-width: 3200px)': {
-                  fontSize: '2.5rem', // Scale up text
-                },
-              }}
-            >
-                     BOOK A CALL
-            </Typography>
+        <Typography
+          sx={{
+            fontSize: '1.1rem',
+          }}
+        >
+          BOOK A CALL
+        </Typography>
       </Button>
     </Box>
   );

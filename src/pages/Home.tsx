@@ -61,7 +61,7 @@ const Home: React.FC = () => {
                 fontSize: '1.75rem'
               }}
             >
-              Ignite Thrills with our All-In-One solution - EezePlus
+              Ignite Thrills with our All-In-One solution <span style={{ color: '#E1E1E1'}}>- EezePlus</span>
             </Typography>
             <br></br>
             <Box
@@ -131,7 +131,7 @@ const Home: React.FC = () => {
             Key Benefits:
           </Typography>
           {/* <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'}/> */}
-          <Grid container spacing={4} sx={{ marginLeft: '1rem', marginTop: '1rem', paddingRight: '7rem'}}>
+          <Grid container spacing={4} sx={{ marginLeft: '1rem', marginTop: '0rem', paddingRight: '7rem'}}>
             {[
               {
                 title: 'Boost Engagement',
