@@ -61,7 +61,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
                 <Typography
                   variant="h3"
                   sx={{
-                    fontSize: '90px',
+                    fontSize: '80px',
                     fontWeight: 'bold',
                     marginTop: '6rem',
                     marginBottom: 2,
@@ -77,15 +77,8 @@ const ThemeCustomisation: React.FC = (props: any) => {
                   <Typography
                     variant="h3"
                     sx={{
-                      fontSize: '90px',
-                      fontWeight: 'bold',
-                      marginBottom: 0,
-                      '@media screen and (min-width: 2560px)': {
-                        fontSize: '120px', // Scale font size for large screens
-                      },
-                      '@media screen and (min-width: 3200px)': {
-                        fontSize: '160px', // Scale font size for large screens
-                      },
+                      fontSize: '80px',
+                      fontWeight: 'bold'
                     }}
                     color="#D3B1FF"
                   >
@@ -103,6 +96,9 @@ const ThemeCustomisation: React.FC = (props: any) => {
                 sx={{
                   fontWeight: 100,
                   alignSelf: 'right',
+                  fontSize: '1.75rem',
+                  lineHeight: '100%',
+                  marginBottom: '2rem',
                   '@media screen and (min-width: 2560px)': {
                     fontSize: '1.75rem', // Adjust font size
                   },
@@ -140,21 +136,25 @@ const ThemeCustomisation: React.FC = (props: any) => {
             </Grid>
           </Grid>
         </motion.div>
-        <Grid container columnGap={2}>
-          {/* <ThemeSelector
-                  setNewCustomTheme={setNewCustomTheme}
-                  newCustomTheme={newCustomTheme}
-                  setAlertMessage={setAlertMessage}
-                /> */}
 
-          <GridItem border={'none'}>
-            <Box display="flex" flexDirection="column">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                {/* Key Benefits Section */}
+        <Grid container columnGap={5} borderRadius={'20px'}
+        sx={{
+          // backgroundImage: 'url(/images/background.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          background: 'linear-gradient(180deg, #34175D 0%, #2A1545 0%)',
+          padding: '2rem',
+          marginBottom: '10rem'
+        }}
+        >
+          <GridItem border={'none'}>
+            <Box display="flex" flexDirection="column">
+                {/* Theme Color Sliders Section */}
                 <Box sx={{ marginTop: '0rem' }}>
                   <Typography
                     variant="h4"
@@ -171,11 +171,6 @@ const ThemeCustomisation: React.FC = (props: any) => {
                   >
                     Play Around!
                   </Typography>
-                  {/* <LinearGradient
-                    height={'4px'}
-                    width={'25%'}
-                    marginBottom={'4rem'}
-                  /> */}
                   <br></br>
                                     <Typography
                     variant="h4"
@@ -199,15 +194,9 @@ const ThemeCustomisation: React.FC = (props: any) => {
                     setColors={updateColors}
                   />
                 </Box>
-              </motion.div>
-              {/* Hero Section - Front End Carousel */}
-              {/* Hero Section - Back End Carousel */}
-              
-
               {/* <Grid item xs={12} md={12}>
                       <RadioLogoSelector />
                     </Grid> */}
-
               <Box flexGrow={1}>
                 <Divider
                   style={{
@@ -221,8 +210,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
             </Box>
           </GridItem>
           <GridItem border={'none'}>
-            <Box>
-              <Divider style={{ width: '100%', marginBottom: '16px' }} />
+            <Box width={'80%'} marginLeft={'20%'}>
               <MobilePreview
                 primaryColor={colors['data.main.primaryColor']}
                 secondaryColor={colors['data.main.secondaryColor']}
@@ -237,17 +225,22 @@ const ThemeCustomisation: React.FC = (props: any) => {
             </Box>
           </GridItem>
           <GridItem border={'none'}>
-            <Box>
+            <Box marginRight={'20%'} marginBottom={'7.5%'} marginTop={'-2.5%'}>
               <Divider style={{ width: '100%', marginBottom: '16px' }} />
               <MobilePreview
                 primaryColor={colors['data.main.primaryColor']}
                 secondaryColor={colors['data.main.secondaryColor']}
                 backgroundColor={colors['data.main.backgroundColor']}
               >
-                <WidgetScorePreview />
+                <WidgetScorePreview
+                  bgColor={colors['data.main.backgroundColor']}
+                  fontColor={'white'}
+                  secColor={colors['data.main.secondaryColor']}
+                  secBgColor={colors['data.main.backgroundColor']}
+                />
               </MobilePreview>
             </Box>
-            <Box>
+            <Box marginRight={'20%'}>
               <Divider style={{ width: '100%', marginBottom: '16px' }} />
               <MobilePreview
                 primaryColor={colors['data.main.primaryColor']}
@@ -259,6 +252,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
             </Box>
           </GridItem>
         </Grid>
+        </motion.div>
       </Box>
     </>
   );

@@ -12,6 +12,20 @@ const Carousel = ({
     settings: any
 }) => {
 
+  const slideNumbers = (number) => {
+
+    switch (number) {
+      case '1':
+        return styles.one;
+        case '2':
+          return styles.two;
+          case '3':
+        return styles.three;
+        case '4':
+        return styles.four;
+    }
+  }
+
   return (
     <Box
       sx={{
@@ -26,7 +40,7 @@ const Carousel = ({
             <div className="slide-overlay">
               <div style={{ display: 'inline-flex' }}>
                 <div className="slide-number" style={styles.slideNumber}></div>
-                <span style={styles.number}>{slide.number}</span>
+                <span style={slideNumbers(slide.number)}>{slide.number}</span>
                 <div className="slide-title" style={styles.slideTitle}>
                   {slide.title}
                 </div>
@@ -59,12 +73,33 @@ const styles = {
     width: '50px',
     height: '50px',
   },
-  number: {
+  one: {
     color: 'white',
     fontFamily: 'Raleway',
     fontSize: '2.5rem',
-    marginLeft: '-2.2rem',
-    marginTop: '0px',
+    marginLeft: '-2.25rem',
+    marginTop: '2px',
+  },
+  two: {
+    color: 'white',
+    fontFamily: 'Raleway',
+    fontSize: '2.5rem',
+    marginLeft: '-2.4rem',
+    marginTop: '2px',
+  },
+  three: {
+    color: 'white',
+    fontFamily: 'Raleway',
+    fontSize: '2.25rem',
+    marginLeft: '-2.28rem',
+    marginTop: '1.75px',
+  },
+  four: {
+    color: 'white',
+    fontFamily: 'Raleway',
+    fontSize: '2.35rem',
+    marginLeft: '-2.35rem',
+    marginTop: '2px',
   },
   slideTitle: {
     color: '#FFF',

@@ -93,7 +93,7 @@ const Tournaments: React.FC = () => {
             variant="h4"
             sx={{
               fontWeight: 'bold',
-              marginBottom: 1,
+              marginBottom: '2rem',
               '@media screen and (min-width: 2560px)': {
                 fontSize: '3rem', // Adjust font size
               },
