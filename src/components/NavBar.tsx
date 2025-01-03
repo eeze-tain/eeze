@@ -8,23 +8,19 @@ const Navbar: React.FC = () => {
   return (
     <Box
       sx={{
-        minHeight: '94.55vh',
+        height: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         padding: '2rem',
         gap: '0rem',
-        background: 'linear-gradient(180deg, #34175D 0%, #2A1545 100%)',
-        boxShadow: '20px 0px 40px 0px rgba(34, 5, 60, 0.25)',
-        backdropFilter: 'blur(5.896214485168457px)',
+        background: 'transparent',
+        // background: 'linear-gradient(180deg, #34175D 0%, #2A1545 100%)',
+        // boxShadow: '20px 0px 40px 0px rgba(34, 5, 60, 0.25)',
+        // backdropFilter: 'blur(5.896214485168457px)',
         zIndex: 100,
         position: 'sticky',
         top: 0,
-        // '@media screen and (min-width: 2520px)': {
-        //   minHeight: '95.5vh',
-        //   padding: '2rem', // Larger padding for high-res screens
-        //   gap: '1rem',
-        // },
         '@media screen and (min-width: 3200px)': {
           minHeight: '92vh',
           paddingX: '5.5rem',
@@ -40,12 +36,7 @@ const Navbar: React.FC = () => {
         sx={{
           margin: '1.75rem 0rem 1.75rem 2rem',
           padding: '1rem',
-          width: '250px',
-          // '@media screen and (min-width: 2520px)': {
-          //   margin: '3rem 2rem 8rem 3rem',
-          //   padding: '1rem',
-          //   width: '300px', // Scale logo for large screens
-          // },
+          width: '275px',
           '@media screen and (min-width: 3200px)': {
             margin: '6.5rem 0rem 8rem 4rem',
             padding: '1rem',
