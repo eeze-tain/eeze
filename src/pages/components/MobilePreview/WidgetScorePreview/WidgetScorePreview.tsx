@@ -69,23 +69,6 @@ const WidgetScorePreview = ({
   secColor = '#000',
   secBgColor =  'linear-gradient(93deg, #1D62D9 -30.37%, #1A9AE8 26.72%, #25B9B8 51.66%, #2BC7A2 68.57%, #2ED093 87.14%)'
 }: any) => {
-  // const { watch } = useFormContext();
-  // const formData = watch('data.widget');
-
-  // const bgColor = formData?.backgroundColor || '#2d1d48';
-  // const fontColor = formData?.textColor || 'white';
-  // const secColor = formData?.secondaryTextColor || '#000';
-  // const secBgColor =
-  //   formData?.secondaryBackgroundColor ||
-  //   'linear-gradient(93deg, #1D62D9 -30.37%, #1A9AE8 26.72%, #25B9B8 51.66%, #2BC7A2 68.57%, #2ED093 87.14%)';
-
-
-  // ACTIVE COLOR VALUE
-  // const bgColor = '#2d1d48';
-  // const fontColor = 'white';
-  // const secColor = '#000';
-  // const secBgColor =  'linear-gradient(93deg, #1D62D9 -30.37%, #1A9AE8 26.72%, #25B9B8 51.66%, #2BC7A2 68.57%, #2ED093 87.14%)';
-
 
   return (
     <Box sx={containerStyles(bgColor)}>

@@ -10,7 +10,7 @@ const Tournaments: React.FC = () => {
       sx={{
         padding: '0rem 4rem',
         color: '#FFFFFF',
-        fontFamily: 'Inter',
+        fontFamily: 'Roboto',
         overflowX: 'hidden', // Prevent horizontal overflow
         marginTop: '0rem',
       }}
@@ -88,7 +88,7 @@ const Tournaments: React.FC = () => {
         transition={{ duration: 0.6 }}
       >
         {/* Key Benefits Section */}
-        <Box sx={{ marginTop: 6 }}>
+        <Box sx={{ marginTop: 6 }} >
           <Typography
             variant="h4"
             sx={{
@@ -105,7 +105,9 @@ const Tournaments: React.FC = () => {
             Tournament UI
           </Typography>
           {/* <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} /> */}
+          {/* <Box sx={{marginLeft: '-10%', transform: 'scale(80%)'}}> */}
           <Carousel settings={frontEndCourselSettings} slides={frontEndSlides} />
+          {/* </Box> */}
         </Box>
       </motion.div>
       {/* Hero Section - Back End Carousel */}
@@ -114,19 +116,15 @@ const Tournaments: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <Box sx={{ marginTop: '20rem' }}>
+        <Box sx={{ marginTop: '7rem' }}>
           <Typography
             variant="h4"
             sx={{
               fontWeight: 'bold',
-              fontFamily: 'Inter',
-              marginBottom: 1,
+              marginBottom: 5,
               '@media screen and (min-width: 2560px)': {
                 fontSize: '3rem', // Adjust font size
-              },
-              '@media screen and (min-width: 3200px)': {
-                fontSize: '3.5rem', // Adjust font size
-              },
+              }
             }}
           >
             Back Office
@@ -168,7 +166,7 @@ const frontEndCourselSettings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 3,
+  slidesToShow: 4,
   slidesToScroll: 1,
   arrows: true,
 };

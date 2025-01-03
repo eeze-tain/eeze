@@ -149,7 +149,6 @@ const ThemeCustomisation: React.FC = (props: any) => {
           backgroundPosition: 'center',
           background: 'linear-gradient(180deg, #34175D 0%, #2A1545 0%)',
           padding: '2rem',
-          marginBottom: '10rem'
         }}
         >
           <GridItem border={'none'}>
