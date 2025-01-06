@@ -60,18 +60,21 @@ const Tournaments: React.FC = () => {
               width={'100%'}
               variant="subtitle1"
               sx={{
-                fontWeight: 100,
+                fontWeight: 800,
+                position: 'relative',
                 color: '#2FD093',
                 alignSelf: 'right',
+                textAlign: 'right',
                 fontSize: '2.5rem',
                 textTransform: 'uppercase',
                 fontStyle: 'italic',
                 marginTop: '15rem',
+                marginRight: '3rem'
               }}
             >
-              <span style={{ fontWeight: 800 }}>
+              {/* <span style={{ fontWeight: 800, textAlign: 'right' }}> */}
                 Unleash Competitive Spirit with Real-time, Engaging Tournaments
-              </span>
+              {/* </span> */}
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}></Grid>
