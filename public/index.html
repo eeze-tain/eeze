@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/svg/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/svg/logo.svg" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -25,6 +25,35 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script>
+      // JavaScript to dynamically update the title based on path
+      function updateTitleBasedOnPath() {
+        const path = window.location.pathname;
+        const title = 'EEZE - ICE 2025 - ' + ((path).replace('/', '') || 'Overview').toUpperCase();
+       
+        document.title = title;
+      }
+  
+      // Listen for URL changes
+      window.addEventListener('popstate', updateTitleBasedOnPath);
+  
+      // Override pushState and replaceState to detect programmatic navigation
+      const originalPushState = history.pushState;
+      const originalReplaceState = history.replaceState;
+  
+      history.pushState = function (...args) {
+        originalPushState.apply(this, args);
+        updateTitleBasedOnPath(); // Update title on pushState
+      };
+  
+      history.replaceState = function (...args) {
+        originalReplaceState.apply(this, args);
+        updateTitleBasedOnPath(); // Update title on replaceState
+      };
+  
+      // Initial call to set the title when the page loads
+      updateTitleBasedOnPath();
+    </script>
   </head>
   <body>
     <style>
