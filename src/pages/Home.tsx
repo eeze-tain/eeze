@@ -34,11 +34,11 @@ const Home: React.FC = () => {
                 sx={{
                   fontSize: '80px',
                   fontWeight: 'bold',
-                  marginTop: '-1rem',
+                  marginTop: '-7.5rem',
                   lineHeight: '100%',
                 }}
+                color="#D3B1FF"
               >
-                Award <br /> Winning <br />{' '}
                 <Typography
                   variant="h3"
                   sx={{
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
                     marginBottom: 0,
                     lineHeight: '100%',
                   }}
-                  color="#D3B1FF"
+                  color="#FFF"
                 >
                   Gamification
                 </Typography>{' '}
@@ -58,7 +58,8 @@ const Home: React.FC = () => {
             <Typography
               variant="subtitle1"
               sx={{
-                fontSize: '1.75rem'
+                fontSize: '1.75rem',
+                marginTop: '-1rem'
               }}
             >
               Ignite Thrills with our All-In-One solution <span style={{ color: '#E1E1E1'}}>- EezePlus</span>
@@ -87,7 +88,7 @@ const Home: React.FC = () => {
                     textTransform: 'none',
                     borderRadius: '5px',
                     padding: '3px 10px',
-                    fontSize: '1.5rem',
+                    fontSize: '1.35rem',
                     marginRight: '1rem',
                     marginY: '0.5rem',
                     '&:hover': { backgroundColor: '#8E53F4' },
@@ -105,8 +106,8 @@ const Home: React.FC = () => {
               alt={`Mobile Phone Preview`}
               sx={{
                 width: '100%',
-                maxWidth: '400px',                
-                padding: '7rem 10rem 0rem 10rem'
+                maxWidth: '300px',                
+                padding: '7rem 0rem 0rem 15rem'
               }}
             />
           </Grid>
@@ -199,7 +200,7 @@ const Home: React.FC = () => {
             fontWeight: 100,
             letterSpacing: 1,
             textAlign: 'left',
-            marginTop: '8rem',
+            marginTop: '4rem',
             fontStyle: 'normal',
             marginBottom: 2
           }}

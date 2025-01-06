@@ -8,11 +8,11 @@ const Navbar: React.FC = () => {
   return (
     <Box
       sx={{
-        height: '100%',
+        height: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: '2rem',
+        padding: '0rem 2rem',
         gap: '0rem',
         background: 'transparent',
         // background: 'linear-gradient(180deg, #34175D 0%, #2A1545 100%)',
@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
         src="/svg/logo.svg"
         alt="Logo"
         sx={{
-          margin: '1.75rem 0rem 1.75rem 2rem',
+          margin: '2.75rem 0rem 1.75rem 2rem',
           padding: '1rem',
           width: '275px',
           '@media screen and (min-width: 3200px)': {
