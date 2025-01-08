@@ -1,12 +1,12 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
 import { Grid } from '@mui/material';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/NavBar';
-import Home from './pages/Home';
-import Tournaments from './pages/Tournaments';
-import ThemeCustomisation from './pages/ThemeCustomisation';
 import DynamicRewards from './pages/DynamicRewards';
 import ExclusiveTournament from './pages/ExclusiveTournaments';
+import Home from './pages/Home';
+import ThemeCustomisation from './pages/ThemeCustomisation';
+import Tournaments from './pages/Tournaments';
 
 const App: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         margin: 0,
         padding: 0,
         backgroundImage: 'url(/images/background.png)',
-        backgroundSize: 'cover',
+        backgroundSize: '100vw 100%',
         backgroundPosition: 'center',
       }}
     >
