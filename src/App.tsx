@@ -17,7 +17,7 @@ const App: React.FC = () => {
         margin: 0,
         padding: 0,
         backgroundImage: 'url(/images/background.png)',
-        backgroundSize: '100vw 100%',
+        backgroundSize: '101vw 100%',
         backgroundPosition: 'center',
       }}
     >
