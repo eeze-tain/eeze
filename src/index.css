@@ -136,3 +136,11 @@ code {
   border-radius: 10px;
   object-fit: cover;
 }
+
+.theme__cursor__wrapper {
+  display: inline-flex;
+}
+
+.theme__cursor {
+  position: relative;
+}
