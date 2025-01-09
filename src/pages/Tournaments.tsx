@@ -1,236 +1,230 @@
-import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
-import { motion } from 'framer-motion';
-import LinearGradient from '../components/LinearGradient';
-import Carousel from '../components/Carousel';
+import { Box, Typography } from '@mui/material';
+import ScreenWrapper from './components/ScreenWrapper';
+import MarkedText from './components/MarkedText';
+import AnimatedSection from './components/AnimatedSection';
 
-const Tournaments: React.FC = () => {
+// Reusable styles for Typography
+const typographyStyles = {
+  header: {
+    fontWeight: 800,
+    color: '#FBF8F8',
+    fontSize: '100px',
+    textTransform: 'capitalize',
+    fontFamily: 'Raleway, serif',
+    lineHeight: '100px',
+    '& span': { color: '#D3B1FF' },
+  },
+  subHeader: {
+    fontWeight: 500,
+    fontStyle: 'italic',
+    color: '#FFFFFF',
+    textAlign: 'right',
+    fontSize: '48px',
+    lineHeight: '67.2px',
+    fontFamily: 'Raleway, serif',
+  },
+  sectionTitle: {
+    fontWeight: 700,
+    color: '#FFFFFF',
+    fontSize: '60px',
+    textTransform: 'capitalize',
+    lineHeight: '84px',
+    fontFamily: 'Raleway, serif',
+    '& span': { color: '#D3B1FF' },
+  },
+  description: {
+    fontWeight: 400,
+    fontSize: '36px',
+    lineHeight: '57.6px',
+    fontFamily: 'Raleway, serif',
+    '& span': { fontWeight: 700 },
+  },
+};
+
+// Layout constants
+const containerStyles = {
+  mainWrapper: {
+    padding: '0 4rem',
+    color: '#FFFFFF',
+    fontFamily: 'Roboto',
+    overflowX: 'hidden',
+    marginTop: '40px',
+  },
+  phasesWrapper: {
+    border: '1px solid #7C1DF7',
+    borderRadius: '40px',
+    padding: '16px',
+    marginTop: '60px',
+    width: 'calc(100% - 32px)',
+  },
+  phasesInnerBg: {
+    display: 'flex',
+    background: 'linear-gradient(172.92deg, rgba(0, 0, 0, 0.1) 5.53%, rgba(90, 53, 151, 0.2) 89.21%)',
+    width: 'calc(100% - 120px)',
+    height: 'calc(100% - 120px)',
+    borderRadius: '30px',
+    padding: '60px',
+  },
+};
+const Tournaments = () => {
   return (
-    <Box
-      sx={{
-        padding: '0rem 4rem',
-        color: '#FFFFFF',
-        fontFamily: 'Inter',
-        overflowX: 'hidden', // Prevent horizontal overflow
-        marginTop: '-2rem',
-        '@media screen and (min-width: 2560px)': {
-          padding: '0rem 8rem', // Adjust padding for larger screen
-        },
-        '@media screen and (min-width: 3200px)': {
-          marginTop: '8rem',
-          padding: '0rem 8rem', // Adjust padding for larger screen
-          marginLeft: '3rem',
-        },
-      }}
-    >
+    <Box sx={containerStyles.mainWrapper}>
       {/* Hero Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
+      <AnimatedSection>
+        <Box display="flex" flexDirection="column" gap={2}>
+          <Box display="flex" justifyContent="space-between">
+            <Box sx={{ width: '48%' }}>
+              <Typography variant="h3" sx={typographyStyles.header}>
+                Customisable <span>Tournament</span> Features
+              </Typography>
+            </Box>
+            <Box sx={{ width: '48%', display: 'flex', alignItems: 'flex-end' }}>
+              <Typography variant="body1" sx={typographyStyles.subHeader}>
+                Unleash competitive spirit with real-time, engaging tournaments
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </AnimatedSection>
+
+      {/* Customizable Section */}
+      <AnimatedSection>
+        <Box display="flex" justifyContent="space-between" gap={'24px'} marginTop="120px">
+          {[
+            {
+              title: 'Customisable <br/> Tournament Mechanics',
+              texts: [
+                'Customisable score <span>calculation</span> & <span>round qualification strategies</span>',
+                'Keep players <span>engaged</span> with diverse mechanics',
+              ],
+              src: '/images/tournament-rules.png'
+            },
+            {
+              title: 'Limited Player Spots',
+              texts: [
+                'Host tournaments on a <span>first-come, first-served</span> basis with <span>limited player spots</span>',
+                'Foster a sense of <span>urgency</span> and enhance <span>player excitement</span>',
+              ],
+              src: '/images/tournament-limited-spot.png'
+            },
+            {
+              title: 'Diverse Reward Types',
+              texts: [
+                'Leverage <span>various reward types</span> from cash to physical prizes',
+                'Motivate players and <span>boost participation</span>',
+              ],
+              src: '/images/tournament-reward.png'
+            },
+          ].map(({ title, texts, src }) => (
+            <ScreenWrapper title={title}  key={title} src={src}>
+              <Box display="flex" flexDirection="column" gap={2}>
+                {texts.map((text, index) => (
+                  <MarkedText key={index}>{ <div dangerouslySetInnerHTML={{ __html: text }} />}</MarkedText>
+                ))}
+              </Box>
+            </ScreenWrapper>
+          ))}
+        </Box>
+
+        {/* Phases Section */}
+        <Box sx={containerStyles.phasesWrapper}>
+          <Box sx={containerStyles.phasesInnerBg}>
             <Box
               sx={{
                 display: 'flex',
-                gap: 1,
-                flexWrap: 'wrap',
-                marginBottom: 2,
+                flexDirection: 'column',
+                gap: '60px',
+                alignSelf: 'center',
+                height: '100%',
+                width: '36%',
               }}
             >
-              <Typography
-                variant="h3"
-                sx={{
-                  fontSize: '90px',
-                  fontWeight: 'bold',
-                  marginTop: '6rem',
-                  marginBottom: 2,
-                  '@media screen and (min-width: 2560px)': {
-                    fontSize: '120px', // Scale font size for large screens
-                  },
-                  '@media screen and (min-width: 3200px)': {
-                    marginTop: '-2rem',
-                    fontSize: '180px', // Scale font size for large screens
-                  },
-                }}
-              >
-                Customisable <br />{' '}
-                <Typography
-                  variant="h3"
-                  sx={{
-                    fontSize: '90px',
-                    fontWeight: 'bold',
-                    marginBottom: 0,
-                    '@media screen and (min-width: 2560px)': {
-                      fontSize: '120px', // Scale font size for large screens
-                    },
-                    '@media screen and (min-width: 3200px)': {
-                      fontSize: '180px', // Scale font size for large screens
-                    },
-                  }}
-                  color="#D3B1FF"
-                >
-                  Tournament
-                </Typography>{' '}
-                Features
+              <Typography sx={typographyStyles.sectionTitle}>
+                Dynamic <span>Tournament Phases</span>
+              </Typography>
+              <Typography sx={typographyStyles.description}>
+                Flexibly structure tournaments with <span>Promotion</span> and <span>Registration Phases</span> to build anticipation and filter committed players.
+              </Typography>
+              <Typography sx={typographyStyles.description}>
+                Ensure more <span>competitive</span> and <span>active</span> participation in live tournaments.
               </Typography>
             </Box>
-          </Grid>
-          <Grid item xs={12} md={6}></Grid>
-          <Grid item xs={12} md={6}></Grid>
-          <Grid item xs={12} md={6}>
-            <Typography
-              width={'100%'}
-              variant="subtitle1"
-              sx={{
-                fontWeight: 100,
-                alignSelf: 'right',
-                '@media screen and (min-width: 2560px)': {
-                  fontSize: '1.75rem', // Adjust font size
-                },
-                '@media screen and (min-width: 3200px)': {
-                  fontSize: '2rem', // Adjust font size
-                },
-              }}
-            >
-              Easily set up tournaments with{' '}
-              <span style={{ fontWeight: 800 }}>
-                flexible Promotion and Registration phases, including bet/win
-                requirements
-              </span>{' '}
-              to build excitement before they go live.{' '}
-              <br></br>
-              <br></br>
-              <span style={{ fontWeight: 800 }}>
-                Create exclusivity by limiting player spots
-              </span>
-              , available on a first-come, first served basis. 
-              <br></br>
-              <br></br>
-              Keep players
-              engaged with{' '}
-              <span style={{ fontWeight: 800 }}>customisable mechanics</span>{' '}
-              like <span style={{ fontWeight: 800 }}>score calculation</span>{' '}
-              and round{' '}
-              <span style={{ fontWeight: 800 }}>qualification strategies</span>.
+            <Box sx={{ width: '32%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '40px' }}>
+              <Box
+                component="img"
+                src="/images/promotion-cups.png"
+                alt={`Mobile Phone Preview`}
+                sx={{
+                  width: '383px',
+                  height: '675px',
+                  border: '1px solid #ffffff',
+                  borderRadius: '16px'
+
+                }}
+              />
+              <MarkedText>
+                Schedule <span>Promotion Phase</span> to <span>increase visibility</span> for players with eye-catching banners and countdown
+              </MarkedText>
+            </Box>
+            <Box sx={{ width: '32%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '40px' }}>
+              <Box
+                component="img"
+                src="/images/promotion-custom.png"
+                alt={`Mobile Phone Preview`}
+                sx={{
+                  width: '383px',
+                  height: '675px',
+                  border: '1px solid #ffffff',
+                  borderRadius: '16px',
+                }}
+              />
+              <MarkedText>
+                Engage players with minimum bet or win criteria during <span>Registration Phase</span> to <span>accelerate returns</span>
+              </MarkedText>
+            </Box>
+          </Box>
+        </Box>
+
+        {/* Backoffice Section */}
+        <Box sx={{ ...containerStyles.phasesWrapper, height: '100%', marginBottom: '20px' }}>
+          <Box sx={{ ...containerStyles.phasesInnerBg, flexDirection: 'column', gap: '60px' }}>
+            <Typography sx={typographyStyles.sectionTitle}>
+              Back <span>Office</span>
             </Typography>
-          </Grid>
-        </Grid>
-      </motion.div>
-      {/* Hero Section - Front End Carousel */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        {/* Key Benefits Section */}
-        <Box sx={{ marginTop: 6 }}>
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 'bold',
-              marginBottom: 1,
-              '@media screen and (min-width: 2560px)': {
-                fontSize: '3rem', // Adjust font size
-              },
-              '@media screen and (min-width: 3200px)': {
-                fontSize: '3.5rem', // Adjust font size
-              },
-            }}
-          >
-            Tournament UI
-          </Typography>
-          <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
-          <Carousel settings={frontEndCourselSettings} slides={frontEndSlides} />
+            <Box display="flex" flexDirection="column" alignItems="center">
+              <MarkedText>
+                <span>Save your time and resources</span> by scheduling recurring regular tournaments
+              </MarkedText>
+              <MarkedText>
+                Phases can be <span>flexibly arranged or overlapped</span> to align with your strategies and timeline
+              </MarkedText>
+            </Box>
+            <Box
+              sx={{
+                background: '#00000066',
+                borderRadius: '32.9px',
+                height: '869.15px',
+                border: '1.37px solid #FFFFFF',
+              }}
+            />
+            <Box alignSelf="center">
+              <MarkedText>
+                <span>Simplify setup, tracking, and analysis</span> with our detailed analytics dashboards
+              </MarkedText>
+            </Box>
+            <Box
+              sx={{
+                background: '#00000066',
+                borderRadius: '32.9px',
+                height: '869.15px',
+                border: '1.37px solid #FFFFFF',
+              }}
+            />
+          </Box>
         </Box>
-      </motion.div>
-      {/* Hero Section - Back End Carousel */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        {/* Key Benefits Section */}
-        <Box sx={{ marginTop: '20rem' }}>
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 'bold',
-              marginBottom: 1,
-              '@media screen and (min-width: 2560px)': {
-                fontSize: '3rem', // Adjust font size
-              },
-              '@media screen and (min-width: 3200px)': {
-                fontSize: '3.5rem', // Adjust font size
-              },
-            }}
-          >
-            Back Office
-          </Typography>
-          <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
-          <Carousel settings={backEndCourselSettings} slides={backEndSlides} />
-        </Box>
-      </motion.div>
+      </AnimatedSection>
     </Box>
   );
-};
-
-// Data for slides: Includes titles and image paths
-const frontEndSlides = [
-  {
-    number: '1',
-    title: 'Live Widget',
-    image: '/images/live-widget.png',
-  },
-  {
-    number: '2',
-    title: 'Default Widget',
-    image: '/images/default-widget.png',
-  },
-  {
-    number: '3',
-    title: 'Leaderboard',
-    image: '/images/leaderboard.png',
-  },
-  {
-    number: '4',
-    title: 'Registration',
-    image: '/images/registration.png',
-  },
-  // { number: "5", title: "Limited Widget", image: "/eeze/images/final.png" },
-];
-
-const frontEndCourselSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  arrows: true,
-};
-
-// Data for slides: Includes titles and image paths
-const backEndSlides = [
-  {
-    number: '1',
-    title: 'Tournament List',
-    image: '/images/tournament-list.png',
-  },
-  {
-    number: '2',
-    title: 'Creating New Tournament',
-    image: '/images/create-new-tournament.png',
-  }
-];
-
-const backEndCourselSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  arrows: true,
 };
 
 export default Tournaments;

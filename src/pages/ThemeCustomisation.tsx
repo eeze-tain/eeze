@@ -12,7 +12,6 @@ import BasicColorsSettings from './containers/BasicColorsSettings';
 // import RadioLogoSelector from './containers/RadioLogoSelector';
 
 import { motion } from 'framer-motion';
-import LinearGradient from '../components/LinearGradient';
 
 const ThemeCustomisation: React.FC = (props: any) => {
   const [colors, setColors] = useState({
@@ -32,7 +31,6 @@ const ThemeCustomisation: React.FC = (props: any) => {
   };
 
   return (
-    // <FormProvider {...form}>
     <>
       <Box
         sx={{
@@ -62,7 +60,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
                 <Typography
                   variant="h3"
                   sx={{
-                    fontSize: '90px',
+                    fontSize: '80px',
                     fontWeight: 'bold',
                     marginTop: '6rem',
                     marginBottom: 2,
@@ -113,12 +111,6 @@ const ThemeCustomisation: React.FC = (props: any) => {
             <Grid item xs={12} md={6}></Grid>
           </Grid>
         </motion.div>
-        <Grid container columnGap={2}>
-          {/* <ThemeSelector
-                  setNewCustomTheme={setNewCustomTheme}
-                  newCustomTheme={newCustomTheme}
-                  setAlertMessage={setAlertMessage}
-                /> */}
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -260,7 +252,6 @@ const ThemeCustomisation: React.FC = (props: any) => {
         </motion.div>
       </Box>
     </>
-    // </FormProvider>
   );
 };
 

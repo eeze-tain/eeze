@@ -114,6 +114,10 @@ code {
   text-align: center;
 }
 
+.slider .slick-slide:focus {
+  outline: 'none'; 
+}
+
 .slide-overlay {
   position: absolute;
   top: 20px;

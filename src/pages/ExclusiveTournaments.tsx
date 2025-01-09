@@ -12,13 +12,7 @@ const ExclusiveTournaments: React.FC = () => {
         color: '#FFFFFF',
         fontFamily: 'Inter',
         overflowX: 'hidden', // Prevent horizontal overflow
-        marginTop: '-2rem',
-        '@media screen and (min-width: 2560px)': {
-          padding: '0rem 8rem', // Adjust padding for larger screen
-        },
-        '@media screen and (min-width: 3200px)': {
-          padding: '0rem 8rem', // Adjust padding for larger screen
-        },
+        marginTop: '-2rem'
       }}
     >
       {/* Hero Section */}
@@ -40,7 +34,7 @@ const ExclusiveTournaments: React.FC = () => {
               <Typography
                 variant="h3"
                 sx={{
-                  fontSize: '90px',
+                  fontSize: '80px',
                   fontWeight: 'bold',
                   marginTop: '6rem',
                   marginBottom: 2,
@@ -56,9 +50,8 @@ const ExclusiveTournaments: React.FC = () => {
                 <Typography
                   variant="h3"
                   sx={{
-                    fontSize: '90px',
+                    fontSize: '80px',
                     fontWeight: 'bold',
-                    marginBottom: 0,
                     '@media screen and (min-width: 2560px)': {
                       fontSize: '120px', // Scale font size for large screens
                     },
@@ -82,6 +75,9 @@ const ExclusiveTournaments: React.FC = () => {
               sx={{
                 fontWeight: 100,
                 alignSelf: 'right',
+                fontSize: '1.75rem',
+                lineHeight: '100%',
+                marginBottom: '2rem',
                 '@media screen and (min-width: 2560px)': {
                   fontSize: '1.75rem', // Adjust font size
                 },
@@ -138,7 +134,7 @@ const ExclusiveTournaments: React.FC = () => {
             variant="h4"
             sx={{
               fontWeight: 'bold',
-              marginBottom: 1,
+              marginBottom: '2rem', 
               '@media screen and (min-width: 2560px)': {
                 fontSize: '3rem', // Adjust font size
               },
@@ -149,7 +145,7 @@ const ExclusiveTournaments: React.FC = () => {
           >
             Tournament UI
           </Typography>
-          <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
+          {/* <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} /> */}
           <Carousel
             settings={frontEndCourselSettings}
             slides={frontEndSlides}
@@ -192,22 +188,22 @@ const frontEndSlides = [
   {
     number: '1',
     title: 'Leaderboard',
-    image: '/images/live-widget.png',
+    image: '/images/et-leaderboard.png',
   },
   {
     number: '2',
     title: 'Promotion',
-    image: '/images/default-widget.png',
+    image: '/images/et-promotion.png',
   },
   {
     number: '3',
     title: 'Win/Bet Criteria',
-    image: '/images/leaderboard.png',
+    image: '/images/et-winbet.png',
   },
   {
     number: '4',
     title: 'Winner Layout',
-    image: '/images/registration.png',
+    image: '/images/et-winner.png',
   },
 ];
 
@@ -225,12 +221,12 @@ const backEndSlides = [
   {
     number: '1',
     title: 'Player Segmentation - Tagging',
-    image: '/images/tournament-list.png',
+    image: '/images/et-tagging.png',
   },
   {
     number: '2',
     title: 'Setting Up Player Group With Filters',
-    image: '/images/create-new-tournament.png',
+    image: '/images/et-player-group.png',
   },
 ];
 
