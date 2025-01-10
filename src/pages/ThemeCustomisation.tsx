@@ -76,6 +76,16 @@ const containerStyles = {
     borderRadius: '30px',
     padding: '60px',
   },
+  phasesInnerBgRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    background:
+      'linear-gradient(172.92deg, rgba(0, 0, 0, 0.1) 5.53%, rgba(90, 53, 151, 0.2) 89.21%)',
+    width: 'calc(100% - 120px)',
+    height: 'calc(100% - 120px)',
+    borderRadius: '30px',
+    padding: '60px',
+  }
 };
 
 const ThemeCustomisation: React.FC = (props: any) => {
@@ -119,13 +129,28 @@ const ThemeCustomisation: React.FC = (props: any) => {
           </Box>
         </AnimatedSection>
         <Box display="flex" gap="60px" sx={containerStyles.phasesWrapper}>
-          <Box sx={containerStyles.phasesInnerBg}>
-            <Box flex="1">
+          <Box gap="60px" sx={containerStyles.phasesInnerBgRow}>
+            <Box display="flex" alignItems="center" justifyContent="end" flex="1">
               <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
                 width="375px"
                 height="354px"
                 sx={{ background: '#00000066' }}
-              ></Box>
+              >
+                <Box
+                  component="img"
+                  src="/svg/logo-circle.svg"
+                  alt={`Logo Circle`}
+                  sx={{
+                    width: '256px',
+                    height: '256px',
+                    // maxWidth: '300px',
+                    // padding: '7rem 0rem 0rem 15rem',
+                  }}
+                />
+              </Box>
             </Box>
             <Box
               display="flex"
@@ -134,12 +159,12 @@ const ThemeCustomisation: React.FC = (props: any) => {
               flex="1"
               gap="60px"
             >
-              <Typography sx={typographyStyles.description}>
+              <Typography width="668px" sx={typographyStyles.description}>
                 Strengthen your brand identity by{' '}
                 <span>personalising your own branding, colours,</span> and{' '}
                 <span>logos</span> twithin tournaments to align with your brand
               </Typography>
-              <Typography sx={typographyStyles.description}>
+              <Typography width="668px" sx={typographyStyles.description}>
                 Create a<span>seamless brand experience</span> for players in
                 tournaments to <span>reinforce your brand identity</span> and{' '}
                 <span>build players' loyalty</span> to your platform
