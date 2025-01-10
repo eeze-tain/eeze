@@ -8,7 +8,6 @@ const Home: React.FC = () => {
     <Box
       sx={{
         color: '#FFFFFF',
-        fontFamily: 'Inter',
         padding: '0rem 6rem',
         overflowX: 'hidden', // Prevent horizontal overflow
       }}
@@ -32,9 +31,10 @@ const Home: React.FC = () => {
               <Typography
                 variant="h3"
                 sx={{
-                  fontSize: '80px',
-                  fontWeight: 'bold',
-                  marginTop: '-7.5rem',
+                  fontFamily: 'Raleway',
+                  fontSize: '100px',
+                  fontWeight: '800',
+                  marginTop: '-14rem',
                   lineHeight: '100%',
                 }}
                 color="#D3B1FF"
@@ -42,8 +42,9 @@ const Home: React.FC = () => {
                 <Typography
                   variant="h3"
                   sx={{
-                    fontSize: '80px',
-                    fontWeight: 'bold',
+                    fontFamily: 'Raleway',
+                    fontSize: '100px',
+                    fontWeight: '800',
                     marginBottom: 0,
                     lineHeight: '100%',
                   }}
@@ -58,20 +59,25 @@ const Home: React.FC = () => {
             <Typography
               variant="subtitle1"
               sx={{
-                fontSize: '1.75rem',
-                marginTop: '-1rem'
+                fontSize: '2rem',
+                fontFamily: 'Raleway',
+                fontStyle: 'normal',
+                marginTop: '-2rem',
+                fontWeight: '500',
               }}
             >
-              Ignite Thrills with our All-In-One solution <span style={{ color: '#E1E1E1'}}>- EezePlus</span>
+              Ignite thrills with our all-in-one solution{' '}
+              <span style={{ color: '#E1E1E1' }}>- EezePlus</span>
             </Typography>
             <br></br>
             <Box
               sx={{
                 flex: 1,
+                minWidth: '1250px',
                 gap: 0,
                 flexWrap: 'wrap',
                 marginBottom: 2,
-                alignContent: 'space-evenly'
+                alignContent: 'space-evenly',
               }}
             >
               {[
@@ -83,13 +89,17 @@ const Home: React.FC = () => {
                 <Button
                   key={tag}
                   sx={{
+                    fontFamily: 'Raleway',
+                    fontSize: '2rem',
+                    fontWeight: 500,
+                    lineHeight: '140%',
+                    letterSpacing: '0.32px',
                     backgroundColor: '#5912FF',
                     color: '#FFFFFF',
                     textTransform: 'none',
                     borderRadius: '5px',
                     padding: '3px 10px',
-                    fontSize: '1.35rem',
-                    marginRight: '1rem',
+                    marginRight: '1.5rem',
                     marginY: '0.5rem',
                     '&:hover': { backgroundColor: '#8E53F4' },
                   }}
@@ -101,15 +111,55 @@ const Home: React.FC = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Box
-              component="img"
-              src="/images/phone.png"
-              alt={`Mobile Phone Preview`}
               sx={{
-                width: '100%',
-                maxWidth: '300px',                
-                padding: '7rem 0rem 0rem 15rem'
+                position: 'relative',
+                display: 'flex',
               }}
-            />
+            >
+              <Box
+                component="img"
+                src="/images/ov-vector-line.png"
+                alt={`Vector Line`}
+                sx={{
+                  position: 'absolute',
+                  height: '20%',
+                  top: '-0.1rem',
+                  left: '-62rem',
+                  maxWidth: '2000px',
+                  objectit: 'contain',
+                  padding: '0rem 0rem 0rem 0rem',
+                  transform: 'scale(1.5)',
+                  zIndex: '0',
+                }}
+              />
+              <Box
+                component="img"
+                src="/images/ov-mobile.png"
+                alt={`Mobile Phone Preview`}
+                sx={{
+                  width: '100%',
+                  maxWidth: '1000px',
+                  padding: '0rem 0rem 4rem 0rem',
+                  zIndex: '1',
+                  transform: 'rotate(16.405deg) scale(1.25)',
+                }}
+              />
+              <Box
+                component="img"
+                src="/images/ov-eeze-widget.png"
+                alt={`Eeze Logo`}
+                sx={{
+                  position: 'absolute',
+                  width: '100%',
+                  maxWidth: '245px',
+                  top: '17.5rem',
+                  left: '12.5rem',
+                  padding: '5.7rem 0rem 0rem 20.5rem',
+                  zIndex: '2',
+                  transform: 'rotate(3deg) scale(1.08)',
+                }}
+              />
+            </Box>
           </Grid>
         </Grid>
       </motion.div>
@@ -124,48 +174,63 @@ const Home: React.FC = () => {
           <Typography
             variant="h4"
             sx={{
-              fontWeight: 'bold',
-              fontSize: '2rem',
-              marginTop: '-4rem'
+              fontFamily: 'Raleway',
+              fontWeight: '700',
+              fontSize: '2.5rem',
+              marginTop: '-14rem',
+              lineHeight: '100%',
             }}
           >
             Key Benefits:
           </Typography>
           {/* <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'}/> */}
-          <Grid container spacing={4} sx={{ marginLeft: '1rem', marginTop: '0rem', paddingRight: '7rem'}}>
+          <Grid
+            container
+            spacing={4}
+            sx={{ marginLeft: '0rem', marginTop: '0rem', paddingRight: '7rem' }}
+          >
             {[
               {
                 title: 'Boost Engagement',
                 description:
                   'Keep players excited with dynamic tournaments, real-time leaderboards, and evolving rewards systems.',
-                color: '#22B1C3',
+                color: '#30A977',
               },
               {
                 title: 'Optimise Resources',
                 description:
                   'Simplify operations with plug-and-play modules and interactive data tools to optimise costs and strategies.',
-                color: '#22B1C3',
-              },
-              {
-                title: 'Foster Loyalty',
-                description:
-                  'Create tailored events and exclusive tournaments with compelling rewards to drive long-term retention.',
-                color: '#22B1C3',
+                color: '#30A977',
               },
               {
                 title: 'Integrated Tournament Interface',
                 description:
-                  'Enjoy a built-in and exciting tournament interface across all Eeze products for effortless gameplay and participation.',
-                color: '#22B1C3',
+                  'Enjoy a built-in and exciting tournament interface across all Eeze products for smooth gameplay and participation.',
+                color: '#30A977',
+              },
+              {
+                title: 'Foster Loyalty',
+                description:
+                  'Offer customised tournaments to retain users and fuel ambition with achievements',
+                color: '#30A977',
               },
             ].map((benefit) => (
-              <Grid item xs={12} sm={6} key={benefit.title} sx={{ margin: '0rem'}}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                key={benefit.title}
+                sx={{ margin: '0rem', padding: '32px' }}
+              >
                 <Typography
                   variant="h6"
                   sx={{
                     color: benefit.color,
-                    fontWeight: 'bold',
-                    fontSize: '1.5rem'
+                    fontFamily: 'Raleway',
+                    fontWeight: '600',
+                    fontSize: '2.25rem',
+                    lineHeight: '100%',
+                    marginTop: '16px',
                   }}
                 >
                   {benefit.title}
@@ -173,7 +238,11 @@ const Home: React.FC = () => {
                 <Typography
                   variant="body1"
                   sx={{
-                    fontSize: '1.5rem'
+                    fontFamily: 'Raleway',
+                    fontWeight: '500',
+                    fontSize: '2rem',
+                    lineHeight: '150%',
+                    marginTop: '21px',
                   }}
                 >
                   {benefit.description}
@@ -196,21 +265,63 @@ const Home: React.FC = () => {
         <Typography
           variant="h3"
           sx={{
-            // fontFamily: 'Inter Tight',
-            fontWeight: 100,
-            letterSpacing: 1,
+            maxWidth: '1900px',
+            fontSize: '3.75rem',
+            fontFamily: 'Raleway',
+            fontWeight: 200,
+            letterSpacing: '0.6px',
             textAlign: 'left',
-            marginTop: '4rem',
+            marginTop: '3rem',
             fontStyle: 'normal',
-            marginBottom: 2
+            lineHeight: '150%',
+            marginBottom: 2,
           }}
         >
           Our mission is to{' '}
-          <span style={{ fontWeight: 800 }}>provide the tools</span> needed to{' '}
-          <span style={{ fontWeight: 800 }}>captivate players</span>,{' '}
-          <span style={{ fontWeight: 800 }}>drive growth</span>, and{' '}
-          <span style={{ fontWeight: 800 }}>enhance loyalty</span> through
-          gamification solutions.
+          <span
+            style={{
+              fontWeight: 600,
+              fontSize: '3.75rem',
+              lineHeight: '150%',
+              letterSpacing: '0.6px',
+            }}
+          >
+            provide the tools
+          </span>{' '}
+          needed to{' '}
+          <span
+            style={{
+              fontWeight: 600,
+              fontSize: '3.75rem',
+              lineHeight: '150%',
+              letterSpacing: '0.6px',
+            }}
+          >
+            captivate players
+          </span>
+          ,{' '}
+          <span
+            style={{
+              fontWeight: 600,
+              fontSize: '3.75rem',
+              lineHeight: '150%',
+              letterSpacing: '0.6px',
+            }}
+          >
+            drive growth
+          </span>
+          , and{' '}
+          <span
+            style={{
+              fontWeight: 600,
+              fontSize: '3.75rem',
+              lineHeight: '150%',
+              letterSpacing: '0.6px',
+            }}
+          >
+            enhance loyalty
+          </span>{' '}
+          through gamification solutions.
         </Typography>
       </Box>
     </Box>
