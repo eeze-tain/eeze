@@ -5,6 +5,7 @@ import LinearGradient from '../components/LinearGradient';
 import Carousel from '../components/Carousel';
 import AnimatedSection from './components/AnimatedSection';
 import MarkedText from './components/MarkedText';
+import VideoPlayer from './components/VideoPlayer';
 const typographyStyles = {
   header: {
     fontWeight: 800,
@@ -43,7 +44,7 @@ const containerStyles = {
     fontFamily: 'Roboto',
     overflowX: 'hidden',
     marginTop: '40px',
-    marginBottom:"30px"
+    marginBottom: "30px"
   },
   sectionWrapper: {
     border: '1px solid #7C1DF7',
@@ -115,7 +116,7 @@ const DynamicRewards: React.FC = () => {
               </Box>
             </Box>
             <Box display={"flex"} marginTop={"60px"} gap={"60px"} width={"58%"}>
-              {phases.map(({ title, image }) => (
+              {phases.map(({ title, videoSrc, thumbnailSrc }) => (
                 <Box width={"50%"} display={"flex"} justifyContent={"center"} flexDirection={"column"}
                   alignItems={"center"}>
                   <Typography
@@ -126,12 +127,14 @@ const DynamicRewards: React.FC = () => {
                   >
                     {title}
                   </Typography>
-                  <Box sx={{
+                  <VideoPlayer sx={{
                     border: '1px solid #ffffff',
-                    borderRadius: '16px',
-
-                  }} component="img" src={image} alt={title} width={"373px"}
-                  />
+                    borderRadius: '8px',
+                    width: "373px"
+                  }}
+                    playOnHover={true}
+                    videoSrc={videoSrc}
+                    thumbnailSrc={thumbnailSrc}></VideoPlayer>
                 </Box>
               ))}
             </Box>
@@ -146,7 +149,7 @@ const DynamicRewards: React.FC = () => {
               </span>
             </Typography>
             <Box>
-              <Typography sx={{  fontSize: "36px", fontWeight: "700", fontFamily: "Raleway, serif", display: "flex", justifyContent: "center" }}>
+              <Typography sx={{ fontSize: "36px", fontWeight: "700", fontFamily: "Raleway, serif", display: "flex", justifyContent: "center" }}>
                 <span>Set Up Dynamic Rewards
                 </span>
               </Typography>
@@ -164,7 +167,7 @@ const DynamicRewards: React.FC = () => {
                   marginTop: "60px"
                 }}
               >
-                <Typography fontSize={"64px"} fontWeight={"800"} color='rgba(255, 255, 255, 1)'>Video</Typography>
+                <Typography fontSize={"64px"} fontWeight={"800"} color='rgba(255, 255, 255, 1)'></Typography>
               </Box>
             </Box>
             <Box>
@@ -199,12 +202,17 @@ const phases = [
   {
     number: '1',
     title: 'Registration - Dynamic Prize',
-    image: '/images/live-widget.png',
+    videoSrc: '/videos/dynamic-rewards-reg-phase.mp4',
+    thumbnailSrc: '/images/reg-thumbnail.png',
+
+
   },
   {
     number: '2',
     title: 'Live - Dynamic Prize',
-    image: '/images/default-widget.png',
+    videoSrc: '/videos/dynamic-rewards-live-phase.mp4',
+    thumbnailSrc: '/images/live-thumbnail.png',
+
   },
 ];
 
