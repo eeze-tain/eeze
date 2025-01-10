@@ -10,6 +10,8 @@ import LogoPreview from './components/MobilePreview/LogoPreview/LogoPreview';
 import WidgetScorePreview from './components/MobilePreview/WidgetScorePreview/WidgetScorePreview';
 import BasicColorsSettings from './containers/BasicColorsSettings';
 // import RadioLogoSelector from './containers/RadioLogoSelector';
+import CarouselThemeCustomasationPage from '../components/CarouselThemeCustomasationPage';
+import LinearGradient from '../components/LinearGradient';
 
 import { motion } from 'framer-motion';
 // Reusable styles for Typography
@@ -85,7 +87,7 @@ const containerStyles = {
     height: 'calc(100% - 120px)',
     borderRadius: '30px',
     padding: '60px',
-  }
+  },
 };
 
 const ThemeCustomisation: React.FC = (props: any) => {
@@ -106,31 +108,34 @@ const ThemeCustomisation: React.FC = (props: any) => {
   };
 
   return (
-    <>
-      <Box sx={containerStyles.mainWrapper}>
-        {/* Hero Section */}
-        <AnimatedSection>
-          <Box display="flex" flexDirection="column" gap={2}>
-            <Box display="flex" justifyContent="space-between">
-              <Box sx={{ width: '38%' }}>
-                <Typography variant="h3" sx={typographyStyles.header}>
-                  Theme <span>Customisation</span>
-                </Typography>
-              </Box>
-              <Box
-                sx={{ width: '48%', display: 'flex', alignItems: 'flex-end' }}
-              >
-                <Typography variant="body1" sx={typographyStyles.subHeader}>
-                  Customise themes to deliver standout,
-                  <br /> personalised experiences
-                </Typography>
-              </Box>
+    <Box sx={containerStyles.mainWrapper}>
+      {/* Hero Section */}
+      <AnimatedSection>
+        <Box display="flex" flexDirection="column" gap={2}>
+          <Box display="flex" justifyContent="space-between">
+            <Box sx={{ width: '38%' }}>
+              <Typography variant="h3" sx={typographyStyles.header}>
+                Theme <span>Customisation</span>
+              </Typography>
+            </Box>
+            <Box sx={{ width: '48%', display: 'flex', alignItems: 'flex-end' }}>
+              <Typography variant="body1" sx={typographyStyles.subHeader}>
+                Customise themes to deliver standout,
+                <br /> personalised experiences
+              </Typography>
             </Box>
           </Box>
-        </AnimatedSection>
+        </Box>
+      </AnimatedSection>
+      <AnimatedSection>
         <Box display="flex" gap="60px" sx={containerStyles.phasesWrapper}>
           <Box gap="60px" sx={containerStyles.phasesInnerBgRow}>
-            <Box display="flex" alignItems="center" justifyContent="end" flex="1">
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="end"
+              flex="1"
+            >
               <Box
                 display="flex"
                 justifyContent="center"
@@ -172,7 +177,6 @@ const ThemeCustomisation: React.FC = (props: any) => {
             </Box>
           </Box>
         </Box>
-
         <Box sx={containerStyles.phasesWrapper}>
           <Box sx={containerStyles.phasesInnerBg}>
             <Typography sx={typographyStyles.sectionTitle}>
@@ -303,9 +307,78 @@ const ThemeCustomisation: React.FC = (props: any) => {
             </Box>
           </Box>
         </Box>
-      </Box>
-    </>
+        <Box display="flex" gap="60px" sx={containerStyles.phasesWrapper}>
+          <Box gap="60px" sx={containerStyles.phasesInnerBgRow}>
+            <Box
+              display="flex"
+              flexDirection="column"
+              // alignItems="center"
+              // justifyContent="end"
+              flex="1"
+            >
+              <Typography sx={typographyStyles.sectionTitle}>
+                Our <span>Present Themes</span>
+              </Typography>
+              <Box
+                display="flex"
+                flexDirection="column"
+                justifyContent="start"
+                flex="1"
+                gap="60px"
+              >
+                <Typography width="668px" sx={typographyStyles.description}>
+                  Effortlessly adopt
+                  <span>ready-to-use</span> preset themes and
+                  <span>refresh your offerings</span> for players
+                </Typography>
+                <Typography width="668px" sx={typographyStyles.description}>
+                  You can further<span>customise your own colours</span>{' '}
+                  flexibly per component group with our advanced setting
+                </Typography>
+              </Box>
+            </Box>
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="start"
+              flex="1"
+              gap="60px"
+            >
+    
+            </Box>
+          </Box>
+        </Box>
+      </AnimatedSection>
+      <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
+
+<CarouselThemeCustomasationPage
+  settings={frontEndCourselSettings}
+  slides={frontEndSlides}
+/>
+    </Box>
   );
 };
 
 export default ThemeCustomisation;
+
+const frontEndSlides = [
+  {
+    number: '1',
+    title: 'Promotion - Dynamic Prize',
+    image: '/images/live-widget.png',
+  },
+  {
+    number: '2',
+    title: 'Live Tournamet - Dynamic Prize',
+    image: '/images/default-widget.png',
+  },
+];
+
+const frontEndCourselSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  arrows: true,
+};
