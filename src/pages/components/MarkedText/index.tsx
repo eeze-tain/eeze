@@ -1,12 +1,14 @@
 import { ReactNode } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, SxProps, Theme, Typography } from '@mui/material';
 
-interface MarkedTextProps{
+interface MarkedTextProps {
     children?: ReactNode,
+    sx?: SxProps<Theme>;
+
 }
-const MarkedText = ({children} : MarkedTextProps) => {
+const MarkedText = ({ children, sx }: MarkedTextProps) => {
     return (
-        <Box display="flex" flexDirection="row" gap={2}>
+        <Box sx={sx} display="flex" flexDirection="row" gap={2}>
             <Box sx={{ width: 'fit-content' }}>
                 <Typography sx={{
                     display: 'flex',
@@ -27,10 +29,10 @@ const MarkedText = ({children} : MarkedTextProps) => {
                         lineHeight: '42px',
                         '& span': {
                             fontWeight: 700,
-                          },
+                        },
                     }}
                 >
-                   {children}
+                    {children}
                 </Typography>
             </Box>
         </Box>

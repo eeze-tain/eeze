@@ -43,6 +43,7 @@ const containerStyles = {
     fontFamily: 'Roboto',
     overflowX: 'hidden',
     marginTop: '40px',
+    marginBottom:"30px"
   },
   sectionWrapper: {
     border: '1px solid #7C1DF7',
@@ -58,6 +59,7 @@ const containerStyles = {
     height: 'calc(100% - 120px)',
     borderRadius: '30px',
     padding: '60px',
+    gap: "60px"
   },
 };
 const DynamicRewards: React.FC = () => {
@@ -65,7 +67,7 @@ const DynamicRewards: React.FC = () => {
     <Box sx={containerStyles.mainWrapper}>
       <AnimatedSection>
         {/* Hero Section */}
-        <Box display="flex" justifyContent="space-between">
+        <Box display="flex" justifyContent="center">
           <Typography variant="h3" sx={typographyStyles.header}>
             Dynamic <span>Rewards
             </span>
@@ -79,42 +81,111 @@ const DynamicRewards: React.FC = () => {
 
         {/* Phases Section */}
         <Box sx={containerStyles.sectionWrapper} marginTop={"120px"}>
-          <Box sx={containerStyles.sectionInnerBg} display={"flex"} flexDirection={"column"}>
-            <Box display={"flex"} justifyContent={"space-between"} flexDirection={"column"}>
-              <Typography sx={typographyStyles.sectionTitle} width={"70%"}>
+          <Box sx={containerStyles.sectionInnerBg} display={"flex"} flexDirection={"row"}>
+            <Box display={"flex"} justifyContent={"center"} flexDirection={"column"} width={"42%"}>
+              <Typography sx={typographyStyles.sectionTitle}>
                 What <span>Players can see
                 </span>
               </Typography>
-              <Box>
-                <Typography >
+              <Box marginTop={"60px"}>
+                <Typography sx={{
+                  fontFamily: '"Raleway", serif',
+                  fontWeight: 400,
+                  fontSize: '30px',
+                  lineHeight: '42px',
+                  '& span': {
+                    fontWeight: 700,
+                  },
+                }}>
                   <span>Drive player interaction
                   </span>by scaling rewards based on participation, fostering excitement and activity
                 </Typography>
-                <Typography >
+                <Typography sx={{
+                  fontFamily: '"Raleway", serif',
+                  fontWeight: 400,
+                  fontSize: '30px',
+                  lineHeight: '42px',
+                  '& span': {
+                    fontWeight: 700,
+                  },
+                  marginTop: "60px"
+                }}>
                   Maintain <span>budget control</span> and <span>cost efficiency</span> by balancing prize allocation with engagement levels
                 </Typography>
               </Box>
             </Box>
-            <Box sx={{ marginTop: "60px" }} display={"flex"}>
-              {phases.map((slide) => (
-                <Box width={"25%"} display={"flex"} justifyContent={"center"} flexDirection={"column"}
+            <Box display={"flex"} marginTop={"60px"} gap={"60px"} width={"58%"}>
+              {phases.map(({ title, image }) => (
+                <Box width={"50%"} display={"flex"} justifyContent={"center"} flexDirection={"column"}
                   alignItems={"center"}>
                   <Typography
                     sx={{
                       fontSize: '2rem',
-                      marginBottom: '1rem',
+                      marginBottom: '40px',
                     }}
                   >
-                    {slide.title}
+                    {title}
                   </Typography>
                   <Box sx={{
                     border: '1px solid #ffffff',
                     borderRadius: '16px',
-                  }} component="img" src={slide.image} alt={slide.title}
+
+                  }} component="img" src={image} alt={title} width={"373px"}
                   />
                 </Box>
-
               ))}
+            </Box>
+          </Box>
+        </Box>
+
+        {/* Back Office Section */}
+        <Box sx={containerStyles.sectionWrapper} marginTop={"120px"} marginBottom={"20px"}>
+          <Box sx={containerStyles.sectionInnerBg} display={"flex"} flexDirection={"column"}>
+            <Typography sx={typographyStyles.sectionTitle}>
+              Back <span>Office
+              </span>
+            </Typography>
+            <Box>
+              <Typography sx={{  fontSize: "36px", fontWeight: "700", fontFamily: "Raleway, serif", display: "flex", justifyContent: "center" }}>
+                <span>Set Up Dynamic Rewards
+                </span>
+              </Typography>
+              <MarkedText >
+                Set up triggers, stages, and reward increments flexibly</MarkedText>
+              <Box
+                sx={{
+                  background: '#00000066',
+                  borderRadius: '32.9px',
+                  height: '869.15px',
+                  border: '1.37px solid #FFFFFF',
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "60px"
+                }}
+              >
+                <Typography fontSize={"64px"} fontWeight={"800"} color='rgba(255, 255, 255, 1)'>Video</Typography>
+              </Box>
+            </Box>
+            <Box>
+              <Typography sx={{ fontSize: "36px", fontWeight: "700", fontFamily: "Raleway, serif", display: "flex", justifyContent: "center" }}>
+                <span>Preview Prize Pool
+                </span>
+              </Typography>
+              <MarkedText sx={{ justifyContent: "center" }}>Preview the prize pool to ensure alignment with your budget</MarkedText>
+              <Box
+                sx={{
+                  background: '#00000066',
+                  borderRadius: '32.9px',
+                  height: '869.15px',
+                  border: '1.37px solid #FFFFFF',
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "60px"
+                }}
+              >
+              </Box>
             </Box>
           </Box>
         </Box>
@@ -123,50 +194,18 @@ const DynamicRewards: React.FC = () => {
   );
 };
 
-// Data for slides: Includes titles and image paths
+// Data for phases: Includes titles and image paths
 const phases = [
   {
     number: '1',
-    title: 'Promotion - Dynamic Prize',
+    title: 'Registration - Dynamic Prize',
     image: '/images/live-widget.png',
   },
   {
     number: '2',
-    title: 'Live Tournamet - Dynamic Prize',
+    title: 'Live - Dynamic Prize',
     image: '/images/default-widget.png',
   },
 ];
-
-const frontEndCourselSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  arrows: true,
-};
-
-// Data for slides: Includes titles and image paths
-const backEndSlides = [
-  {
-    number: '1',
-    title: 'Setting Up Dynamic Rewards',
-    image: '/images/tournament-list.png',
-  },
-  {
-    number: '2',
-    title: 'Configuring Different Stages & Results',
-    image: '/images/create-new-tournament.png',
-  },
-];
-
-const backEndCourselSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  arrows: true,
-};
 
 export default DynamicRewards;
