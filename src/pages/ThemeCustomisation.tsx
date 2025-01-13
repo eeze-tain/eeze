@@ -107,6 +107,67 @@ const ThemeCustomisation: React.FC = (props: any) => {
     }));
   };
 
+  // State to track the active center slide
+  const [middleIndex, setMiddleIndex] = useState(1);
+
+  // const frontEndSlides = [
+  //   {
+  //     number: '1',
+  //     image: '/svg/themes-coursel-forest.svg',
+  //   },
+  //   {
+  //     number: '2',
+  //     image: '/svg/themes-coursel-default.svg',
+  //   },
+  //   {
+  //     number: '3',
+  //     image: '/svg/themes-coursel-grey.svg',
+  //   },
+  // ];
+
+  const frontEndSlides = [
+    {
+      number: '0',
+      backgroundColor: 'red', // This can be dynamic, use any color or other properties
+    },
+    {
+      number: '1',
+      backgroundColor: 'pink',
+    },
+    {
+      number: '2',
+      backgroundColor: 'green',
+    },
+  ];
+
+  // const frontEndCourselSettings = {
+  //   infinite: false,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 1,
+  //   centerMode: true, 
+  //   centerPadding: '0px', 
+  //   draggable: false, 
+  //   swipe: false, 
+  //   autoplaySpeed: 10000, // 10 seconds for each slide
+  //   beforeChange: (current, next) => setActiveSlide(next), // Track active slide
+  // };
+
+  const frontEndCourselSettings = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '800px',
+    draggable: false,
+    swipe: false,
+    // arrows: true,
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 10000, // 10 seconds for each slide
+    beforeChange: (current: number, next: number) => {
+      setMiddleIndex(next); // Update active slide when the slide changes
+    },
+  }; 
+
   return (
     <Box sx={containerStyles.mainWrapper}>
       {/* Hero Section */}
@@ -343,42 +404,19 @@ const ThemeCustomisation: React.FC = (props: any) => {
               justifyContent="start"
               flex="1"
               gap="60px"
-            >
-    
-            </Box>
+            ></Box>
           </Box>
         </Box>
       </AnimatedSection>
       <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
 
-<CarouselThemeCustomasationPage
-  settings={frontEndCourselSettings}
-  slides={frontEndSlides}
-/>
+      <CarouselThemeCustomasationPage
+        settings={frontEndCourselSettings}
+        slides={frontEndSlides}
+        middleIndex={middleIndex}
+      />
     </Box>
   );
 };
 
 export default ThemeCustomisation;
-
-const frontEndSlides = [
-  {
-    number: '1',
-    title: 'Promotion - Dynamic Prize',
-    image: '/images/live-widget.png',
-  },
-  {
-    number: '2',
-    title: 'Live Tournamet - Dynamic Prize',
-    image: '/images/default-widget.png',
-  },
-];
-
-const frontEndCourselSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  arrows: true,
-};
