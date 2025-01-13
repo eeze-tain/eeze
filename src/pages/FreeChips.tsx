@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import MarkedText from './components/MarkedText';
 import AnimatedSection from './components/AnimatedSection';
+import VideoPlayer from './components/VideoPlayer';
 
 const typographyStyles = {
   header: {
@@ -71,7 +72,7 @@ const FreeChips = () => {
       {/* Hero Section */}
       <AnimatedSection>
         <Box display="flex" flexDirection="column" gap={2}>
-          <Box display="flex" justifyContent="flex-end">
+          <Box display="flex" justifyContent="flex-end" alignItems="flex-end">
             <Box sx={{ width: '48%' }}>
               <Typography variant="h3" sx={typographyStyles.header}>
                 Free
@@ -200,11 +201,16 @@ const FreeChips = () => {
               sx={{
                 background: '#1C102E',
                 borderRadius: '32.9px',
-                height: '869.15px',
                 border: '1.37px solid #FFFFFF',
                 position: 'relative',
               }}
-            />
+            >
+              <VideoPlayer
+                playOnHover={false}
+                videoSrc={'/videos/free-chips-page.mp4'}
+                videoBorderRadius="33px"
+              />
+            </Box>
           </Box>
         </Box>
       </AnimatedSection>
