@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import DynamicRewards from './pages/DynamicRewards';
 import ExclusiveTournament from './pages/ExclusiveTournaments';
+import FreeChips from './pages/FreeChips';
 import Home from './pages/Home';
 import Roadmap from './pages/Roadmap';
 import ThemeCustomisation from './pages/ThemeCustomisation';
@@ -47,6 +48,7 @@ const App: React.FC = () => {
           <Route path="/themes" element={<ThemeCustomisation />} />
           <Route path="/rewards" element={<DynamicRewards />} />
           <Route path="/exclusive" element={<ExclusiveTournament />} />
+          <Route path="/freechips" element={<FreeChips />} />
           <Route path="/roadmap" element={<Roadmap />} />
         </Routes>
       </Grid>

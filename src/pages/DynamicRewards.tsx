@@ -3,207 +3,217 @@ import { Box, Typography, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import LinearGradient from '../components/LinearGradient';
 import Carousel from '../components/Carousel';
+import AnimatedSection from './components/AnimatedSection';
+import MarkedText from './components/MarkedText';
+import VideoPlayer from './components/VideoPlayer';
+const typographyStyles = {
+  header: {
+    fontWeight: 800,
+    color: '#FBF8F8',
+    fontSize: '100px',
+    textTransform: 'capitalize',
+    fontFamily: 'Raleway, serif',
+    lineHeight: '100px',
+    '& span': { color: '#D3B1FF' },
+  },
+  subHeader: {
+    fontWeight: 500,
+    fontStyle: 'italic',
+    color: '#FFFFFF',
+    textAlign: 'right',
+    fontSize: '48px',
+    lineHeight: '67.2px',
+    fontFamily: 'Raleway, serif',
+  },
+  sectionTitle: {
+    fontWeight: 700,
+    color: '#FFFFFF',
+    fontSize: '60px',
+    textTransform: 'capitalize',
+    lineHeight: '84px',
+    fontFamily: 'Raleway, serif',
+    '& span': { color: '#D3B1FF' },
+  }
+};
 
+// Layout constants
+const containerStyles = {
+  mainWrapper: {
+    padding: '0 4rem',
+    color: '#FFFFFF',
+    fontFamily: 'Roboto',
+    overflowX: 'hidden',
+    marginTop: '40px',
+    marginBottom: "30px"
+  },
+  sectionWrapper: {
+    border: '1px solid #7C1DF7',
+    borderRadius: '40px',
+    padding: '16px',
+    marginTop: '120px',
+    width: 'calc(100% - 32px)',
+  },
+  sectionInnerBg: {
+    display: 'flex',
+    background: 'linear-gradient(172.92deg, rgba(0, 0, 0, 0.1) 5.53%, rgba(90, 53, 151, 0.2) 89.21%)',
+    width: 'calc(100% - 120px)',
+    height: 'calc(100% - 120px)',
+    borderRadius: '30px',
+    padding: '60px',
+    gap: "60px"
+  },
+};
 const DynamicRewards: React.FC = () => {
   return (
-    <Box
-      sx={{
-        padding: '0rem 4rem',
-        color: '#FFFFFF',
-        fontFamily: 'Inter',
-        overflowX: 'hidden', // Prevent horizontal overflow
-        marginTop: '-2rem'
-      }}
-    >
-      {/* Hero Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Box
-              sx={{
-                display: 'flex',
-                gap: 1,
-                flexWrap: 'wrap',
-                marginBottom: 2,
-              }}
-            >
-              <Typography
-                variant="h3"
+    <Box sx={containerStyles.mainWrapper}>
+      <AnimatedSection>
+        {/* Hero Section */}
+        <Box display="flex" justifyContent="center">
+          <Typography variant="h3" sx={typographyStyles.header}>
+            Dynamic <span>Rewards
+            </span>
+          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+            <Typography variant="body1" sx={typographyStyles.subHeader} >
+              Excite players with a growing reward system while keeping costs in check by planning budget in advance
+            </Typography>
+          </Box>
+        </Box>
+
+        {/* Phases Section */}
+        <Box sx={containerStyles.sectionWrapper} marginTop={"120px"}>
+          <Box sx={containerStyles.sectionInnerBg} display={"flex"} flexDirection={"row"}>
+            <Box display={"flex"} justifyContent={"center"} flexDirection={"column"} width={"42%"}>
+              <Typography sx={typographyStyles.sectionTitle}>
+                What <span>Players can see
+                </span>
+              </Typography>
+              <Box marginTop={"60px"}>
+                <Typography sx={{
+                  fontFamily: '"Raleway", serif',
+                  fontWeight: 400,
+                  fontSize: '30px',
+                  lineHeight: '42px',
+                  '& span': {
+                    fontWeight: 700,
+                  },
+                }}>
+                  <span>Drive player interaction
+                  </span>by scaling rewards based on participation, fostering excitement and activity
+                </Typography>
+                <Typography sx={{
+                  fontFamily: '"Raleway", serif',
+                  fontWeight: 400,
+                  fontSize: '30px',
+                  lineHeight: '42px',
+                  '& span': {
+                    fontWeight: 700,
+                  },
+                  marginTop: "60px"
+                }}>
+                  Maintain <span>budget control</span> and <span>cost efficiency</span> by balancing prize allocation with engagement levels
+                </Typography>
+              </Box>
+            </Box>
+            <Box display={"flex"} marginTop={"60px"} gap={"60px"} width={"58%"}>
+              {phases.map(({ title, videoSrc, thumbnailSrc }) => (
+                <Box width={"50%"} display={"flex"} justifyContent={"center"} flexDirection={"column"}
+                  alignItems={"center"}>
+                  <Typography
+                    sx={{
+                      fontSize: '2rem',
+                      marginBottom: '40px',
+                    }}
+                  >
+                    {title}
+                  </Typography>
+                  <VideoPlayer sx={{
+                    border: '1px solid #ffffff',
+                    borderRadius: '8px',
+                    width: "373px"
+                  }}
+                    playOnHover={true}
+                    videoSrc={videoSrc}
+                    thumbnailSrc={thumbnailSrc}></VideoPlayer>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </Box>
+
+        {/* Back Office Section */}
+        <Box sx={containerStyles.sectionWrapper} marginTop={"120px"} marginBottom={"20px"}>
+          <Box sx={containerStyles.sectionInnerBg} display={"flex"} flexDirection={"column"}>
+            <Typography sx={typographyStyles.sectionTitle}>
+              Back <span>Office
+              </span>
+            </Typography>
+            <Box>
+              <Typography sx={{ fontSize: "36px", fontWeight: "700", fontFamily: "Raleway, serif", display: "flex", justifyContent: "center" }}>
+                <span>Set Up Dynamic Rewards
+                </span>
+              </Typography>
+              <MarkedText >
+                Set up triggers, stages, and reward increments flexibly</MarkedText>
+              <Box
                 sx={{
-                  fontSize: '80px',
-                  fontWeight: 'bold',
-                  marginTop: '6rem',
-                  marginBottom: 2,
-                  '@media screen and (min-width: 2560px)': {
-                    fontSize: '120px', // Scale font size for large screens
-                  },
-                  '@media screen and (min-width: 3200px)': {
-                    fontSize: '160px', // Scale font size for large screens
-                  },
+                  background: '#00000066',
+                  borderRadius: '32.9px',
+                  height: '869.15px',
+                  border: '1.37px solid #FFFFFF',
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "60px"
                 }}
               >
-                Dynamic <br />{' '}
-                <Typography
-                  variant="h3"
-                  sx={{
-                    fontSize: '80px',
-                    fontWeight: 'bold',
-                  }}
-                  color="#D3B1FF"
-                >
-                  Rewards
-                </Typography>{' '}
-              </Typography>
+                <Typography fontSize={"64px"} fontWeight={"800"} color='rgba(255, 255, 255, 1)'></Typography>
+              </Box>
             </Box>
-          </Grid>
-          <Grid item xs={12} md={6}></Grid>
-          <Grid item xs={12} md={6}></Grid>
-          <Grid item xs={12} md={6}>
-            <Typography
-              width={'100%'}
-              variant="subtitle1"
-              sx={{
-                fontWeight: 100,
-                alignSelf: 'right',
-                fontSize: '1.75rem',
-                lineHeight: '100%',
-                marginBottom: '2rem',
-                '@media screen and (min-width: 2560px)': {
-                  fontSize: '1.75rem', // Adjust font size
-                },
-                '@media screen and (min-width: 3200px)': {
-                  fontSize: '2rem', // Adjust font size
-                },
-              }}
-            >
-              <span style={{ fontWeight: 800 }}>Budget</span> and{' '}
-              <span style={{ fontWeight: 800 }}>scale prizes</span> according to
-              player participation, ensuring a balance between{' '}
-              <span style={{ fontWeight: 800 }}>increased engagement</span> and{' '}
-              <span style={{ fontWeight: 800 }}>cost efficiency</span>.
-              <br></br>
-              <br></br>
-              Effortlessly set up dynamic cash rewards by choosing{' '}
-              <span style={{ fontWeight: 800 }}>triggers, stages,</span> and{' '}
-              <span style={{ fontWeight: 800 }}>reward increases</span>. Preview
-              the prize pool to{' '}
-              <span style={{ fontWeight: 800 }}>match your budget</span>.
-              <br></br>
-              <br></br>
-              <span style={{ fontWeight: 800 }}>Boost engagement</span> while
-              managing costs and{' '}
-              <span style={{ fontWeight: 800 }}>optimising GGR</span> with this
-              simple configuration.
-            </Typography>
-          </Grid>
-        </Grid>
-      </motion.div>
-      {/* Hero Section - Front End Carousel */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        {/* Key Benefits Section */}
-        <Box sx={{ marginTop: 6 }}>
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 'bold',
-              marginBottom: '2rem',
-              '@media screen and (min-width: 2560px)': {
-                fontSize: '3rem', // Adjust font size
-              },
-              '@media screen and (min-width: 3200px)': {
-                fontSize: '3.5rem', // Adjust font size
-              },
-            }}
-          >
-            Tournament UI
-          </Typography>
-          {/* <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} /> */}
-          <Carousel
-            settings={frontEndCourselSettings}
-            slides={frontEndSlides}
-          />
+            <Box>
+              <Typography sx={{ fontSize: "36px", fontWeight: "700", fontFamily: "Raleway, serif", display: "flex", justifyContent: "center" }}>
+                <span>Preview Prize Pool
+                </span>
+              </Typography>
+              <MarkedText sx={{ justifyContent: "center" }}>Preview the prize pool to ensure alignment with your budget</MarkedText>
+              <Box
+                sx={{
+                  background: '#00000066',
+                  borderRadius: '32.9px',
+                  height: '869.15px',
+                  border: '1.37px solid #FFFFFF',
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "60px"
+                }}
+              >
+              </Box>
+            </Box>
+          </Box>
         </Box>
-      </motion.div>
-      {/* Hero Section - Back End Carousel */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        {/* Key Benefits Section */}
-        <Box sx={{ marginTop: '7rem' }}>
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 'bold',
-              marginBottom: 5,
-              '@media screen and (min-width: 2560px)': {
-                fontSize: '3rem', // Adjust font size
-              },
-            }}
-          >
-            Back Office
-          </Typography>
-          <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
-          <Carousel settings={backEndCourselSettings} slides={backEndSlides} />
-        </Box>
-      </motion.div>
+      </AnimatedSection>
     </Box>
   );
 };
 
-// Data for slides: Includes titles and image paths
-const frontEndSlides = [
+// Data for phases: Includes titles and image paths
+const phases = [
   {
     number: '1',
-    title: 'Promotion - Dynamic Prize',
-    image: '/images/live-widget.png',
+    title: 'Registration - Dynamic Prize',
+    videoSrc: '/videos/dynamic-rewards-reg-phase.mp4',
+    thumbnailSrc: '/images/reg-thumbnail.png',
+
+
   },
   {
     number: '2',
-    title: 'Live Tournamet - Dynamic Prize',
-    image: '/images/default-widget.png',
+    title: 'Live - Dynamic Prize',
+    videoSrc: '/videos/dynamic-rewards-live-phase.mp4',
+    thumbnailSrc: '/images/live-thumbnail.png',
+
   },
 ];
-
-const frontEndCourselSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  arrows: true,
-};
-
-// Data for slides: Includes titles and image paths
-const backEndSlides = [
-  {
-    number: '1',
-    title: 'Setting Up Dynamic Rewards',
-    image: '/images/tournament-list.png',
-  },
-  {
-    number: '2',
-    title: 'Configuring Different Stages & Results',
-    image: '/images/create-new-tournament.png',
-  },
-];
-
-const backEndCourselSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  arrows: true,
-};
 
 export default DynamicRewards;
