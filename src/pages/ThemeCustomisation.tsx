@@ -154,10 +154,10 @@ const ThemeCustomisation: React.FC = (props: any) => {
 
   const frontEndCourselSettings = {
     infinite: false,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '0px',
+    centerPadding: '10px',
     draggable: false,
     swipe: false,
     // arrows: true,
