@@ -13,7 +13,7 @@ export default function BasicColorsSettings({
   mainThemeColor,
   secondaryThemeColor,
   CTATextColor,
-  setColors
+  setColors,
 }: BasicColorsSettingsProps) {
   const handleOnColorChange = (keys: string[]) => (newColor: string) => {
     const updates: { [key: string]: string } = {};
@@ -31,19 +31,21 @@ export default function BasicColorsSettings({
         onColorChange={handleOnColorChange([
           'data.main.backgroundColor',
           'data.widget.backgroundColor',
-          'data.logo.backgroundColor'
+          'data.logo.backgroundColor',
         ])}
         colorsOptions={{ saturation: 43, lightness: 20 }}
       />
+      <br></br>
       <ColorSlider
         label="Secondary color"
         value={hexToHue(secondaryThemeColor)}
         onColorChange={handleOnColorChange([
           'data.main.secondaryColor',
-          'data.widget.secondaryBackgroundColor'
+          'data.widget.secondaryBackgroundColor',
         ])}
         colorsOptions={{ saturation: 98, lightness: 49 }}
       />
+      <br></br>
       <ColorSlider
         label="CTA color"
         value={hexToHue(CTATextColor)}

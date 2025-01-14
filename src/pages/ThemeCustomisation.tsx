@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 // import { FormProvider } from 'react-hook-form';
 
-import { Box, Typography, Grid, Divider, useTheme } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Grid,
+  Divider,
+  useTheme,
+  FormControl,
+  FormLabel,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+  Button,
+} from '@mui/material';
 import AnimatedSection from './components/AnimatedSection';
 import GridItem from './components/GridItem';
 import MobilePreview from './components/MobilePreview';
@@ -14,6 +26,7 @@ import CarouselThemeCustomasationPage from '../components/CarouselThemeCustomasa
 import LinearGradient from '../components/LinearGradient';
 
 import { motion } from 'framer-motion';
+import VideoPlayer from './components/VideoPlayer';
 // Reusable styles for Typography
 const typographyStyles = {
   header: {
@@ -49,6 +62,10 @@ const typographyStyles = {
     lineHeight: '57.6px',
     fontFamily: 'Raleway, serif',
     '& span': { fontWeight: 700 },
+    color: 'white', // Set the default color
+    '&.Mui-focused': {
+      color: 'white', // Prevent color change on focus
+    },
   },
 };
 
@@ -110,63 +127,27 @@ const ThemeCustomisation: React.FC = (props: any) => {
   // State to track the active center slide
   const [middleIndex, setMiddleIndex] = useState(1);
 
-  // const frontEndSlides = [
-  //   {
-  //     number: '1',
-  //     image: '/svg/themes-coursel-forest.svg',
-  //   },
-  //   {
-  //     number: '2',
-  //     image: '/svg/themes-coursel-default.svg',
-  //   },
-  //   {
-  //     number: '3',
-  //     image: '/svg/themes-coursel-grey.svg',
-  //   },
-  // ];
-
   const frontEndSlides = [
     {
-      number: '0',
-      backgroundColor: 'red', // This can be dynamic, use any color or other properties
-    },
-    {
       number: '1',
-      backgroundColor: 'pink',
+      image: '/svg/themes-coursel-forest.svg',
     },
     {
       number: '2',
-      backgroundColor: 'green',
+      image: '/svg/themes-coursel-default.svg',
+    },
+    {
+      number: '3',
+      image: '/svg/themes-coursel-grey.svg',
     },
   ];
 
-  // const frontEndCourselSettings = {
-  //   infinite: false,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   centerMode: true, 
-  //   centerPadding: '0px', 
-  //   draggable: false, 
-  //   swipe: false, 
-  //   autoplaySpeed: 10000, // 10 seconds for each slide
-  //   beforeChange: (current, next) => setActiveSlide(next), // Track active slide
-  // };
+  const capitalizeFirstLetter = (text) => {
+    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+  };
 
-  const frontEndCourselSettings = {
-    infinite: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: '10px',
-    draggable: false,
-    swipe: false,
-    // arrows: true,
-    autoplay: true, // Enable autoplay
-    autoplaySpeed: 10000, // 10 seconds for each slide
-    beforeChange: (current: number, next: number) => {
-      setMiddleIndex(next); // Update active slide when the slide changes
-    },
-  }; 
+  const label = 'UPLOAD FROM FILE';
+  const formattedLabel = capitalizeFirstLetter(label);
 
   return (
     <Box sx={containerStyles.mainWrapper}>
@@ -203,9 +184,9 @@ const ThemeCustomisation: React.FC = (props: any) => {
                 alignItems="center"
                 width="375px"
                 height="354px"
-                sx={{ background: '#00000066' }}
+                // sx={{ background: '#00000066' }}
               >
-                <Box
+                {/* <Box
                   component="img"
                   src="/svg/logo-circle.svg"
                   alt={`Logo Circle`}
@@ -215,6 +196,17 @@ const ThemeCustomisation: React.FC = (props: any) => {
                     // maxWidth: '300px',
                     // padding: '7rem 0rem 0rem 15rem',
                   }}
+                /> */}
+                <VideoPlayer
+                  sx={{
+                    // border: '1px solid #ffffff',
+                    // borderRadius: '8px',
+                    // background: 'red',
+                    height: '354px',
+                  }}
+                  playOnHover={false}
+                  videoSrc={'/videos/logos-switch.mp4'}
+                  // videoBorderRadius="33px"
                 />
               </Box>
             </Box>
@@ -243,6 +235,9 @@ const ThemeCustomisation: React.FC = (props: any) => {
             <Typography sx={typographyStyles.sectionTitle}>
               Play <span>Around!</span>
             </Typography>
+            <Typography sx={typographyStyles.description}>
+              Adjust the slider to customise your own theme!
+            </Typography>
             <Box display="flex" flexDirection="row">
               {/*left side*/}
               <GridItem border={'none'}>
@@ -266,9 +261,8 @@ const ThemeCustomisation: React.FC = (props: any) => {
                       </div>
                     </div>
                     <br></br>
-                    <Typography sx={typographyStyles.description}>
-                      Adjust the slider to customise your own theme!
-                    </Typography>
+
+                    <br></br>
                     <BasicColorsSettings
                       mainThemeColor={colors['data.main.backgroundColor']}
                       secondaryThemeColor={colors['data.main.secondaryColor']}
@@ -287,7 +281,65 @@ const ThemeCustomisation: React.FC = (props: any) => {
                         marginBottom: '16px',
                       }}
                     />
-                    <Box></Box>
+                    <Box>
+                      <FormControl>
+                        <FormLabel sx={typographyStyles.description}>
+                          Choose a Logo:
+                        </FormLabel>
+                        <br />
+                        <RadioGroup
+                          aria-labelledby="demo-radio-buttons-group-label"
+                          defaultValue="default"
+                          name="radio-buttons-group"
+                        >
+                          <FormControlLabel
+                            sx={{
+                              color: 'white',
+                              fontFamily: 'Raleway',
+                              '& .MuiFormControlLabel-label': {
+                                fontSize: '30px',
+                              },
+                            }}
+                            value="default"
+                            control={<Radio sx={{ color: 'white' }} />}
+                            label="Default logo"
+                          />
+                          <br />
+                          <FormControlLabel
+                            sx={{
+                              color: 'white',
+                              fontFamily: 'Raleway',
+                              '& .MuiFormControlLabel-label': {
+                                fontSize: '30px',
+                              },
+                            }}
+                            value="custom"
+                            control={<Radio sx={{ color: 'white' }} />}
+                            label="Custom logo (Optional)"
+                          />
+                        </RadioGroup>
+                        <br />
+                        <Box sx={{ width: '297px' }}>
+                          <Button
+                            variant="contained"
+                            sx={{
+                              backgroundColor: '#4A2289',
+                              borderRadius: '30px',
+                              textTransform: 'none',
+                              fontSize: '28px',
+                              fontFamily: 'Raleway',
+                              padding: '16px 30px',
+                              // color: '#fff', // Custom text color
+                              // '&:hover': {
+                              //   backgroundColor: '#115293', // Custom hover color
+                              // },
+                            }}
+                          >
+                            {formattedLabel}
+                          </Button>
+                        </Box>
+                      </FormControl>
+                    </Box>
                   </Box>
                 </Box>
               </GridItem>
@@ -370,13 +422,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
         </Box>
         <Box display="flex" gap="60px" sx={containerStyles.phasesWrapper}>
           <Box gap="60px" sx={containerStyles.phasesInnerBgRow}>
-            <Box
-              display="flex"
-              flexDirection="column"
-              // alignItems="center"
-              // justifyContent="end"
-              flex="1"
-            >
+            <Box display="flex" flexDirection="column" flex="1" margin="auto">
               <Typography sx={typographyStyles.sectionTitle}>
                 Our <span>Present Themes</span>
               </Typography>
@@ -404,17 +450,12 @@ const ThemeCustomisation: React.FC = (props: any) => {
               justifyContent="start"
               flex="1"
               gap="60px"
-            ></Box>
+            >
+              <CarouselThemeCustomasationPage slides={frontEndSlides} />
+            </Box>
           </Box>
         </Box>
       </AnimatedSection>
-      <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
-
-      <CarouselThemeCustomasationPage
-        settings={frontEndCourselSettings}
-        slides={frontEndSlides}
-        middleIndex={middleIndex}
-      />
     </Box>
   );
 };
