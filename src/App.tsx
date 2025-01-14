@@ -4,10 +4,11 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import DynamicRewards from './pages/DynamicRewards';
 import ExclusiveTournament from './pages/ExclusiveTournaments';
+import FreeChips from './pages/FreeChips';
 import Home from './pages/Home';
+import Roadmap from './pages/Roadmap';
 import ThemeCustomisation from './pages/ThemeCustomisation';
 import Tournaments from './pages/Tournaments';
-import FreeChips from './pages/FreeChips';
 
 const App: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const App: React.FC = () => {
         margin: 0,
         padding: 0,
         backgroundImage: 'url(/images/background.png)',
-        backgroundSize: '101vw 100%',
+        backgroundSize: '101vw 101%',
         backgroundPosition: 'center',
       }}
     >
@@ -48,6 +49,7 @@ const App: React.FC = () => {
           <Route path="/rewards" element={<DynamicRewards />} />
           <Route path="/exclusive" element={<ExclusiveTournament />} />
           <Route path="/freechips" element={<FreeChips />} />
+          <Route path="/roadmap" element={<Roadmap />} />
         </Routes>
       </Grid>
     </Grid>
