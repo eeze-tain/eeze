@@ -15,7 +15,7 @@ const App: React.FC = () => {
     <Grid
       container
       sx={{
-        height: '100%',
+        height: '100vh',
         margin: 0,
         padding: 0,
         backgroundImage: 'url(/images/background.png)',
@@ -27,7 +27,7 @@ const App: React.FC = () => {
       <Grid
         item
         xs={2.55}
-        sx={{ height: '100vh', position: 'sticky', top: 0, zIndex: 100 }}
+        sx={{ height: '97vh', position: 'sticky', top: 0, zIndex: 100 }}
       >
         <Navbar />
       </Grid>
@@ -40,6 +40,7 @@ const App: React.FC = () => {
           height: '100%',
           overflowY: 'auto',
           margin: 0,
+          overflowX: 'hidden',
         }}
       >
         <Routes>
