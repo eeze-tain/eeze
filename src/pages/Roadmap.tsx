@@ -137,122 +137,117 @@ const containerStyles = {
 
 const Roadmap: React.FC = () => {
   return (
-    <>
+    <AnimatedSection>
       <Box sx={containerStyles.mainWrapper}>
-        <AnimatedSection>
-          <Box display="flex" flexDirection="column" gap={2}>
-            <Box display="flex" justifyContent="space-between">
-              <Box sx={{ width: '48%' }}>
-                <Typography variant="h3" sx={typographyStyles.header}>
-                  Roadmap<br/><span>2025</span>
-                </Typography>
-              </Box>
-              <Box sx={{ width: '48%', display: 'flex', alignItems: 'flex-end' }}>
-                <Typography variant="body1" sx={typographyStyles.subHeader}>
-                  Gamify your strategies with new exciting features this year
-                </Typography>
-              </Box>
+        <Box display="flex" flexDirection="column" gap={2}>
+          <Box display="flex" justifyContent="space-between">
+            <Box sx={{ width: '48%' }}>
+              <Typography variant="h3" sx={typographyStyles.header}>
+                Roadmap<br/><span>2025</span>
+              </Typography>
+            </Box>
+            <Box sx={{ width: '48%', display: 'flex', alignItems: 'flex-end' }}>
+              <Typography variant="body1" sx={typographyStyles.subHeader}>
+                Gamify your strategies with new exciting features this year
+              </Typography>
             </Box>
           </Box>
-        </AnimatedSection>
+        </Box>
       </Box>
-      <AnimatedSection>
-        <Box sx={{ position: 'relative', overflow: 'hidden' }} py={8}>
-          {/* Now dot and label */}
-          <Box sx={{ position: 'absolute', left: '7.5px', top: '490px' }}>
-            <Box sx={containerStyles.nowDot} />
-            <Typography sx={containerStyles.nowLabel}>Now</Typography>
-          </Box>
+      <Box sx={{ position: 'relative', overflow: 'hidden' }} py={8}>
+        {/* Now dot and label */}
+        <Box sx={{ position: 'absolute', left: '7.5px', top: '490px' }}>
+          <Box sx={containerStyles.nowDot} />
+          <Typography sx={containerStyles.nowLabel}>Now</Typography>
+        </Box>
 
-          <Grid2 container sx={{ flexGrow: 1, minHeight: '540px', height: '760px' }}>
-            {[
-              {
-                title: 'Free Chips Campaigns',
-                icon: CoinIcon,
-                description: 'Transform the ordinary Free Chips giveaway into an <span>interactive adventure,</span> enhancing retention',
-                top: '50px'
-              },
-              {
-                title: 'Flash Tournament',
-                icon: LightningIcon,
-                description: 'Drive players\' <span>excitement</span> with our Flash Tournament Mode, offering <span>fast-paced, high-stakes</span> competitions',
-                top: '320px'
-              },
-              {
-                title: 'Lucky Drop',
-                icon: DiceIcon,
-                description: 'Offer surprise rewards and real-time prizes, <span>maximizing gameplay engagement</span> and <span>driving loyalty</span> like never before',
-                top: '50px'
-              },
-              {
-                title: 'Lucky Wheel',
-                icon: LuckyWheelIcon,
-                description: 'Offer a gamified experience where players can win <span>diverse rewards,</span> while fostering long-term connections and <span>boosting</span> daily player <span>activity</span>',
-                top: '320px'
-              }
-            ].map((item, index) => (
-              <Grid2 size={{ xs: 12, sm: 3 }} key={index} sx={{ position: 'relative' }}>
-                <Box 
-                  sx={{
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    top: item.top === '50px' ? '170px' : '470px',
-                  }}
-                />
+        <Grid2 container sx={{ flexGrow: 1, minHeight: '540px', height: '760px' }}>
+          {[
+            {
+              title: 'Free Chips Campaigns',
+              icon: CoinIcon,
+              description: 'Transform the ordinary Free Chips giveaway into an <span>interactive adventure,</span> enhancing retention',
+              top: '50px'
+            },
+            {
+              title: 'Flash Tournament',
+              icon: LightningIcon,
+              description: 'Drive players\' <span>excitement</span> with our Flash Tournament Mode, offering <span>fast-paced, high-stakes</span> competitions',
+              top: '320px'
+            },
+            {
+              title: 'Lucky Drop',
+              icon: DiceIcon,
+              description: 'Offer surprise rewards and real-time prizes, <span>maximizing gameplay engagement</span> and <span>driving loyalty</span> like never before',
+              top: '50px'
+            },
+            {
+              title: 'Lucky Wheel',
+              icon: LuckyWheelIcon,
+              description: 'Offer a gamified experience where players can win <span>diverse rewards,</span> while fostering long-term connections and <span>boosting</span> daily player <span>activity</span>',
+              top: '320px'
+            }
+          ].map((item, index) => (
+            <Grid2 size={{ xs: 12, sm: 3 }} key={index} sx={{ position: 'relative' }}>
+              <Box 
+                sx={{
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  top: item.top === '50px' ? '170px' : '470px',
+                }}
+              />
 
-                <CardContent
-                  sx={{
-                    ...containerStyles.roadmapItemWrapper,
-                    top: item.top,
-                    width: index % 2 === 0 ? '100%' : 'calc(100% + 10px)%',
-                    left: index === 0 ? '25px' : index >= 2 ? '0px' : '25px',
-                    borderTop: index % 2 === 0 ? `6px solid ${secondaryColor}` : 'none',
-                    borderBottom: index % 2 === 0 ? 'none' : `6px solid ${secondaryColor}`,
+              <CardContent
+                sx={{
+                  ...containerStyles.roadmapItemWrapper,
+                  top: item.top,
+                  width: index % 2 === 0 ? '100%' : 'calc(100% + 10px)%',
+                  left: index === 0 ? '25px' : index >= 2 ? '0px' : '25px',
+                  borderTop: index % 2 === 0 ? `6px solid ${secondaryColor}` : 'none',
+                  borderBottom: index % 2 === 0 ? 'none' : `6px solid ${secondaryColor}`,
+                  borderTopLeftRadius: index % 2 === 0 ? '50%' : '0px',
+                  borderTopRightRadius: index % 2 === 0 ? '50%' : '0px',
+                  borderBottomLeftRadius: index % 2 === 0 ? '0px' : '50%',
+                  borderBottomRightRadius: index % 2 === 0 ? '0px' : '50%',
+                  margin: index % 2 === 0 ? '0px 0px 0px 0px' : '0px -6px 0px -6px',
+                  '&:before': {
+                    content: '""',
+                    position: 'absolute',
+                    left: '-27.5px',
+                    width: 'calc(100% + 55px)',
+                    height: '100%',
+                    top: index % 2 === 0 ? '-50px' : '50px',
+                    
+                    borderTop: index % 2 === 0 ? `6px dashed ${secondaryColor.replace(/,/g, ', ')}` : 'none',
+                    borderBottom: index % 2 === 0 ? 'none' : `6px dashed ${secondaryColor.replace(/,/g, ', ')}`,
                     borderTopLeftRadius: index % 2 === 0 ? '50%' : '0px',
                     borderTopRightRadius: index % 2 === 0 ? '50%' : '0px',
                     borderBottomLeftRadius: index % 2 === 0 ? '0px' : '50%',
                     borderBottomRightRadius: index % 2 === 0 ? '0px' : '50%',
                     margin: index % 2 === 0 ? '0px 0px 0px 0px' : '0px -6px 0px -6px',
-                    '&:before': {
-                      content: '""',
-                      position: 'absolute',
-                      left: '-27.5px',
-                      width: 'calc(100% + 55px)',
-                      height: '100%',
-                      top: index % 2 === 0 ? '-50px' : '50px',
-                      
-                      borderTop: index % 2 === 0 ? `6px dashed ${secondaryColor.replace(/,/g, ', ')}` : 'none',
-                      borderBottom: index % 2 === 0 ? 'none' : `6px dashed ${secondaryColor.replace(/,/g, ', ')}`,
-                      borderTopLeftRadius: index % 2 === 0 ? '50%' : '0px',
-                      borderTopRightRadius: index % 2 === 0 ? '50%' : '0px',
-                      borderBottomLeftRadius: index % 2 === 0 ? '0px' : '50%',
-                      borderBottomRightRadius: index % 2 === 0 ? '0px' : '50%',
-                      margin: index % 2 === 0 ? '0px 0px 0px 0px' : '0px -6px 0px -6px',
-                    },
-                  }}
-                >
-                  <Box sx={containerStyles.iconWrapper}>
-                    <Box
-                      component="img"
-                      src={item.icon}
-                      alt={`${item.title} Icon`}
-                      sx={typographyStyles.roadmapIcon}
-                    />
-                  </Box>
-                  <Typography sx={typographyStyles.roadmapTitle}>
-                    {item.title}
-                  </Typography>
-                  <Typography sx={typographyStyles.roadmapDescription}>
-                    <div dangerouslySetInnerHTML={{ __html: item.description }} />
-                  </Typography>
-                </CardContent>
-              </Grid2>
-            ))}
-          </Grid2>
-        </Box> 
-      </AnimatedSection>
+                  },
+                }}
+              >
+                <Box sx={containerStyles.iconWrapper}>
+                  <Box
+                    component="img"
+                    src={item.icon}
+                    alt={`${item.title} Icon`}
+                    sx={typographyStyles.roadmapIcon}
+                  />
+                </Box>
+                <Typography sx={typographyStyles.roadmapTitle}>
+                  {item.title}
+                </Typography>
+                <Typography sx={typographyStyles.roadmapDescription}>
+                  <div dangerouslySetInnerHTML={{ __html: item.description }} />
+                </Typography>
+              </CardContent>
+            </Grid2>
+          ))}
+        </Grid2>
+      </Box> 
       <Box sx={containerStyles.ctaWrapper}>
-        <AnimatedSection>
           <Box
             component={motion.div}
             initial={{ opacity: 0, y: 20 }}
@@ -268,9 +263,8 @@ const Roadmap: React.FC = () => {
               <span>with us today and let's achieve your goals together!</span>
             </Typography>
           </Box>
-        </AnimatedSection>
       </Box>
-    </>
+    </AnimatedSection>
   );
 };
 
