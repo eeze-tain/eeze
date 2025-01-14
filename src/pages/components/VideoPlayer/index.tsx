@@ -43,23 +43,15 @@ const VideoPlayer = ({
   };
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 'auto',
-        ...sx,
-      }}
-    >
       <Box
         sx={{
+          display: 'flex',
           position: 'relative',
           overflow: 'hidden',
           borderRadius: 2,
           cursor: playOnHover ? 'pointer' : 'default',
           width: '100%',
+          ...sx,
         }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -97,7 +89,6 @@ const VideoPlayer = ({
           Your browser does not support the video tag.
         </video>
       </Box>
-    </Box>
   );
 };
 

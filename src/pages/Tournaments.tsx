@@ -97,7 +97,7 @@ const Tournaments = () => {
                 'Customisable score <span>calculation</span> & <span>round qualification strategies</span>',
                 'Keep players <span>engaged</span> with diverse mechanics',
               ],
-              src: '/images/tournament-rules.png'
+              imageSrc: '/images/tournament-rules.png'
             },
             {
               title: 'Limited Player Spots',
@@ -105,7 +105,7 @@ const Tournaments = () => {
                 'Host tournaments on a <span>first-come, first-served</span> basis with <span>limited player spots</span>',
                 'Foster a sense of <span>urgency</span> and enhance <span>player excitement</span>',
               ],
-              src: '/images/tournament-limited-spot.png'
+              videoSrc: '/videos/limited-seats.mp4'
             },
             {
               title: 'Diverse Reward Types',
@@ -113,13 +113,13 @@ const Tournaments = () => {
                 'Leverage <span>various reward types</span> from cash to physical prizes',
                 'Motivate players and <span>boost participation</span>',
               ],
-              src: '/images/tournament-reward.png'
+              imageSrc: '/images/tournament-reward.png'
             },
-          ].map(({ title, texts, src }) => (
-            <ScreenWrapper title={title}  key={title} src={src}>
+          ].map(({ title, texts, imageSrc,videoSrc }) => (
+            <ScreenWrapper title={title} key={title} imageSrc={imageSrc} videoSrc={videoSrc}>
               <Box display="flex" flexDirection="column" gap={2}>
                 {texts.map((text, index) => (
-                  <MarkedText key={index}>{ <div dangerouslySetInnerHTML={{ __html: text }} />}</MarkedText>
+                  <MarkedText key={index}>{<div dangerouslySetInnerHTML={{ __html: text }} />}</MarkedText>
                 ))}
               </Box>
             </ScreenWrapper>
@@ -200,6 +200,9 @@ const Tournaments = () => {
               </MarkedText>
             </Box>
             <Box
+              component="img"
+              src="/images/tournaments-bo-phases.jpg"
+              alt="BO phases"
               sx={{
                 background: '#00000066',
                 borderRadius: '32.9px',
@@ -213,6 +216,9 @@ const Tournaments = () => {
               </MarkedText>
             </Box>
             <Box
+              component="img"
+              src="/images/tournaments-bo-dashboard.png"
+              alt="BO dashboard"
               sx={{
                 background: '#00000066',
                 borderRadius: '32.9px',
