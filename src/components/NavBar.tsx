@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 import { Box, Button, Typography } from '@mui/material';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
 import { PopupModal } from "react-calendly";
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
         src="/svg/logo.svg"
         alt="Logo"
         sx={{
-          margin: '2.75rem 0rem 1.75rem 0rem',
+          margin: '3.5rem 0rem 1.75rem 0rem',
           padding: '1rem',
           width: '372.32px',
           '@media screen and (min-width: 3200px)': {
@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
               justifyContent: 'center',
               width: '372.32px',
               height: '92px',
-              margin: '1.25rem 3rem 1.25rem 3rem',
+              margin: '1.2rem 3rem 1.2rem 3rem',
               // padding: '1.2rem 1rem',
               borderRadius: '16px',
               border: isActive ? '4px solid #D3B1FF !important' : '4px solid transparent',
