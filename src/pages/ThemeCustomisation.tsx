@@ -478,7 +478,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
               display="flex"
               flexDirection="column"
               justifyContent="start"
-              flex="1"
+              flex="2"
               gap="60px"
             >
               <CarouselThemeCustomasationPage slides={frontEndSlides} />
