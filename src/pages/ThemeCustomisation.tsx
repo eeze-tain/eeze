@@ -153,8 +153,8 @@ const ThemeCustomisation: React.FC = (props: any) => {
   const handleRadioChange = (event) => {
     setSelectedValue(event.target.value);
 
-    if(event.target.value === 'default') {
-      setLogoUrl('')
+    if (event.target.value === 'default') {
+      setLogoUrl('');
     }
   };
   const onDrop = useCallback((acceptedFiles) => {
@@ -175,15 +175,20 @@ const ThemeCustomisation: React.FC = (props: any) => {
 
         // Set the URL to display the image
         setLogoUrl(url);
-
       };
       reader.readAsArrayBuffer(file);
     });
   }, []);
 
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: {
+      'image/jpeg': ['.jpeg', '.jpg'],
+      'image/png': ['.png'],
+      'image/svg': ['.svg'],
+    },
+    onDrop,
+  });
 
-  console.log('logoUrl', logoUrl);
   return (
     <Box sx={containerStyles.mainWrapper}>
       {/* Hero Section */}
@@ -448,7 +453,12 @@ const ThemeCustomisation: React.FC = (props: any) => {
             </Box>
           </Box>
         </Box>
-        <Box marginBottom={'20px'} display="flex" gap="60px" sx={containerStyles.phasesWrapper}>
+        <Box
+          marginBottom={'20px'}
+          display="flex"
+          gap="60px"
+          sx={containerStyles.phasesWrapper}
+        >
           <Box gap="60px" sx={containerStyles.phasesInnerBgRow}>
             <Box display="flex" flexDirection="column" flex="1" margin="auto">
               <Typography sx={typographyStyles.sectionTitle}>
