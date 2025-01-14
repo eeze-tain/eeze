@@ -123,6 +123,8 @@ const Navbar: React.FC = () => {
 
       {/* Call to Action Button */}
       <Button
+                  component={Link}
+                  to={'/book'}
         sx={{
           // background:
           //   'linear-gradient(88deg, rgba(29, 98, 217, 0.60) 11.29%, rgba(26, 154, 232, 0.60) 45.38%, rgba(31, 167, 212, 0.60) 50.95%, rgba(37, 185, 184, 0.60) 60.28%, rgba(43, 199, 162, 0.60) 70.38%, rgba(46, 208, 147, 0.60) 81.47%, rgba(48, 214, 138, 0.60) 94.33%, rgba(49, 216, 135, 0.60) 113.04%)',
