@@ -5,10 +5,10 @@ import SideNavPreview from './components/SideNavPreview/SideNavPreview';
 import TablePreview from './components/TablePreview/TablePreview';
 import TournamentSelectorPreview from './components/TournamentSelectorPreview/TournamentSelectorPreview';
 
-const LeaderboardPreview = ({ primaryColor, secondaryColor, backgroundColor }) => {
+const LeaderboardPreview = ({ primaryColor, secondaryColor, backgroundColor, logoUrl }) => {
   return (
     <Box bgcolor={backgroundColor} borderRadius="16px 16px 0px 0px" paddingTop="8px">
-      <HeaderPreview primaryColor={primaryColor} />
+      <HeaderPreview logoUrl={logoUrl} primaryColor={primaryColor} />
       <Box style={{ position: 'relative', paddingTop: '50px', marginBottom: '10px' }}>
         <TournamentSelectorPreview secondaryColor={secondaryColor} bgColor={backgroundColor} />
         <SideNavPreview btnBackground={primaryColor} secondaryColor={secondaryColor} />

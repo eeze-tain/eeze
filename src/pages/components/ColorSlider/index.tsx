@@ -33,7 +33,7 @@ export default function ColorSlider({
 
   return (
     <Box>
-      <Typography component={'span'} variant='body2'>
+      <Typography fontSize="30px" fontFamily='Raleway' component={'span'} variant='body2'>
         {label}
       </Typography>
       <Slider
