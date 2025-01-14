@@ -1,12 +1,23 @@
 {
   "files": {
-    "main.js": "./static/js/main.24e28036.js",
+    "main.css": "./static/css/main.8619b3fd.css",
+    "main.js": "./static/js/main.c980fd2a.js",
     "static/media/CoreUI.png": "./static/media/CoreUI.e64093311d2bfad6d030.png",
+    "static/media/coin.svg": "./static/media/coin.a43ec3725239159fb9b6c98e2d25fd98.svg",
     "static/media/eezeIcon.svg": "./static/media/eezeIcon.ab5fcfe70f61a515e8d0ac9effb0644f.svg",
+    "static/media/slick.svg": "./static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/lucky-wheel.svg": "./static/media/lucky-wheel.06516b93ac88b2604ec5af99cd2271ea.svg",
+    "static/media/slick.eot": "./static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/lightning.svg": "./static/media/lightning.c8b4f3993d71c9c90375fb013be0ce63.svg",
+    "static/media/slick.ttf": "./static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/dice.svg": "./static/media/dice.1bbf98813d31f6cac332643f02e8e8bf.svg",
     "index.html": "./index.html",
-    "main.24e28036.js.map": "./static/js/main.24e28036.js.map"
+    "static/media/slick.woff": "./static/media/slick.295183786cd8a1389865.woff",
+    "main.8619b3fd.css.map": "./static/css/main.8619b3fd.css.map",
+    "main.c980fd2a.js.map": "./static/js/main.c980fd2a.js.map"
   },
   "entrypoints": [
-    "static/js/main.24e28036.js"
+    "static/css/main.8619b3fd.css",
+    "static/js/main.c980fd2a.js"
   ]
 }
