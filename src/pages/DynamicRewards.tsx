@@ -134,7 +134,7 @@ const DynamicRewards: React.FC = () => {
                   }}
                     playOnHover={true}
                     videoSrc={videoSrc}
-                    thumbnailSrc={thumbnailSrc}></VideoPlayer>
+                    thumbnailSrc={thumbnailSrc} />
                 </Box>
               ))}
             </Box>
@@ -157,17 +157,19 @@ const DynamicRewards: React.FC = () => {
                 Set up triggers, stages, and reward increments flexibly</MarkedText>
               <Box
                 sx={{
-                  background: '#00000066',
+                  background: '#1C102E',
                   borderRadius: '32.9px',
-                  height: '869.15px',
                   border: '1.37px solid #FFFFFF',
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginTop: "60px"
+                  position: 'relative',
+                  backgroundColor: "rgba(0, 0, 0, 0.4)",
+                  marginTop: "60px",
                 }}
               >
-                <Typography fontSize={"64px"} fontWeight={"800"} color='rgba(255, 255, 255, 1)'></Typography>
+                <VideoPlayer
+                  playOnHover={false}
+                  videoSrc={'/videos/bo-dynamic-rewards.mov'}
+                  videoBorderRadius="33px"
+                />
               </Box>
             </Box>
             <Box>
@@ -177,18 +179,21 @@ const DynamicRewards: React.FC = () => {
               </Typography>
               <MarkedText sx={{ justifyContent: "center" }}>Preview the prize pool to ensure alignment with your budget</MarkedText>
               <Box
+                component="img"
+                src="/images/bo-dynamic-rewards-pool.png"
+                alt="Dynamic Rewards Pool"
                 sx={{
                   background: '#00000066',
                   borderRadius: '32.9px',
                   height: '869.15px',
+                  width: "1615px",
                   border: '1.37px solid #FFFFFF',
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
                   marginTop: "60px"
                 }}
-              >
-              </Box>
+              />
             </Box>
           </Box>
         </Box>

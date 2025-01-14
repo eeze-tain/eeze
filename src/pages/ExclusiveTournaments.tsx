@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import AnimatedSection from './components/AnimatedSection';
 import MarkedText from './components/MarkedText';
+import VideoPlayer from './components/VideoPlayer';
 
 const typographyStyles = {
   header: {
@@ -132,17 +133,19 @@ const ExclusiveTournaments: React.FC = () => {
               Assign <span>customisable tags</span> to track players, upload targeted player lists, or set up dynamic filters based on player behaviour and location to include or exclude participants effortlessly</MarkedText>
             <Box
               sx={{
-                background: '#00000066',
+                background: '#1C102E',
                 borderRadius: '32.9px',
-                height: '869.15px',
                 border: '1.37px solid #FFFFFF',
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                marginTop: "60px"
+                position: 'relative',
+                backgroundColor: "rgba(0, 0, 0, 0.4)",
+                marginTop: "60px",
               }}
             >
-              <Typography fontSize={"64px"} fontWeight={"800"} color='rgba(255, 255, 255, 1)'>Video</Typography>
+              <VideoPlayer
+                playOnHover={false}
+                videoSrc={'/videos/bo-exclusive-tournament.mov'}
+                videoBorderRadius="33px"
+              />
             </Box>
           </Box>
         </Box>
