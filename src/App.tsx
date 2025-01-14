@@ -7,7 +7,6 @@ import Tournaments from './pages/Tournaments';
 import ThemeCustomisation from './pages/ThemeCustomisation';
 import DynamicRewards from './pages/DynamicRewards';
 import ExclusiveTournament from './pages/ExclusiveTournaments';
-import BookNow from './pages/BookNow';
 
 const App: React.FC = () => {
   return (
@@ -47,7 +46,6 @@ const App: React.FC = () => {
           <Route path="/themes" element={<ThemeCustomisation />} />
           <Route path="/rewards" element={<DynamicRewards />} />
           <Route path="/exclusive" element={<ExclusiveTournament />} />
-          <Route path="/book" element={<BookNow />} />
         </Routes>
       </Grid>
     </Grid>
