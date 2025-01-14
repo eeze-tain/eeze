@@ -26,7 +26,7 @@ const App: React.FC = () => {
       {/* Navbar is sticky */}
       <Grid
         item
-        xs={1.85}
+        xs={2.55}
         sx={{ height: '100vh', position: 'sticky', top: 0, zIndex: 100 }}
       >
         <Navbar />
@@ -35,7 +35,7 @@ const App: React.FC = () => {
       {/* Content spans the remaining 10.20 columns and has a background image */}
       <Grid
         item
-        xs={10.15}
+        xs={9.45}
         sx={{
           height: '100%',
           overflowY: 'auto',
