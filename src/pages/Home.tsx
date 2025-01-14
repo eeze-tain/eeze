@@ -26,14 +26,14 @@ const Home: React.FC = () => {
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            width: '150%',
+            width: '200%',
             gap: '1rem',
           }}
         >
           <Box
             sx={{
               width: '10%',
-              marginTop: '5rem',
+              marginTop: '3rem',
             }}
           >
             <Typography
@@ -118,10 +118,10 @@ const Home: React.FC = () => {
             sx={{
               position: 'absolute',
               height: '230px',
-              top: '-2rem',
-              right: '-73rem',
+              top: '-4rem',
+              right: '-90rem',
               objectFit: 'contain',
-              padding: '0rem 0rem 0rem 0rem',
+              padding: '0',
               width: '4500px',
               zIndex: '0',
             }}
@@ -136,8 +136,8 @@ const Home: React.FC = () => {
               height: '100%',
               maxHeight: '85%',
               objectFit: 'contain',
-              left: '-5rem',
-              top: '8.5rem',
+              left: '-7rem',
+              top: '6.5rem',
               transform: 'rotate(16.405deg) scale(2)',
             }}
           ></Box>
@@ -151,9 +151,9 @@ const Home: React.FC = () => {
               width: '100%',
               maxWidth: '7%',
               objectFit: 'contain',
-              left: '27.5rem',
-              top: '25rem',
-              transform: 'rotate(-2deg) scale(3.5)',
+              left: '18.5rem',
+              top: '23.5rem',
+              transform: 'rotate(-1deg) scale(4.5)',
             }}
           ></Box>
         </Box>
@@ -167,7 +167,7 @@ const Home: React.FC = () => {
             fontWeight: '700',
             fontSize: '2.5rem',
             lineHeight: '100%',
-            margin: '100px 0 32px 32px',
+            margin: '80px 0 8px 32px',
           }}
         >
           Key Benefits:
@@ -219,7 +219,7 @@ const Home: React.FC = () => {
                   fontWeight: '600',
                   fontSize: '2.25rem',
                   lineHeight: '100%',
-                  marginTop: '16px',
+                  marginTop: '0px',
                 }}
               >
                 {benefit.title}
@@ -255,12 +255,12 @@ const Home: React.FC = () => {
           variant="h3"
           sx={{
             maxWidth: '1900px',
-            fontSize: '3.75rem',
+            fontSize: '3.25rem',
             fontFamily: 'Raleway',
             fontWeight: 200,
             letterSpacing: '0.6px',
             textAlign: 'left',
-            marginTop: '3rem',
+            marginTop: '-1.5rem',
             fontStyle: 'normal',
             lineHeight: '150%',
             marginBottom: 2,
