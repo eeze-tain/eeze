@@ -55,13 +55,6 @@ const typographyStyles = {
     fontFamily: 'Raleway, serif',
     display: 'flex',
     '& span': { color: '#D3B1FF' },
-    '& div.theme__cursor__wrapper': {
-      marginLeft: '10px',
-      '& svg': {
-        width: '50px',
-        height: '50px',
-      }
-    }
   },
   description: {
     fontWeight: 400,
@@ -101,6 +94,14 @@ const containerStyles = {
     height: 'calc(100% - 120px)',
     borderRadius: '30px',
     padding: '60px',
+    '& .theme__cursor__wrapper': {
+      marginLeft: '10px',
+      marginY: 'auto',
+      '& svg': {
+        width: '50px',
+        height: '50px',
+      }
+    }
   },
   phasesInnerBgRow: {
     display: 'flex',
@@ -260,8 +261,10 @@ const ThemeCustomisation: React.FC = (props: any) => {
         </Box>
         <Box sx={containerStyles.phasesWrapper}>
           <Box sx={containerStyles.phasesInnerBg}>
-            <Typography sx={typographyStyles.sectionTitle}>
-              Play&nbsp;<span>Around!</span>
+            <Box display="flex" flexDirection="row" justifyContent="flex-start" alignContent={'center'}>
+              <Typography sx={typographyStyles.sectionTitle}>
+                Play&nbsp;<span>Around!</span>
+              </Typography>
               <div className="theme__cursor__wrapper">
                 <div className="theme__cursor">
                   <svg
@@ -278,7 +281,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
                   </svg>
                 </div>
               </div>
-            </Typography>
+            </Box>
             <Typography sx={typographyStyles.description}>
               Adjust the slider to customise your own theme!
             </Typography>
