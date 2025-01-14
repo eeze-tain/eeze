@@ -60,8 +60,8 @@ const LogoPreview = ({ logoUrl }: LogoPreviewProps) => {
           component="img"
           loading="lazy"
           src={logoUrl}
-          width="22px"
-          height="22px"
+          width="42px"
+          height="42px"
           alt="logo icon"
           style={{ objectFit: 'contain' }}
         />

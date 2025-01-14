@@ -182,9 +182,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
-      'image/jpeg': ['.jpeg', '.jpg'],
       'image/png': ['.png'],
-      'image/svg': ['.svg'],
     },
     onDrop,
   });
@@ -227,14 +225,10 @@ const ThemeCustomisation: React.FC = (props: any) => {
               >
                 <VideoPlayer
                   sx={{
-                    // border: '1px solid #ffffff',
-                    // borderRadius: '8px',
-                    // background: 'red',
                     height: '354px',
                   }}
                   playOnHover={false}
                   videoSrc={'/videos/logos-switch.mp4'}
-                  // videoBorderRadius="33px"
                 />
               </Box>
             </Box>
@@ -387,10 +381,8 @@ const ThemeCustomisation: React.FC = (props: any) => {
                     columnGap={5}
                     borderRadius={'20px'}
                     sx={{
-                      // backgroundImage: 'url(/images/background.png)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
-                      // background: 'linear-gradient(180deg, #34175D 0%, #2A1545 0%)',
                       padding: '2rem',
                     }}
                   >

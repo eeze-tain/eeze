@@ -1,16 +1,34 @@
 import { Box, Typography, IconButton } from '@mui/material';
 import { historySVG, cancelSVG } from '../../../asset';
-import eezeIcon from '../../../asset/eezeIcon.svg'
-const HeaderPreview = ({ primaryColor, fontColor = 'white', iconColor = 'white', logoUrl = '' }) => {
-
-
+import eezeIcon from '../../../asset/eezeIcon.svg';
+const HeaderPreview = ({
+  primaryColor,
+  fontColor = 'white',
+  iconColor = 'white',
+  logoUrl = '',
+}) => {
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" marginBottom="20px">
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      marginBottom="20px"
+    >
       {/* Header Bar */}
-      <Box width="32px" height="4px" bgcolor={primaryColor} borderRadius="16px" />
+      <Box
+        width="32px"
+        height="4px"
+        bgcolor={primaryColor}
+        borderRadius="16px"
+      />
 
       {/* Header Content */}
-      <Box width="100%" display="flex" justifyContent="space-between" alignItems="center">
+      <Box
+        width="100%"
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+      >
         {/* Logo and Title */}
         <Box display="flex" justifyContent="center" alignItems="center">
           {!logoUrl ? (
@@ -21,19 +39,33 @@ const HeaderPreview = ({ primaryColor, fontColor = 'white', iconColor = 'white',
               component="img"
               loading="lazy"
               src={logoUrl}
-              width="22px"
-              height="22px"
+              width="42px"
+              height="42px"
               alt="logo icon"
-              style={{ objectFit: 'contain', marginRight: '5px', marginLeft: '15px' }}
+              style={{
+                objectFit: 'contain',
+                marginRight: '5px',
+                marginLeft: '15px',
+              }}
             />
           )}
-          <Typography variant="h6" fontWeight="700" fontFamily="Inter" color={fontColor}>
+          <Typography
+            marginLeft="10px"
+            variant="h6"
+            fontWeight="700"
+            fontFamily="Inter"
+            color={fontColor}
+          >
             TOURNAMENTS
           </Typography>
         </Box>
-
         {/* Icons */}
-        <Box display="flex" justifyContent="center" alignItems="center" marginRight="20px">
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          marginRight="20px"
+        >
           <IconButton>{historySVG(iconColor)}</IconButton>
           <IconButton>{cancelSVG(iconColor)}</IconButton>
         </Box>
