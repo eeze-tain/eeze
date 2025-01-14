@@ -80,7 +80,13 @@ const FreeChips = () => {
                 <span>Chips</span>
               </Typography>
             </Box>
-            <Box sx={{ width: '68%', display: 'flex', alignItems: 'flex-end' }}>
+            <Box
+              sx={{
+                width: '68%',
+                display: 'flex',
+                justifyContent: 'flex-end',
+              }}
+            >
               <Typography variant="body1" sx={typographyStyles.subHeader}>
                 Boost engagement with low-risk, high-
                 <br />
@@ -104,6 +110,7 @@ const FreeChips = () => {
               ...containerStyles.phasesInnerBg,
               flexDirection: 'column',
               gap: '60px',
+              padding: '60px',
             }}
           >
             <Box
@@ -120,14 +127,14 @@ const FreeChips = () => {
                 <Typography sx={typographyStyles.sectionTitle}>
                   What <span>Players Can See</span>
                 </Typography>
-                <Box>
+                <Box sx={{ display: 'flex', position: 'relative' }}>
                   <Box
                     component="img"
                     src="/svg/chip-one.svg"
                     alt="Logo"
                     position="absolute"
-                    left="25%"
-                    top="25%"
+                    left="80px"
+                    top="-50px"
                     sx={{
                       margin: '2.75rem 0rem 1.75rem 2rem',
                       padding: '1rem',
@@ -139,8 +146,8 @@ const FreeChips = () => {
                     src="/svg/chip-two.svg"
                     alt="Logo"
                     position="absolute"
-                    left="33%"
-                    top="29%"
+                    left="310px"
+                    top="25px"
                     sx={{
                       margin: '2.75rem 0rem 1.75rem 2rem',
                       padding: '1rem',
@@ -153,8 +160,8 @@ const FreeChips = () => {
                     src="/svg/chip-three.svg"
                     alt="Logo"
                     position="absolute"
-                    left="40%"
-                    top="33%"
+                    left="490px"
+                    top="102px"
                     sx={{
                       margin: '2.75rem 0rem 1.75rem 2rem',
                       padding: '1rem',
@@ -166,8 +173,8 @@ const FreeChips = () => {
                     src="/svg/chip-four.svg"
                     alt="Logo"
                     position="absolute"
-                    left="19%"
-                    top="32%"
+                    left="-50px"
+                    top="90px"
                     sx={{
                       margin: '2.75rem 0rem 1.75rem 2rem',
                       padding: '1rem',
@@ -181,6 +188,7 @@ const FreeChips = () => {
                 flexDirection="column"
                 alignItems="flex-start"
                 flex="1"
+                gap="1.5rem"
               >
                 <MarkedText>
                   <span>Convert players into paying customers </span> by
@@ -192,7 +200,7 @@ const FreeChips = () => {
                   strategically, guided by data on habits and trends
                 </MarkedText>
                 <MarkedText>
-                  Maximise campaign impact while staying
+                  Maximise campaign impact while staying{' '}
                   <span>cost-effective </span>with budget management tools
                 </MarkedText>
               </Box>
@@ -203,6 +211,7 @@ const FreeChips = () => {
                 borderRadius: '32.9px',
                 border: '1.37px solid #FFFFFF',
                 position: 'relative',
+                marginTop: '-3rem',
               }}
             >
               <VideoPlayer
