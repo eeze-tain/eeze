@@ -216,7 +216,7 @@ const Roadmap: React.FC = () => {
                     left: '-27.5px',
                     width: 'calc(100% + 55px)',
                     height: '100%',
-                    top: index % 2 === 0 ? '-50px' : '50px',
+                    top: index % 2 === 0 ? '-45px' : '45px',
                     
                     borderTop: index % 2 === 0 ? `6px dashed ${secondaryColor.replace(/,/g, ', ')}` : 'none',
                     borderBottom: index % 2 === 0 ? 'none' : `6px dashed ${secondaryColor.replace(/,/g, ', ')}`,

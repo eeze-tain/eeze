@@ -155,7 +155,9 @@ const Navbar: React.FC = () => {
       >
         <Typography
           sx={{
-            fontSize: '1.1rem',
+            fontSize: '1.25rem',
+            fontFamily: 'Raleway, serif',
+            fontWeight: 700,
           }}
         >
           BOOK A CALL
