@@ -1,242 +1,182 @@
 import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
-import { motion } from 'framer-motion';
-import LinearGradient from '../components/LinearGradient';
-import Carousel from '../components/Carousel';
+import { Box, Typography } from '@mui/material';
+import AnimatedSection from './components/AnimatedSection';
+import MarkedText from './components/MarkedText';
+import VideoPlayer from './components/VideoPlayer';
 
+const typographyStyles = {
+  header: {
+    fontWeight: 800,
+    color: '#FBF8F8',
+    fontSize: '100px',
+    textTransform: 'capitalize',
+    fontFamily: 'Raleway, serif',
+    lineHeight: '100px',
+    '& span': { color: '#D3B1FF' },
+  },
+  subHeader: {
+    fontWeight: 500,
+    fontStyle: 'italic',
+    color: '#FFFFFF',
+    textAlign: 'right',
+    fontSize: '48px',
+    lineHeight: '67.2px',
+    fontFamily: 'Raleway, serif',
+  },
+  sectionTitle: {
+    fontWeight: 700,
+    color: '#FFFFFF',
+    fontSize: '60px',
+    textTransform: 'capitalize',
+    lineHeight: '84px',
+    fontFamily: 'Raleway, serif',
+    '& span': { color: '#D3B1FF' },
+  }
+};
+
+// Layout constants
+const containerStyles = {
+  mainWrapper: {
+    padding: '0 4rem',
+    color: '#FFFFFF',
+    fontFamily: 'Roboto',
+    overflowX: 'hidden',
+    marginTop: '40px',
+  },
+  sectionWrapper: {
+    border: '1px solid #7C1DF7',
+    borderRadius: '40px',
+    padding: '16px',
+    marginTop: '120px',
+    width: 'calc(100% - 32px)',
+  },
+  sectionInnerBg: {
+    display: 'flex',
+    background: 'linear-gradient(172.92deg, rgba(0, 0, 0, 0.1) 5.53%, rgba(90, 53, 151, 0.2) 89.21%)',
+    width: 'calc(100% - 120px)',
+    height: 'calc(100% - 120px)',
+    borderRadius: '30px',
+    padding: '60px',
+  },
+};
 const ExclusiveTournaments: React.FC = () => {
   return (
-    <Box
-      sx={{
-        padding: '0rem 4rem',
-        color: '#FFFFFF',
-        fontFamily: 'Inter',
-        overflowX: 'hidden', // Prevent horizontal overflow
-        marginTop: '-2rem'
-      }}
-    >
-      {/* Hero Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
+    <Box sx={containerStyles.mainWrapper}>
+      <AnimatedSection>
+
+        {/* Hero Section */}
+        <Box display="flex" justifyContent="space-between">
+          <Typography variant="h3" sx={typographyStyles.header}>
+            Exclusive <span>Tournaments
+            </span>
+          </Typography>
+          <Box sx={{ width: '70%', display: 'flex', alignItems: 'flex-end' }}>
+            <Typography variant="body1" sx={typographyStyles.subHeader} >
+              Tailored tournaments to engage specific player segments
+            </Typography>
+          </Box>
+        </Box>
+
+        {/* Phases Section */}
+        <Box sx={containerStyles.sectionWrapper} marginTop={"120px"}>
+          <Box sx={containerStyles.sectionInnerBg} display={"flex"} flexDirection={"column"}>
+            <Box display={"flex"} justifyContent={"space-between"}>
+              <Typography sx={typographyStyles.sectionTitle} width={"70%"}>
+                What <span>Players can see
+                </span>
+              </Typography>
+              <Box>
+                <MarkedText >
+                  Use <span>customer segmentation</span> to design tournaments tailored to specific player groups
+                </MarkedText>
+                <MarkedText sx={{ marginTop: "24px" }}>
+                  Deliver personalised, exclusive events that drive <span>increased player activity</span> and <span>elevate performance  </span>
+                </MarkedText>
+              </Box>
+            </Box>
+            <Box sx={{ marginTop: "60px" }} display={"flex"}>
+              {phases.map((slide) => (
+                <Box width={"25%"} display={"flex"} justifyContent={"center"} flexDirection={"column"}
+                  alignItems={"center"}>
+                  <Typography
+                    sx={{
+                      fontSize: '2rem',
+                      marginBottom: '1rem',
+                    }}
+                  >
+                    {slide.title}
+                  </Typography>
+                  <Box sx={{
+                    border: '1px solid #ffffff',
+                    borderRadius: '16px',
+                  }} component="img" src={slide.image} alt={slide.title}
+                  />
+                </Box>
+
+              ))}
+            </Box>
+          </Box>
+        </Box>
+
+        {/* Back Office Section */}
+        <Box sx={containerStyles.sectionWrapper} marginTop={"120px"} marginBottom={"20px"}>
+          <Box sx={containerStyles.sectionInnerBg} display={"flex"} flexDirection={"column"}>
+            <Typography sx={typographyStyles.sectionTitle}>
+              Back <span>Office
+              </span>
+            </Typography>
+            <Typography sx={{ marginTop: "60px", fontSize: "36px", fontWeight: "700", fontFamily: "Raleway, serif", display: "flex", justifyContent: "center" }}>
+              <span>Set Up Exclusive Tournaments
+              </span>
+            </Typography>
+            <MarkedText >
+              Assign <span>customisable tags</span> to track players, upload targeted player lists, or set up dynamic filters based on player behaviour and location to include or exclude participants effortlessly</MarkedText>
             <Box
               sx={{
-                display: 'flex',
-                gap: 1,
-                flexWrap: 'wrap',
-                marginBottom: 2,
+                background: '#1C102E',
+                borderRadius: '32.9px',
+                border: '1.37px solid #FFFFFF',
+                position: 'relative',
+                backgroundColor: "rgba(0, 0, 0, 0.4)",
+                marginTop: "60px",
               }}
             >
-              <Typography
-                variant="h3"
-                sx={{
-                  fontSize: '80px',
-                  fontWeight: 'bold',
-                  marginTop: '6rem',
-                  marginBottom: 2,
-                  '@media screen and (min-width: 2560px)': {
-                    fontSize: '120px', // Scale font size for large screens
-                  },
-                  '@media screen and (min-width: 3200px)': {
-                    fontSize: '160px', // Scale font size for large screens
-                  },
-                }}
-              >
-                Exclusive <br />{' '}
-                <Typography
-                  variant="h3"
-                  sx={{
-                    fontSize: '80px',
-                    fontWeight: 'bold',
-                    '@media screen and (min-width: 2560px)': {
-                      fontSize: '120px', // Scale font size for large screens
-                    },
-                    '@media screen and (min-width: 3200px)': {
-                      fontSize: '160px', // Scale font size for large screens
-                    },
-                  }}
-                  color="#D3B1FF"
-                >
-                  Tournaments
-                </Typography>{' '}
-              </Typography>
+              <VideoPlayer
+                playOnHover={false}
+                videoSrc={'/videos/bo-exclusive-tournament.mov'}
+                videoBorderRadius="33px"
+              />
             </Box>
-          </Grid>
-          <Grid item xs={12} md={6}></Grid>
-          <Grid item xs={12} md={6}></Grid>
-          <Grid item xs={12} md={6}>
-            <Typography
-              width={'100%'}
-              variant="subtitle1"
-              sx={{
-                fontWeight: 100,
-                alignSelf: 'right',
-                fontSize: '1.75rem',
-                lineHeight: '100%',
-                marginBottom: '2rem',
-                '@media screen and (min-width: 2560px)': {
-                  fontSize: '1.75rem', // Adjust font size
-                },
-                '@media screen and (min-width: 3200px)': {
-                  fontSize: '2rem', // Adjust font size
-                },
-              }}
-            >
-              Use <span style={{ fontWeight: 800 }}>customer segmentation</span>{' '}
-              to create{' '}
-              <span style={{ fontWeight: 800 }}>tailored tournaments</span> with{' '}
-              <span style={{ fontWeight: 800 }}>precise engagement</span> based
-              on player <span style={{ fontWeight: 800 }}>behaviour</span> and{' '}
-              <span style={{ fontWeight: 800 }}>location</span>. Upload{' '}
-              <span style={{ fontWeight: 800 }}>targeted player lists</span> or
-              set <span style={{ fontWeight: 800 }}>dynamic filters</span> to
-              include or exclude participants effortlessly. 
-              <br></br>
-              <br></br>
-              Assign{' '}
-              <span style={{ fontWeight: 800 }}>customisable tags</span> to
-              track players, enabling more{' '}
-              <span style={{ fontWeight: 800 }}>personalised</span> and{' '}
-              <span style={{ fontWeight: 800 }}>effective</span> events. This
-              approach boosts{' '}
-              <span style={{ fontWeight: 800 }}>engagement</span> by focusing on
-              specific player preferences. 
-              <br></br>
-              <br></br>
-              Host{' '}
-              <span style={{ fontWeight: 800 }}>
-                exclusive, personalised events
-              </span>{' '}
-              to increase{' '}
-              <span style={{ fontWeight: 800 }}>player interaction</span> and
-              maximise{' '}
-              <span style={{ fontWeight: 800 }}>
-                Gross Gaming Revenue (GGR)
-              </span>
-              .
-            </Typography>
-          </Grid>
-        </Grid>
-      </motion.div>
-      {/* Hero Section - Front End Carousel */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        {/* Key Benefits Section */}
-        <Box sx={{ marginTop: 6 }}>
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 'bold',
-              marginBottom: '2rem', 
-              '@media screen and (min-width: 2560px)': {
-                fontSize: '3rem', // Adjust font size
-              },
-              '@media screen and (min-width: 3200px)': {
-                fontSize: '3.5rem', // Adjust font size
-              },
-            }}
-          >
-            Tournament UI
-          </Typography>
-          {/* <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} /> */}
-          <Carousel
-            settings={frontEndCourselSettings}
-            slides={frontEndSlides}
-          />
+          </Box>
         </Box>
-      </motion.div>
-      {/* Hero Section - Back End Carousel */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        {/* Key Benefits Section */}
-        <Box sx={{ marginTop: '20rem' }}>
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 'bold',
-              marginBottom: 1,
-              '@media screen and (min-width: 2560px)': {
-                fontSize: '3rem', // Adjust font size
-              },
-              '@media screen and (min-width: 3200px)': {
-                fontSize: '3.5rem', // Adjust font size
-              },
-            }}
-          >
-            Back Office
-          </Typography>
-          <LinearGradient height={'4px'} width={'25%'} marginBottom={'4rem'} />
-          <Carousel settings={backEndCourselSettings} slides={backEndSlides} />
-        </Box>
-      </motion.div>
-    </Box>
+      </AnimatedSection >
+    </Box >
   );
 };
 
-// Data for slides: Includes titles and image paths
-const frontEndSlides = [
+// Data for phases: Includes titles and image paths
+const phases = [
   {
     number: '1',
+    title: 'Promotion',
+    image: '/images/et-promotion.png',
+
+  },
+  {
+    number: '2',
+    title: 'Registration',
+    image: '/images/et-registration.png',
+  },
+  {
+    number: '3',
     title: 'Leaderboard',
     image: '/images/et-leaderboard.png',
   },
   {
-    number: '2',
-    title: 'Promotion',
-    image: '/images/et-promotion.png',
-  },
-  {
-    number: '3',
-    title: 'Win/Bet Criteria',
-    image: '/images/et-winbet.png',
-  },
-  {
     number: '4',
-    title: 'Winner Layout',
+    title: 'Winner',
     image: '/images/et-winner.png',
   },
 ];
-
-const frontEndCourselSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  arrows: true,
-};
-
-// Data for slides: Includes titles and image paths
-const backEndSlides = [
-  {
-    number: '1',
-    title: 'Player Segmentation - Tagging',
-    image: '/images/et-tagging.png',
-  },
-  {
-    number: '2',
-    title: 'Setting Up Player Group With Filters',
-    image: '/images/et-player-group.png',
-  },
-];
-
-const backEndCourselSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  arrows: true,
-};
 
 export default ExclusiveTournaments;
