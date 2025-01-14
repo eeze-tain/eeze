@@ -1,5 +1,5 @@
-import React from 'react';
 import { Box, Typography } from '@mui/material';
+import React from 'react';
 import AnimatedSection from './components/AnimatedSection';
 import MarkedText from './components/MarkedText';
 import VideoPlayer from './components/VideoPlayer';
@@ -8,10 +8,10 @@ const typographyStyles = {
   header: {
     fontWeight: 800,
     color: '#FBF8F8',
-    fontSize: '100px',
+    fontSize: '90px',
     textTransform: 'capitalize',
     fontFamily: 'Raleway, serif',
-    lineHeight: '100px',
+    lineHeight: '90px',
     '& span': { color: '#D3B1FF' },
   },
   subHeader: {
@@ -19,16 +19,16 @@ const typographyStyles = {
     fontStyle: 'italic',
     color: '#FFFFFF',
     textAlign: 'right',
-    fontSize: '48px',
-    lineHeight: '67.2px',
+    fontSize: '44px',
+    lineHeight: '61px',
     fontFamily: 'Raleway, serif',
   },
   sectionTitle: {
     fontWeight: 700,
     color: '#FFFFFF',
-    fontSize: '60px',
+    fontSize: '55px',
     textTransform: 'capitalize',
-    lineHeight: '84px',
+    lineHeight: '80px',
     fontFamily: 'Raleway, serif',
     '& span': { color: '#D3B1FF' },
   },
@@ -37,7 +37,7 @@ const typographyStyles = {
 // Layout constants
 const containerStyles = {
   mainWrapper: {
-    padding: '0 4rem',
+    padding: '2rem 4rem',
     color: '#FFFFFF',
     fontFamily: 'Roboto',
     overflowX: 'hidden',
@@ -84,26 +84,35 @@ const ExclusiveTournaments: React.FC = () => {
             flexDirection={'column'}
           >
             <Box display={'flex'} justifyContent={'space-between'}>
-              <Typography sx={typographyStyles.sectionTitle} width={'70%'}>
+              <Typography sx={typographyStyles.sectionTitle} width={'60%'}>
                 What <span>Players can see</span>
               </Typography>
               <Box>
-                <MarkedText>
+                <MarkedText sx={{ '& p': { fontSize: '26px' }, marginLeft: '10px' }}>
                   Use <span>customer segmentation</span> to design tournaments
                   tailored to specific player groups
                 </MarkedText>
-                <MarkedText sx={{ marginTop: '24px' }}>
+                <MarkedText
+                  sx={{
+                    '& p': { fontSize: '26px' },
+                    marginLeft: '10px',
+                    marginTop: '24px',
+                  }}
+                >
                   Deliver personalised, exclusive events that drive{' '}
                   <span>increased player activity</span> and{' '}
                   <span>elevate performance </span>
                 </MarkedText>
               </Box>
             </Box>
-            <Box sx={{ marginTop: '60px' }} display={'flex'}>
+            <Box
+              sx={{ marginTop: '60px', marginLeft: '-28px' }}
+              display={'flex'}
+            >
               {phases.map((slide, index) => (
                 <Box
                   key={index}
-                  width={'25%'}
+                  width={'30%'}
                   display={'flex'}
                   justifyContent={'center'}
                   flexDirection={'column'}
@@ -113,14 +122,17 @@ const ExclusiveTournaments: React.FC = () => {
                     sx={{
                       fontSize: '2rem',
                       marginBottom: '1rem',
+                      fontFamily: 'Raleway, serif',
+                      fontWeight: 700,
                     }}
                   >
                     {slide.title}
                   </Typography>
                   <Box
                     sx={{
-                      border: '1px solid #ffffff',
+                      border: '1px solid #FFFFFF',
                       borderRadius: '16px',
+                      height: '85%',
                     }}
                     component="img"
                     src={slide.image}
@@ -158,7 +170,7 @@ const ExclusiveTournaments: React.FC = () => {
             >
               <span>Set Up Exclusive Tournaments</span>
             </Typography>
-            <MarkedText>
+            <MarkedText sx={{ '& p': { fontSize: '30px', textAlign: 'center' } }}>
               Assign <span>customisable tags</span> to track players, upload
               targeted player lists, or set up dynamic filters based on player
               behaviour and location to include or exclude participants

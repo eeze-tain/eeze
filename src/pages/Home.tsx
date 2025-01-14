@@ -5,28 +5,31 @@ import AnimatedSection from './components/AnimatedSection';
 const Home: React.FC = () => {
   return (
     <>
-      <Box
-        component="img"
-        src="/images/ov-vector-line.png"
-        alt={`Vector Line`}
-        sx={{
-          position: 'absolute',
-          height: '230px',
-          top: '-4rem',
-          right: '-90rem',
-          objectFit: 'contain',
-          padding: '0',
-          width: '4500px',
-          zIndex: '0',
-        }}
-      />
+      <Box sx={{ width: '100%', overflow: 'hidden' }}>
+        <Box
+          component="img"
+          src="/images/ov-vector-line.png"
+          alt={`Vector Line`}
+          sx={{
+            position: 'absolute',
+            height: '235px',
+            top: '-3rem',
+            right: '0',
+            objectFit: 'contain',
+            padding: '0',
+            width: '1775px',
+            zIndex: '0',
+            transform: 'scaleY(1.5)',
+          }}
+        />
+      </Box>
       <AnimatedSection>
         <Box
           sx={{
             display: 'flex',
             flexDirection: 'column',
             color: '#FFFFFF',
-            padding: '0 0 0 46px',
+            padding: '24px 0 0 46px',
             overflow: 'hidden', // Prevent horizontal overflow
           }}
         >
@@ -56,7 +59,7 @@ const Home: React.FC = () => {
                   variant="h3"
                   sx={{
                     fontFamily: 'Raleway',
-                    fontSize: '100px',
+                    fontSize: '90px',
                     fontWeight: '800',
                     // marginTop: '-14rem',
                     lineHeight: '100%',
@@ -67,7 +70,7 @@ const Home: React.FC = () => {
                     variant="h3"
                     sx={{
                       fontFamily: 'Raleway',
-                      fontSize: '100px',
+                      fontSize: '90px',
                       fontWeight: '800',
                       marginBottom: 0,
                       lineHeight: '100%',
@@ -84,7 +87,7 @@ const Home: React.FC = () => {
                 <Typography
                   variant="subtitle1"
                   sx={{
-                    fontSize: '2rem',
+                    fontSize: '1.7rem',
                     fontFamily: 'Raleway',
                     fontStyle: 'normal',
                     fontWeight: '500',
@@ -106,7 +109,7 @@ const Home: React.FC = () => {
                     key={tag}
                     sx={{
                       fontFamily: 'Raleway',
-                      fontSize: '2rem',
+                      fontSize: '1.8rem',
                       fontWeight: 500,
                       lineHeight: '140%',
                       letterSpacing: '0.32px',
@@ -137,12 +140,12 @@ const Home: React.FC = () => {
                   height: '100%',
                   maxHeight: '85%',
                   objectFit: 'contain',
-                  left: '-7rem',
-                  top: '6.5rem',
+                  left: '-5rem',
+                  top: '6rem',
                   transform: 'rotate(16.405deg) scale(2)',
                   zIndex: '1',
                 }}
-              ></Box>
+              />
 
               <Box
                 component="img"
@@ -153,12 +156,12 @@ const Home: React.FC = () => {
                   width: '100%',
                   maxWidth: '7%',
                   objectFit: 'contain',
-                  left: '18.5rem',
-                  top: '23.5rem',
+                  left: '19rem',
+                  top: '20.5rem',
                   transform: 'rotate(-1deg) scale(4.5)',
                   zIndex: '2',
                 }}
-              ></Box>
+              />
             </Box>
           </Box>
 
@@ -168,9 +171,9 @@ const Home: React.FC = () => {
               sx={{
                 fontFamily: 'Raleway',
                 fontWeight: '700',
-                fontSize: '2.5rem',
+                fontSize: '2.2rem',
                 lineHeight: '100%',
-                margin: '80px 0 8px 32px',
+                margin: '120px 0 8px 32px',
               }}
             >
               Key Benefits:
@@ -211,7 +214,7 @@ const Home: React.FC = () => {
                   xs={12}
                   sm={6}
                   key={benefit.title}
-                  sx={{ margin: '0rem', padding: '32px' }}
+                  sx={{ margin: '0', padding: '46px 32px' }}
                 >
                   <Typography
                     variant="h6"
@@ -219,9 +222,10 @@ const Home: React.FC = () => {
                       color: benefit.color,
                       fontFamily: 'Raleway',
                       fontWeight: '600',
-                      fontSize: '2.25rem',
+                      fontSize: '2rem',
                       lineHeight: '100%',
-                      marginTop: '0px',
+                      paddingTop: '0px',
+                      paddingLeft: '32px'
                     }}
                   >
                     {benefit.title}
@@ -231,9 +235,11 @@ const Home: React.FC = () => {
                     sx={{
                       fontFamily: 'Raleway',
                       fontWeight: '500',
-                      fontSize: '2rem',
+                      fontSize: '1.75rem',
                       lineHeight: '150%',
                       marginTop: '21px',
+                      paddingLeft: '32px',
+                      marginBottom: '26px'
                     }}
                   >
                     {benefit.description}
@@ -245,9 +251,9 @@ const Home: React.FC = () => {
 
           <Box
             sx={{
-              marginTop: 6,
+              marginTop: 2,
               textAlign: 'center',
-              padding: '0 32px',
+              padding: '0 20px 0 32px',
               '@media screen and (min-width: 3200px)': {
                 marginTop: 12, // Adjust spacing for larger screens
               },
@@ -262,7 +268,6 @@ const Home: React.FC = () => {
                 fontWeight: 200,
                 letterSpacing: '0.6px',
                 textAlign: 'left',
-                marginTop: '-1.5rem',
                 fontStyle: 'normal',
                 lineHeight: '150%',
                 marginBottom: 2,
@@ -272,7 +277,7 @@ const Home: React.FC = () => {
               <span
                 style={{
                   fontWeight: 600,
-                  fontSize: '3.75rem',
+                  fontSize: '3.25rem',
                   lineHeight: '150%',
                   letterSpacing: '0.6px',
                 }}
@@ -283,7 +288,7 @@ const Home: React.FC = () => {
               <span
                 style={{
                   fontWeight: 600,
-                  fontSize: '3.75rem',
+                  fontSize: '3.25rem',
                   lineHeight: '150%',
                   letterSpacing: '0.6px',
                 }}
@@ -294,7 +299,7 @@ const Home: React.FC = () => {
               <span
                 style={{
                   fontWeight: 600,
-                  fontSize: '3.75rem',
+                  fontSize: '3.25rem',
                   lineHeight: '150%',
                   letterSpacing: '0.6px',
                 }}
@@ -305,7 +310,7 @@ const Home: React.FC = () => {
               <span
                 style={{
                   fontWeight: 600,
-                  fontSize: '3.75rem',
+                  fontSize: '3.25rem',
                   lineHeight: '150%',
                   letterSpacing: '0.6px',
                 }}

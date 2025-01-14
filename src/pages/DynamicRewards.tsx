@@ -1,8 +1,5 @@
+import { Box, Typography } from '@mui/material';
 import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
-import { motion } from 'framer-motion';
-import LinearGradient from '../components/LinearGradient';
-import Carousel from '../components/Carousel';
 import AnimatedSection from './components/AnimatedSection';
 import MarkedText from './components/MarkedText';
 import VideoPlayer from './components/VideoPlayer';
@@ -10,10 +7,10 @@ const typographyStyles = {
   header: {
     fontWeight: 800,
     color: '#FBF8F8',
-    fontSize: '100px',
+    fontSize: '90px',
     textTransform: 'capitalize',
     fontFamily: 'Raleway, serif',
-    lineHeight: '100px',
+    lineHeight: '90px',
     '& span': { color: '#D3B1FF' },
   },
   subHeader: {
@@ -21,14 +18,14 @@ const typographyStyles = {
     fontStyle: 'italic',
     color: '#FFFFFF',
     textAlign: 'right',
-    fontSize: '48px',
+    fontSize: '42px',
     lineHeight: '67.2px',
     fontFamily: 'Raleway, serif',
   },
   sectionTitle: {
     fontWeight: 700,
     color: '#FFFFFF',
-    fontSize: '60px',
+    fontSize: '54px',
     textTransform: 'capitalize',
     lineHeight: '84px',
     fontFamily: 'Raleway, serif',
@@ -39,7 +36,7 @@ const typographyStyles = {
 // Layout constants
 const containerStyles = {
   mainWrapper: {
-    padding: '0 4rem',
+    padding: '2rem 4rem',
     color: '#FFFFFF',
     fontFamily: 'Roboto',
     overflowX: 'hidden',
@@ -102,21 +99,21 @@ const DynamicRewards: React.FC = () => {
                   sx={{
                     fontFamily: '"Raleway", serif',
                     fontWeight: 400,
-                    fontSize: '30px',
+                    fontSize: '32px',
                     lineHeight: '42px',
                     '& span': {
                       fontWeight: 700,
                     },
                   }}
                 >
-                  <span>Drive player interaction</span>by scaling rewards based
+                  <span>Drive player interaction</span>&nbsp;by scaling rewards based
                   on participation, fostering excitement and activity
                 </Typography>
                 <Typography
                   sx={{
                     fontFamily: '"Raleway", serif',
                     fontWeight: 400,
-                    fontSize: '30px',
+                    fontSize: '32px',
                     lineHeight: '42px',
                     '& span': {
                       fontWeight: 700,
@@ -142,8 +139,10 @@ const DynamicRewards: React.FC = () => {
                 >
                   <Typography
                     sx={{
-                      fontSize: '2rem',
+                      fontSize: '1.725rem',
                       marginBottom: '40px',
+                      fontFamily: '"Raleway", serif',
+                      fontWeight: 700,
                     }}
                   >
                     {title}
@@ -190,7 +189,12 @@ const DynamicRewards: React.FC = () => {
               >
                 <span>Set Up Dynamic Rewards</span>
               </Typography>
-              <MarkedText>
+              <MarkedText
+                sx={{
+                  fontSize: '24px',
+                  justifyContent: 'center',
+                }}
+              >
                 Set up triggers, stages, and reward increments flexibly
               </MarkedText>
               <Box
@@ -232,8 +236,8 @@ const DynamicRewards: React.FC = () => {
                 sx={{
                   background: '#00000066',
                   borderRadius: '32.9px',
-                  height: '869.15px',
-                  width: '1615px',
+                  height: 'auto',
+                  width: '100%',
                   border: '1.37px solid #FFFFFF',
                   display: 'flex',
                   justifyContent: 'center',
