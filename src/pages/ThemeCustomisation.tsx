@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 // import { FormProvider } from 'react-hook-form';
+import { useDropzone } from 'react-dropzone';
 
 import {
   Box,
@@ -124,9 +125,6 @@ const ThemeCustomisation: React.FC = (props: any) => {
     }));
   };
 
-  // State to track the active center slide
-  const [middleIndex, setMiddleIndex] = useState(1);
-
   const frontEndSlides = [
     {
       number: '1',
@@ -149,6 +147,43 @@ const ThemeCustomisation: React.FC = (props: any) => {
   const label = 'UPLOAD FROM FILE';
   const formattedLabel = capitalizeFirstLetter(label);
 
+  const [selectedValue, setSelectedValue] = useState('default');
+  const [logoUrl, setLogoUrl] = useState('');
+
+  const handleRadioChange = (event) => {
+    setSelectedValue(event.target.value);
+
+    if(event.target.value === 'default') {
+      setLogoUrl('')
+    }
+  };
+  const onDrop = useCallback((acceptedFiles) => {
+    acceptedFiles.forEach((file) => {
+      const reader = new FileReader();
+
+      reader.onabort = () => console.log('file reading was aborted');
+      reader.onerror = () => console.log('file reading has failed');
+      reader.onload = () => {
+        // Do whatever you want with the file contents
+        const binaryStr = reader.result;
+        console.log(binaryStr);
+
+        const blob = new Blob([binaryStr], { type: file.type });
+
+        // Create an object URL from the Blob
+        const url = URL.createObjectURL(blob);
+
+        // Set the URL to display the image
+        setLogoUrl(url);
+
+      };
+      reader.readAsArrayBuffer(file);
+    });
+  }, []);
+
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+
+  console.log('logoUrl', logoUrl);
   return (
     <Box sx={containerStyles.mainWrapper}>
       {/* Hero Section */}
@@ -184,19 +219,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
                 alignItems="center"
                 width="375px"
                 height="354px"
-                // sx={{ background: '#00000066' }}
               >
-                {/* <Box
-                  component="img"
-                  src="/svg/logo-circle.svg"
-                  alt={`Logo Circle`}
-                  sx={{
-                    width: '256px',
-                    height: '256px',
-                    // maxWidth: '300px',
-                    // padding: '7rem 0rem 0rem 15rem',
-                  }}
-                /> */}
                 <VideoPlayer
                   sx={{
                     // border: '1px solid #ffffff',
@@ -261,7 +284,6 @@ const ThemeCustomisation: React.FC = (props: any) => {
                       </div>
                     </div>
                     <br></br>
-
                     <br></br>
                     <BasicColorsSettings
                       mainThemeColor={colors['data.main.backgroundColor']}
@@ -291,6 +313,8 @@ const ThemeCustomisation: React.FC = (props: any) => {
                           aria-labelledby="demo-radio-buttons-group-label"
                           defaultValue="default"
                           name="radio-buttons-group"
+                          value={selectedValue}
+                          onChange={handleRadioChange}
                         >
                           <FormControlLabel
                             sx={{
@@ -319,25 +343,28 @@ const ThemeCustomisation: React.FC = (props: any) => {
                           />
                         </RadioGroup>
                         <br />
-                        <Box sx={{ width: '297px' }}>
-                          <Button
-                            variant="contained"
-                            sx={{
-                              backgroundColor: '#4A2289',
-                              borderRadius: '30px',
-                              textTransform: 'none',
-                              fontSize: '28px',
-                              fontFamily: 'Raleway',
-                              padding: '16px 30px',
-                              // color: '#fff', // Custom text color
-                              // '&:hover': {
-                              //   backgroundColor: '#115293', // Custom hover color
-                              // },
-                            }}
-                          >
-                            {formattedLabel}
-                          </Button>
-                        </Box>
+                        {selectedValue === 'custom' && (
+                          <Box {...getRootProps()} sx={{ width: '297px' }}>
+                            <input {...getInputProps()} />
+                            <Button
+                              variant="contained"
+                              sx={{
+                                backgroundColor: '#4A2289',
+                                borderRadius: '30px',
+                                textTransform: 'none',
+                                fontSize: '28px',
+                                fontFamily: 'Raleway',
+                                padding: '16px 30px',
+                                // color: '#fff', // Custom text color
+                                // '&:hover': {
+                                //   backgroundColor: '#115293', // Custom hover color
+                                // },
+                              }}
+                            >
+                              {formattedLabel}
+                            </Button>
+                          </Box>
+                        )}
                       </FormControl>
                     </Box>
                   </Box>
@@ -375,6 +402,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
                             backgroundColor={
                               colors['data.main.backgroundColor']
                             }
+                            logoUrl={logoUrl}
                           />
                         </MobilePreview>
                       </Box>
@@ -393,12 +421,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
                           secondaryColor={colors['data.main.secondaryColor']}
                           backgroundColor={colors['data.main.backgroundColor']}
                         >
-                          <WidgetScorePreview
-                            bgColor={colors['data.main.backgroundColor']}
-                            fontColor={'white'}
-                            secColor={colors['data.main.secondaryColor']}
-                            secBgColor={colors['data.main.backgroundColor']}
-                          />
+                          <LogoPreview logoUrl={logoUrl} />
                         </MobilePreview>
                       </Box>
                       <Box marginRight={'20%'}>
@@ -410,7 +433,12 @@ const ThemeCustomisation: React.FC = (props: any) => {
                           secondaryColor={colors['data.main.secondaryColor']}
                           backgroundColor={colors['data.main.backgroundColor']}
                         >
-                          <LogoPreview />
+                          <WidgetScorePreview
+                            bgColor={colors['data.main.backgroundColor']}
+                            fontColor={'white'}
+                            secColor={colors['data.main.secondaryColor']}
+                            secBgColor={colors['data.main.backgroundColor']}
+                          />
                         </MobilePreview>
                       </Box>
                     </GridItem>
@@ -420,7 +448,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
             </Box>
           </Box>
         </Box>
-        <Box display="flex" gap="60px" sx={containerStyles.phasesWrapper}>
+        <Box marginBottom={'20px'} display="flex" gap="60px" sx={containerStyles.phasesWrapper}>
           <Box gap="60px" sx={containerStyles.phasesInnerBgRow}>
             <Box display="flex" flexDirection="column" flex="1" margin="auto">
               <Typography sx={typographyStyles.sectionTitle}>

@@ -5,7 +5,12 @@ import { Box } from '@mui/material';
 import { dotSvgSmall, customLogoBg } from '../asset';
 import eezeIcon from '../asset/eezeIcon.svg';
 
-const LogoPreview = () => {
+
+interface LogoPreviewProps {
+  logoUrl?: string;
+}
+
+const LogoPreview = ({ logoUrl }: LogoPreviewProps) => {
   // const { watch } = useFormContext();
   // const formData = watch('data.logo');
 
@@ -14,9 +19,8 @@ const LogoPreview = () => {
 
   // ACTIVE COLOR VALUE
   const bgColor = '#12122A';
-  const logoUrl = 'url';
 
-  if (!logoUrl) return <img src={eezeIcon} alt='eeze icon' />;
+  if (!logoUrl) return <img src={eezeIcon} alt="eeze icon" />;
 
   return (
     <Box
@@ -28,15 +32,17 @@ const LogoPreview = () => {
         backgroundSize: '100% 100%',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        overflow: 'hidden'
-      }}>
-      <Box position='relative'>
+        overflow: 'hidden',
+      }}
+    >
+      <Box position="relative">
         <Box
           sx={{
             position: 'absolute',
             top: '-5px',
-            right: '6px'
-          }}>
+            right: '6px',
+          }}
+        >
           {dotSvgSmall}
         </Box>
       </Box>
@@ -47,15 +53,16 @@ const LogoPreview = () => {
           alignItems: 'center',
           width: '90%',
           height: '100%',
-          objectFit: 'contain'
-        }}>
+          objectFit: 'contain',
+        }}
+      >
         <Box
-          component='img'
-          loading='lazy'
+          component="img"
+          loading="lazy"
           src={logoUrl}
-          width='22px'
-          height='22px'
-          alt='logo icon'
+          width="22px"
+          height="22px"
+          alt="logo icon"
           style={{ objectFit: 'contain' }}
         />
       </Box>

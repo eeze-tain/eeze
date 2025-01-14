@@ -1,7 +1,9 @@
 import { Box, Typography, IconButton } from '@mui/material';
-import { logoSVG, historySVG, cancelSVG } from '../../../asset';
-
+import { historySVG, cancelSVG } from '../../../asset';
+import eezeIcon from '../../../asset/eezeIcon.svg'
 const HeaderPreview = ({ primaryColor, fontColor = 'white', iconColor = 'white', logoUrl = '' }) => {
+
+
   return (
     <Box display="flex" flexDirection="column" alignItems="center" marginBottom="20px">
       {/* Header Bar */}
@@ -12,7 +14,8 @@ const HeaderPreview = ({ primaryColor, fontColor = 'white', iconColor = 'white',
         {/* Logo and Title */}
         <Box display="flex" justifyContent="center" alignItems="center">
           {!logoUrl ? (
-            logoSVG(iconColor)
+            // logoSVG(iconColor)
+            <img src={eezeIcon} alt="eeze icon" />
           ) : (
             <Box
               component="img"
