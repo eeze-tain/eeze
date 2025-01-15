@@ -86,14 +86,14 @@ const containerStyles = {
     width: 'calc(100% - 32px)',
   },
   phasesWrapperPlayAround: {
-    border: '4px solid transparent',
+    border: '1px solid transparent',
     boxShadow: '0px 0px 10px 0px #00FFB966',
     backgroundImage:
       'linear-gradient(90deg, #0064CA -0.34%, #0086D8 27.8%, #0091C6 32.83%, #00A4AA 42.88%, #00B295 53.94%, #00BD85 66.01%, #00C37C 80.08%, #00C57A 100.19%)',
     borderRadius: '40px',
-    padding: '4px',
+    padding: '2px',
     marginTop: '60px',
-    width: 'calc(100% - 32px)',
+    width: 'calc(100% - 4px)',
     backgroundColor: 'transparent',
     backgroundClip: 'border-box',
     backgroundOrigin: 'border-box',
@@ -446,12 +446,12 @@ const ThemeCustomisation: React.FC = (props: any) => {
                       </GridItem>
                       <GridItem border={'none'}>
                         <Box
-                          marginRight={'20%'}
+                          marginRight={'0%'}
                           marginBottom={'7.5%'}
                           marginTop={'-2.5%'}
                         >
                           <Divider
-                            style={{ width: '100%', marginBottom: '16px' }}
+                            style={{ width: '100%', marginBottom: '10px' }}
                           />
                           <MobilePreview
                             primaryColor={colors['data.main.primaryColor']}
@@ -463,7 +463,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
                             <LogoPreview logoUrl={logoUrl} />
                           </MobilePreview>
                         </Box>
-                        <Box marginRight={'20%'}>
+                        <Box marginRight={'0%'}>
                           <Divider
                             style={{ width: '100%', marginBottom: '16px' }}
                           />

@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from '@mui/material';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { PopupModal } from 'react-calendly';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -86,8 +86,8 @@ const Navbar: React.FC = () => {
               // padding: '1.2rem 1rem',
               borderRadius: '16px',
               border: isActive
-                ? '4px solid #D3B1FF !important'
-                : '4px solid transparent',
+                ? '2px solid #D3B1FF !important'
+                : '2px solid transparent',
               backgroundColor: '#4A2289',
               '&:hover': {
                 color: '#FFFFFF',
