@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import DynamicRewards from './pages/DynamicRewards';
 import ExclusiveTournament from './pages/ExclusiveTournaments';
@@ -11,6 +11,15 @@ import ThemeCustomisation from './pages/ThemeCustomisation';
 import Tournaments from './pages/Tournaments';
 
 const App: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const content = document.getElementById('content');
+    if (content) {
+      content.scrollTo(0, 0); // Scroll to top when the route changes
+    }
+  }, [location]);
+
   return (
     <Grid
       container
@@ -42,6 +51,7 @@ const App: React.FC = () => {
           margin: 0,
           overflowX: 'hidden',
         }}
+        id="content"
       >
         <Routes>
           <Route path="/" element={<Home />} />

@@ -225,7 +225,7 @@ const Home: React.FC = () => {
                       fontSize: '2rem',
                       lineHeight: '100%',
                       paddingTop: '0px',
-                      paddingLeft: '32px'
+                      paddingLeft: '32px',
                     }}
                   >
                     {benefit.title}
@@ -239,7 +239,7 @@ const Home: React.FC = () => {
                       lineHeight: '150%',
                       marginTop: '21px',
                       paddingLeft: '32px',
-                      marginBottom: '26px'
+                      marginBottom: '26px',
                     }}
                   >
                     {benefit.description}

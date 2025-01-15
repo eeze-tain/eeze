@@ -106,8 +106,8 @@ const DynamicRewards: React.FC = () => {
                     },
                   }}
                 >
-                  <span>Drive player interaction</span>&nbsp;by scaling rewards based
-                  on participation, fostering excitement and activity
+                  <span>Drive player interaction</span>&nbsp;by scaling rewards
+                  based on participation, fostering excitement and activity
                 </Typography>
                 <Typography
                   sx={{

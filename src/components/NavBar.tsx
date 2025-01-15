@@ -1,13 +1,13 @@
 import { Box, Button, Typography } from '@mui/material';
-import React, { useState } from 'react';
-import { PopupModal } from "react-calendly";
+import React, { useState, useEffect } from 'react';
+import { PopupModal } from 'react-calendly';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
   const [openCalendly, setOpenCalendly] = useState<boolean>(false);
-  const handleOpenCalendly = () => setOpenCalendly((prev)=> !prev);
- 
+  const handleOpenCalendly = () => setOpenCalendly((prev) => !prev);
+
   return (
     <Box
       sx={{
@@ -85,7 +85,9 @@ const Navbar: React.FC = () => {
               margin: '1.2rem 3rem 1.2rem 3rem',
               // padding: '1.2rem 1rem',
               borderRadius: '16px',
-              border: isActive ? '4px solid #D3B1FF !important' : '4px solid transparent',
+              border: isActive
+                ? '4px solid #D3B1FF !important'
+                : '4px solid transparent',
               backgroundColor: '#4A2289',
               '&:hover': {
                 color: '#FFFFFF',
@@ -99,17 +101,17 @@ const Navbar: React.FC = () => {
                 alt={`${item.label} Icon`}
                 sx={{
                   width: '34px',
-                  height: '34px'
+                  height: '34px',
                 }}
               />
             }
           >
             <Typography
-              component='span'
+              component="span"
               style={{
-                  fontFamily: 'Raleway, serif',
-                  fontWeight: isActive ? 500 : 400,
-                  fontSize: '24px',
+                fontFamily: 'Raleway, serif',
+                fontWeight: isActive ? 500 : 400,
+                fontSize: '24px',
               }}
               // sx={{
               //   fontSize: '1.1rem',
@@ -132,8 +134,8 @@ const Navbar: React.FC = () => {
       {/* Call to Action Button */}
       <Button
         onClick={handleOpenCalendly}
-                  // component={Link}
-                  // to={'/book'}
+        // component={Link}
+        // to={'/book'}
         sx={{
           // background:
           //   'linear-gradient(88deg, rgba(29, 98, 217, 0.60) 11.29%, rgba(26, 154, 232, 0.60) 45.38%, rgba(31, 167, 212, 0.60) 50.95%, rgba(37, 185, 184, 0.60) 60.28%, rgba(43, 199, 162, 0.60) 70.38%, rgba(46, 208, 147, 0.60) 81.47%, rgba(48, 214, 138, 0.60) 94.33%, rgba(49, 216, 135, 0.60) 113.04%)',
@@ -165,7 +167,7 @@ const Navbar: React.FC = () => {
       </Button>
       <PopupModal
         url="https://calendly.com/gamification_calendar-eeze/one-on-one"
-        rootElement={document.getElementById("root")}
+        rootElement={document.getElementById('root')}
         open={openCalendly}
         onModalClose={handleOpenCalendly}
         pageSettings={{
