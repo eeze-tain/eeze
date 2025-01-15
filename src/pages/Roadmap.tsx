@@ -71,7 +71,7 @@ const typographyStyles = {
 // Layout constants
 const containerStyles = {
   mainWrapper: {
-    padding: '0 4rem',
+    padding: '2rem 4rem',
     color: '#FFFFFF',
     fontFamily: 'Roboto',
     overflowX: 'hidden',
@@ -131,7 +131,7 @@ const containerStyles = {
     padding: '0 1rem',
     color: '#FFFFFF',
     fontFamily: 'Roboto',
-    overflowX: 'hidden',
+    overflow: 'hidden',
   },
 };
 
@@ -154,7 +154,7 @@ const Roadmap: React.FC = () => {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ position: 'relative', overflow: 'hidden' }} py={8}>
+      <Box sx={{ position: 'relative', overflow: 'hidden' }} py={6}>
         {/* Now dot and label */}
         <Box sx={{ position: 'absolute', left: '7.5px', top: '490px' }}>
           <Box sx={containerStyles.nowDot} />

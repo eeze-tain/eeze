@@ -1,16 +1,16 @@
 import { Box, Typography } from '@mui/material';
-import MarkedText from './components/MarkedText';
 import AnimatedSection from './components/AnimatedSection';
+import MarkedText from './components/MarkedText';
 import VideoPlayer from './components/VideoPlayer';
 
 const typographyStyles = {
   header: {
     fontWeight: 800,
     color: '#FBF8F8',
-    fontSize: '100px',
+    fontSize: '90px',
     textTransform: 'capitalize',
     fontFamily: 'Raleway, serif',
-    lineHeight: '100px',
+    lineHeight: '90px',
     '& span': { color: '#D3B1FF' },
   },
   subHeader: {
@@ -18,8 +18,8 @@ const typographyStyles = {
     fontStyle: 'italic',
     color: '#FFFFFF',
     textAlign: 'right',
-    fontSize: '48px',
-    lineHeight: '67.2px',
+    fontSize: '44px',
+    lineHeight: '62.2px',
     fontFamily: 'Raleway, serif',
   },
   sectionTitle: {
@@ -43,7 +43,7 @@ const typographyStyles = {
 // Layout constants
 const containerStyles = {
   mainWrapper: {
-    padding: '0 4rem',
+    padding: '2rem 4rem',
     color: '#FFFFFF',
     fontFamily: 'Roboto',
     overflowX: 'hidden',
