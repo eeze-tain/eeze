@@ -1,17 +1,17 @@
 import { Box, Typography } from '@mui/material';
-import ScreenWrapper from './components/ScreenWrapper';
-import MarkedText from './components/MarkedText';
 import AnimatedSection from './components/AnimatedSection';
+import MarkedText from './components/MarkedText';
+import ScreenWrapper from './components/ScreenWrapper';
 
 // Reusable styles for Typography
 const typographyStyles = {
   header: {
     fontWeight: 800,
     color: '#FBF8F8',
-    fontSize: '100px',
+    fontSize: '90px',
     textTransform: 'capitalize',
     fontFamily: 'Raleway, serif',
-    lineHeight: '100px',
+    lineHeight: '90px',
     '& span': { color: '#D3B1FF' },
   },
   subHeader: {
@@ -19,22 +19,22 @@ const typographyStyles = {
     fontStyle: 'italic',
     color: '#FFFFFF',
     textAlign: 'right',
-    fontSize: '48px',
+    fontSize: '42px',
     lineHeight: '67.2px',
     fontFamily: 'Raleway, serif',
   },
   sectionTitle: {
     fontWeight: 700,
     color: '#FFFFFF',
-    fontSize: '60px',
+    fontSize: '54px',
     textTransform: 'capitalize',
-    lineHeight: '84px',
+    lineHeight: '74px',
     fontFamily: 'Raleway, serif',
     '& span': { color: '#D3B1FF' },
   },
   description: {
     fontWeight: 400,
-    fontSize: '36px',
+    fontSize: '33px',
     lineHeight: '57.6px',
     fontFamily: 'Raleway, serif',
     '& span': { fontWeight: 700 },
@@ -44,7 +44,7 @@ const typographyStyles = {
 // Layout constants
 const containerStyles = {
   mainWrapper: {
-    padding: '0 4rem',
+    padding: '2rem 4rem',
     color: '#FFFFFF',
     fontFamily: 'Roboto',
     overflowX: 'hidden',
@@ -115,11 +115,22 @@ const Tournaments = () => {
               ],
               imageSrc: '/images/tournament-reward.png'
             },
-          ].map(({ title, texts, imageSrc,videoSrc }) => (
+          ].map(({ title, texts, imageSrc, videoSrc }, index) => (
             <ScreenWrapper title={title} key={title} imageSrc={imageSrc} videoSrc={videoSrc}>
-              <Box display="flex" flexDirection="column" gap={2}>
+              <Box
+                display="flex"
+                flexDirection="column"
+                gap={2}
+                sx={{ marginBottom: index % 2 === 0 ? '40px' : '0' }}
+              >
                 {texts.map((text, index) => (
-                  <MarkedText key={index}>{<div dangerouslySetInnerHTML={{ __html: text }} />}</MarkedText>
+                  <MarkedText key={index}
+                    sx={{
+                      '& p': {
+                        fontSize: '25px'
+                      }
+                    }}
+                  >{<div dangerouslySetInnerHTML={{ __html: text }} />}</MarkedText>
                 ))}
               </Box>
             </ScreenWrapper>
@@ -192,10 +203,10 @@ const Tournaments = () => {
               Back <span>Office</span>
             </Typography>
             <Box display="flex" flexDirection="column" alignItems="center">
-              <MarkedText>
+              <MarkedText sx={{ '& p': { fontSize: '30px', lineHeight: '46px' } }}>
                 <span>Save your time and resources</span> by scheduling recurring regular tournaments
               </MarkedText>
-              <MarkedText>
+              <MarkedText >
                 Phases can be <span>flexibly arranged or overlapped</span> to align with your strategies and timeline
               </MarkedText>
             </Box>
@@ -206,23 +217,23 @@ const Tournaments = () => {
               sx={{
                 background: '#00000066',
                 borderRadius: '32.9px',
-                height: '869.15px',
+                height: 'auto',
                 border: '1.37px solid #FFFFFF',
               }}
             />
             <Box alignSelf="center">
-              <MarkedText>
+              <MarkedText sx={{ '& p': { fontSize: '30px', lineHeight: '46px' } }}>
                 <span>Simplify setup, tracking, and analysis</span> with our detailed analytics dashboards
               </MarkedText>
             </Box>
             <Box
               component="img"
-              src="/images/tournaments-bo-dashboard.png"
+              src="/images/tournaments-bo-dashboard.jpg"
               alt="BO dashboard"
               sx={{
                 background: '#00000066',
                 borderRadius: '32.9px',
-                height: '869.15px',
+                height: 'auto',
                 border: '1.37px solid #FFFFFF',
               }}
             />

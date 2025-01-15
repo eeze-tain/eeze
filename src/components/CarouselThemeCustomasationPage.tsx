@@ -1,6 +1,6 @@
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { Box } from '@mui/material';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 import CustomSlider from './CustomSlider/CustomSlider';
 
 const CarouselThemeCustomasationPage = ({
@@ -28,8 +28,8 @@ const CarouselThemeCustomasationPage = ({
               key={index}
               src={slide.image}
               style={{
-                width: '383px',
-                height: '675px',
+                width: '330px',
+                height: '600px',
               }}
             />
           );
