@@ -415,6 +415,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
                       container
                       columnGap={5}
                       borderRadius={'20px'}
+                      alignItems={'center'}
                       sx={{
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
