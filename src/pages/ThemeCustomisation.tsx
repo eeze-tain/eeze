@@ -234,7 +234,6 @@ const ThemeCustomisation: React.FC = (props: any) => {
                   sx={{
                     height: '354px',
                   }}
-                  playOnHover={false}
                   videoSrc={'/videos/logos-switch.mp4'}
                 />
               </Box>
