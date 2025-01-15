@@ -12,10 +12,10 @@ const containerStyles = (bgColor) => ({
   justifyContent: 'flex-end',
   alignItems: 'center',
   background: bgColor,
-  borderRadius: '0px 4px 4px 0px'
+  borderRadius: '0px 4px 4px 0px',
 });
 
-const gradientStyles = {
+const gradientStyles = (widgetSecBgColor) => ({
   position: 'relative',
   display: 'flex',
   justifyContent: 'center',
@@ -24,9 +24,8 @@ const gradientStyles = {
   height: '14px',
   width: '27px',
   overflow: 'hidden',
-  background:
-    'linear-gradient(93deg, #1D62D9 -30.37%, #1A9AE8 26.72%, #25B9B8 51.66%, #2BC7A2 68.57%, #2ED093 87.14%)'
-};
+  background: widgetSecBgColor,
+});
 
 const scoreBoxStyles = (bgColor) => ({
   position: 'relative',
@@ -37,51 +36,52 @@ const scoreBoxStyles = (bgColor) => ({
   background: bgColor,
   width: '100%',
   height: '95%',
-  borderRadius: '4px'
+  borderRadius: '4px',
 });
 
 const scoreValueStyles = (fontColor) => ({
   color: fontColor,
-  textAlign: 'center'
+  textAlign: 'center',
 });
 
-const timeBoxStyles = (textColor, bgColor) => ({
+const timeBoxStyles = ( widgetSecBgColor) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  color: textColor,
+  color: 'black',
   textAlign: 'center',
   fontSize: '8px',
-  height: '14px',
+  height: '15px',
   fontWeight: 700,
   width: '100%',
   borderRadius: '0px 0px 4px 0px',
-  background: bgColor
+  background: widgetSecBgColor,
 });
 
 const scoreTypographyStyles = {
-  fontFamily: 'Inter'
+  fontFamily: 'Inter',
 };
 
 const WidgetScorePreview = ({
   bgColor = '#2d1d48',
   fontColor = 'white',
   secColor = '#000',
-  secBgColor =  'linear-gradient(93deg, #1D62D9 -30.37%, #1A9AE8 26.72%, #25B9B8 51.66%, #2BC7A2 68.57%, #2ED093 87.14%)'
+  secBgColor = 'linear-gradient(93deg, #1D62D9 -30.37%, #1A9AE8 26.72%, #25B9B8 51.66%, #2BC7A2 68.57%, #2ED093 87.14%)',
+  widgetSecBgColor = '#33FFBD',
 }: any) => {
-
   return (
     <Box sx={containerStyles(bgColor)}>
       <Box sx={{ position: 'absolute', top: '-5px' }}>
-        <Box sx={gradientStyles}>
+        <Box sx={gradientStyles(widgetSecBgColor)}>
           <Box sx={scoreBoxStyles(bgColor)}>
             <Typography
               sx={{
                 ...scoreValueStyles(fontColor),
                 ...scoreTypographyStyles,
                 fontSize: '8px',
-                fontWeight: 700
-              }}>
+                fontWeight: 700,
+              }}
+            >
               #
             </Typography>
             <Typography
@@ -89,8 +89,9 @@ const WidgetScorePreview = ({
                 ...scoreValueStyles(fontColor),
                 ...scoreTypographyStyles,
                 fontSize: '10px',
-                fontWeight: 700
-              }}>
+                fontWeight: 700,
+              }}
+            >
               22
             </Typography>
           </Box>
@@ -104,12 +105,11 @@ const WidgetScorePreview = ({
           position: 'relative',
           fontSize: '10px',
           fontWeight: 700,
-          top: '-2px'
-        }}>
+        }}
+      >
         1269
       </Typography>
-
-      <Box sx={timeBoxStyles(secColor, secBgColor)}>2h 48m</Box>
+      <Box sx={timeBoxStyles( widgetSecBgColor)}>2h 48m</Box>
     </Box>
   );
 };

@@ -124,12 +124,12 @@ const containerStyles = {
 
 const ThemeCustomisation: React.FC = (props: any) => {
   const [colors, setColors] = useState({
-    'data.main.backgroundColor': '#FF5733',
-    'data.widget.backgroundColor': '#FF5733',
-    'data.logo.backgroundColor': '#FF5733',
-    'data.main.secondaryColor': '#33FFBD',
+    'data.main.backgroundColor': '#2D1D48',
+    'data.widget.backgroundColor': '#2D1D48',
+    'data.logo.backgroundColor': '#2D1D48',
+    'data.main.secondaryColor': '#6D03F7',
     'data.widget.secondaryBackgroundColor': '#33FFBD',
-    'data.main.primaryColor': '#337BFF',
+    'data.main.primaryColor': '#31D887',
   });
 
   const updateColors = (updates: { [key: string]: string }) => {
@@ -458,6 +458,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
                               fontColor={'white'}
                               secColor={colors['data.main.secondaryColor']}
                               secBgColor={colors['data.main.backgroundColor']}
+                              widgetSecBgColor={colors['data.widget.secondaryBackgroundColor']}
                             />
                           </MobilePreview>
                         </Box>
