@@ -1,95 +1,96 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect, forwardRef, useImperativeHandle, useState } from 'react';
 import { Box, SxProps, Theme } from '@mui/material';
 
 interface VideoPlayerProps {
-  playOnHover?: boolean;
   sx?: SxProps<Theme>;
   thumbnailSrc?: string;
   videoSrc?: string;
   videoBorderRadius?: string;
+  playOnLoop?: boolean;
+  onPlay?: () => void; // Callback for play event
+  onPause?: () => void; // Callback for pause event
 }
 
-const VideoPlayer = ({
-  playOnHover = false,
+const VideoPlayer = forwardRef(({
   thumbnailSrc,
   videoSrc,
   sx,
   videoBorderRadius,
-}: VideoPlayerProps) => {
-  const videoRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
+  playOnLoop = true,
+  onPlay,
+  onPause,
+}: VideoPlayerProps, ref) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isStarted, setIsStarted] = useState(false);
+
+  // Expose video control methods to parent
+  useImperativeHandle(ref, () => ({
+    play: () => videoRef.current?.play(),
+    pause: () => videoRef.current?.pause(),
+  }));
+
+  // Attach event listeners for play and pause
+  const handlePlay = () => {
+    setIsStarted(true); // Video has started playing
+    onPlay?.();
+  }
+  const handlePause = () => onPause?.();
 
   // Handle auto-loop behavior
   useEffect(() => {
-    if (!playOnHover && videoRef.current) {
+    if (playOnLoop && videoRef.current) {
       videoRef.current.loop = true;
       videoRef.current.play();
     }
-  }, [playOnHover]);
-
-  const handleMouseEnter = () => {
-    if (playOnHover && videoRef.current) {
-      setIsHovered(true);
-      videoRef.current.play();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (playOnHover && videoRef.current) {
-      setIsHovered(false);
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0; // Reset to the beginning
-    }
-  };
+  }, [playOnLoop]);
 
   return (
-      <Box
-        sx={{
-          display: 'flex',
-          position: 'relative',
-          overflow: 'hidden',
-          borderRadius: 2,
-          cursor: playOnHover ? 'pointer' : 'default',
-          width: '100%',
-          ...sx,
-        }}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {/* Thumbnail: Show only when not hovered */}
-        {!isHovered && playOnHover && (
-          <img
-            src={thumbnailSrc}
-            alt="Video Thumbnail"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: 1,
-            }}
-          />
-        )}
-
-        {/* Video Element */}
-        <video
-          ref={videoRef}
-          muted
-          loop={!playOnHover} // Loop if playOnHover is false
+    <Box
+      sx={{
+        display: 'flex',
+        position: 'relative',
+        overflow: 'hidden',
+        borderRadius: 2,
+        width: '100%',
+        ...sx,
+      }}
+    >
+      {/* Thumbnail */}
+      {!isStarted &&  thumbnailSrc && (
+        <img
+          src={thumbnailSrc}
+          alt="Video Thumbnail"
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            borderRadius: videoBorderRadius,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            zIndex: 1,
           }}
-        >
-          <source src={videoSrc} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </Box>
+        />
+      )}
+
+      {/* Video Element */}
+      <video
+        ref={videoRef}
+        muted
+        loop={playOnLoop}
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          borderRadius: videoBorderRadius,
+        }}
+        onPlay={handlePlay}
+        onPause={handlePause}
+      >
+        <source src={videoSrc} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </Box>
   );
-};
+});
 
 export default VideoPlayer;
