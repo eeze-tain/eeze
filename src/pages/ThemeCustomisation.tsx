@@ -25,7 +25,6 @@ import BasicColorsSettings from './containers/BasicColorsSettings';
 import CarouselThemeCustomasationPage from '../components/CarouselThemeCustomasationPage';
 
 import { motion } from 'framer-motion';
-import VideoPlayer from './components/VideoPlayer';
 // Reusable styles for Typography
 const typographyStyles = {
   header: {
@@ -233,7 +232,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
             <Box
               display="flex"
               alignItems="center"
-              justifyContent="end"
+              justifyContent="center"
               flex="2"
             >
               <Box
@@ -243,12 +242,11 @@ const ThemeCustomisation: React.FC = (props: any) => {
                 width="375px"
                 height="354px"
               >
-                <VideoPlayer
-                  sx={{
-                    height: '354px',
-                  }}
-                  playOnHover={false}
-                  videoSrc={'/videos/logos-switch.mp4'}
+                <img
+                  src={'/videos/logos-switch.gif'}
+                  width="375px"
+                  height="354px"
+                  alt="logos switch"
                 />
               </Box>
             </Box>
@@ -259,12 +257,21 @@ const ThemeCustomisation: React.FC = (props: any) => {
               flex="3"
               gap="60px"
             >
-              <Typography width="668px" sx={typographyStyles.description}>
+              <Typography width="668px" sx={{
+                ...typographyStyles.description,
+                fontSize: '35px',
+                lineHeight: '50px'
+                }}>
                 Strengthen your brand identity by{' '}
                 <span>personalising your own branding, colours,</span> and{' '}
-                <span>logos</span> twithin tournaments to align with your brand
+                <span>logos</span> within tournaments to align with your brand
               </Typography>
-              <Typography width="668px" sx={typographyStyles.description}>
+              <Typography width="668px" sx={{
+                ...typographyStyles.description,
+                fontSize: '35px',
+                lineHeight: '50px'
+                }}
+              >
                 Create a&nbsp;<span>seamless brand experience</span> for players
                 in tournaments to <span>reinforce your brand identity</span> and{' '}
                 <span>build players' loyalty</span> to your platform

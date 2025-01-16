@@ -57,13 +57,13 @@ const Navbar: React.FC = () => {
           path: '/themes',
           icon: '/svg/remind.svg',
         },
-        { label: 'Dynamic Rewards', path: '/rewards', icon: '/svg/cog.svg' },
+        { label: 'Dynamic Rewards', path: '/rewards', icon: '/svg/gift.svg' },
         {
           label: 'Exclusive Tournaments',
           path: '/exclusive',
           icon: '/svg/vip.svg',
         },
-        { label: 'Free Chips', path: '/freechips', icon: '/svg/earth.svg' },
+        { label: 'Free Chips', path: '/freechips', icon: '/svg/poker-chip.svg' },
         { label: 'Roadmap 2025', path: '/roadmap', icon: '/svg/roadmap.svg' },
       ].map((item) => {
         const isActive = location.pathname === item.path; // Check if the current path matches the button's path

@@ -187,19 +187,19 @@ const Home: React.FC = () => {
                 {
                   title: 'Boost Engagement',
                   description:
-                    'Keep players excited with dynamic tournaments, real-time leaderboards, and evolving rewards systems.',
+                    'Keep players excited with dynamic tournaments, real-time leaderboards, and evolving rewards systems',
                   color: '#30A977',
                 },
                 {
                   title: 'Optimise Resources',
                   description:
-                    'Simplify operations with plug-and-play modules and interactive data tools to optimise costs and strategies.',
+                    'Simplify operations with plug-and-play modules and interactive data tools to optimise costs and strategies',
                   color: '#30A977',
                 },
                 {
                   title: 'Integrated Tournament Interface',
                   description:
-                    'Enjoy a built-in and exciting tournament interface across all Eeze products for smooth gameplay and participation.',
+                    'Enjoy a built-in and exciting tournament interface across all Eeze products for smooth gameplay and participation',
                   color: '#30A977',
                 },
                 {
