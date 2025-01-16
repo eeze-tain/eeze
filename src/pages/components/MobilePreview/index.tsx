@@ -17,7 +17,7 @@ const MobilePreview = ({ primaryColor, secondaryColor, backgroundColor, children
         sx={{
           width: 'calc(100% - 6px)',
           height: '100%',
-          minHeight: '300px',
+          minHeight: '280px',
           borderRadius: '20px',
           border: `3px solid ${theme.palette.mode === 'dark' ? 'white' : 'black'}`,
           backgroundColor: 'white',
