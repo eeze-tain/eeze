@@ -1,4 +1,3 @@
-import { useFormContext } from 'react-hook-form';
 
 import { Box, Typography } from '@mui/material';
 
@@ -35,7 +34,7 @@ const scoreBoxStyles = (bgColor) => ({
   margin: '0.5px',
   background: bgColor,
   width: '100%',
-  height: '95%',
+  height: '94%',
   borderRadius: '4px',
 });
 
@@ -50,6 +49,7 @@ const timeBoxStyles = ( widgetSecBgColor) => ({
   alignItems: 'center',
   color: 'black',
   textAlign: 'center',
+  fontFamily: 'Inter',
   fontSize: '8px',
   height: '15px',
   fontWeight: 700,

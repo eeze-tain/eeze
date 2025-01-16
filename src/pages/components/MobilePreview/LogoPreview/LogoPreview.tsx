@@ -1,9 +1,8 @@
-import { useFormContext } from 'react-hook-form';
 
 import { Box } from '@mui/material';
 
-import { dotSvgSmall, customLogoBg } from '../asset';
-import eezeIcon from '../asset/eezeIcon.svg';
+import { customLogoBg, dotSvgSmall } from '../asset';
+import eezeIcon from '../asset/logo-circle.svg';
 
 
 interface LogoPreviewProps {
@@ -20,7 +19,7 @@ const LogoPreview = ({ logoUrl }: LogoPreviewProps) => {
   // ACTIVE COLOR VALUE
   const bgColor = '#12122A';
 
-  if (!logoUrl) return <img src={eezeIcon} alt="eeze icon" />;
+  if (!logoUrl) return <img src={eezeIcon} alt="eeze icon" width="42" height="42" />;
 
   return (
     <Box
