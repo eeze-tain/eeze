@@ -1,5 +1,5 @@
 import { Box, Button, IconButton } from '@mui/material';
-import { iconLedaderboard, iconTables, iconHistory } from '../../../asset';
+import { iconHistory, iconLedaderboard, iconTables } from '../../../asset';
 
 const SideNavPreview = ({
   btnTextColor = '#06191F',
@@ -24,7 +24,7 @@ const SideNavPreview = ({
     backgroundColor: btnBackground,
     color: btnTextColor,
     fontFamily: 'Inter',
-    fontSize: '12px',
+    fontSize: '11px',
     fontWeight: 700,
     lineHeight: '16px',
     '&:hover': {
@@ -65,13 +65,19 @@ const SideNavPreview = ({
         </IconButton>
 
         <IconButton
-          sx={iconButtonStyles}
+          sx={{
+            ...iconButtonStyles,
+            padding: '4px'
+          }}
           aria-label="Tables">
           {iconTables ? iconTables(iconColor) : null}
         </IconButton>
 
         <IconButton
-          sx={iconButtonStyles}
+          sx={{
+            ...iconButtonStyles,
+            padding: '4px'
+          }}
           aria-label="History">
           {iconHistory ? iconHistory(iconColor) : null}
         </IconButton>

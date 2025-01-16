@@ -70,7 +70,7 @@ const TournamentSelectorPreview = ({
           FINISHED
         </Typography>
         <Box sx={{ position: 'relative', width: '100%' }}>
-          <Box sx={{ position: 'absolute', bottom: '25px', right: '0' }}>{multipleStarsSvg}</Box>
+          <Box sx={{ position: 'absolute', bottom: '33px', right: '0' }}>{multipleStarsSvg}</Box>
         </Box>
       </Box>
 
@@ -87,22 +87,23 @@ const TournamentSelectorPreview = ({
             sx={{
               position: 'absolute',
               bottom: '40px',
-              left: '30%',
+              left: '25%',
               color: btnTextColor,
-              height: '14px',
+              height: '12px',
               padding: '2px 6px',
               backgroundColor: secondaryColor,
               width: '62px',
               borderRadius: '12px',
               textAlign: 'center',
               fontSize: '8px',
-              fontWeight: 700
+              fontWeight: 700,
+              letterSpacing: '0.1029em'
             }}>
             UPCOMING
           </Typography>
         </Box>
         <Box sx={{ position: 'relative', width: '100%' }}>
-          <Box sx={{ position: 'absolute', bottom: '30px', right: '0' }}>{dotSvg}</Box>
+          <Box sx={{ position: 'absolute', bottom: '33px', right: '-2px' }}>{dotSvg}</Box>
         </Box>
       </Box>
 

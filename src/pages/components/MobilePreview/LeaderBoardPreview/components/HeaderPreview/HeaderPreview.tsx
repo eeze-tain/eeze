@@ -1,6 +1,6 @@
-import { Box, Typography, IconButton } from '@mui/material';
-import { historySVG, cancelSVG } from '../../../asset';
-import eezeIcon from '../../../asset/eezeIcon.svg';
+import { Box, IconButton, Typography } from '@mui/material';
+import { cancelSVG, historySVG } from '../../../asset';
+import eezeIcon from '../../../asset/logomark.svg';
 const HeaderPreview = ({
   primaryColor,
   fontColor = 'white',
@@ -64,7 +64,7 @@ const HeaderPreview = ({
           display="flex"
           justifyContent="center"
           alignItems="center"
-          marginRight="20px"
+          marginRight="5px"
         >
           <IconButton>{historySVG(iconColor)}</IconButton>
           <IconButton>{cancelSVG(iconColor)}</IconButton>
