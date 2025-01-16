@@ -1,4 +1,4 @@
-import { Table, TableBody, TableRow, TableCell, TableHead, Box } from '@mui/material';
+import { Box, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { starSvg } from '../../../asset';
 
 const defaultData = [
@@ -38,13 +38,6 @@ const TablePreview = ({
   return (
     <Box sx={{ overflowX: 'auto' }}>
       <Table sx={{ minWidth: 300, borderCollapse: 'collapse' }}>
-        <TableHead>
-          <TableRow sx={{ backgroundColor: secondaryColor }}>
-            <TableCell sx={cellStyles()}><strong>ID</strong></TableCell>
-            <TableCell sx={cellStyles()}><strong>Name</strong></TableCell>
-            <TableCell sx={cellStyles()}><strong>Score</strong></TableCell>
-          </TableRow>
-        </TableHead>
         <TableBody>
           {data.map(({ id, name, score }, index) => (
             <TableRow
