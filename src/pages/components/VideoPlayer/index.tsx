@@ -70,6 +70,7 @@ const VideoPlayer = forwardRef(({
         onPause={handlePause}
         controls
         controlsList="nofullscreen nodownload noremoteplayback"
+        disablePictureInPicture
       >
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
