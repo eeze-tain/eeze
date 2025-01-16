@@ -187,7 +187,6 @@ const ExclusiveTournaments: React.FC = () => {
               }}
             >
               <VideoPlayer
-                playOnHover={false}
                 videoSrc={'/videos/bo-exclusive-tournament.mov'}
                 videoBorderRadius="33px"
               />

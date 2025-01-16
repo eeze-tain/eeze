@@ -215,7 +215,6 @@ const FreeChips = () => {
               }}
             >
               <VideoPlayer
-                playOnHover={false}
                 videoSrc={'/videos/free-chips-page.mp4'}
                 videoBorderRadius="33px"
               />

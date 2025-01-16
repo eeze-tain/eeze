@@ -1,5 +1,5 @@
-import { Box, Typography } from '@mui/material';
-import React from 'react';
+import { Box, Button, Typography } from '@mui/material';
+import React, { useRef, useState } from 'react';
 import AnimatedSection from './components/AnimatedSection';
 import MarkedText from './components/MarkedText';
 import VideoPlayer from './components/VideoPlayer';
@@ -62,6 +62,31 @@ const containerStyles = {
   },
 };
 const DynamicRewards: React.FC = () => {
+
+  const videoPlayerRefs = useRef([]); // Array of refs
+  const handleToggleVideo = (index: number) => {
+    const videoPlayerRef = videoPlayerRefs.current[index];
+    if (videoPlayerRef) {
+      if (isPlaying[index]) {
+        videoPlayerRef.pause();
+      } else {
+        videoPlayerRef.play();
+      }
+      setIsPlaying((prev) => {
+        const newStatus = [...prev];
+        newStatus[index] = !prev[index];
+        return newStatus;
+      });
+    }
+  };
+  const [isPlaying, setIsPlaying] = useState<boolean[]>(Array(phases.length).fill(false)); // State to track video player status
+
+  const togglePlayState = (index: number, playing: boolean) => {
+    const newStates = [...isPlaying];
+    newStates[index] = playing;
+    setIsPlaying(newStates);
+  };
+
   return (
     <Box sx={containerStyles.mainWrapper}>
       <AnimatedSection>
@@ -147,15 +172,45 @@ const DynamicRewards: React.FC = () => {
                   >
                     {title}
                   </Typography>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: 'rgba(112, 23, 230, 1)',
+                      borderRadius: '16px',
+                      textTransform: 'none',
+                      fontSize: '28px',
+                      fontFamily: 'Raleway',
+                      padding: '16px 30px',
+                      boxShadow: "0px 0px 20.23px 0px rgba(0, 0, 0, 0.2)",
+                      marginBottom: "40px"
+                    }}
+                    startIcon={
+                      <Box
+                        component="img"
+                        src={isPlaying[index] ? '/images/pause-icon.png' : '/svg/play-icon.svg'}
+                        alt={`Play Icon`}
+                        sx={{
+                          width: '34px',
+                          height: '34px'
+                        }}
+                      />
+                    }
+                    onClick={() =>handleToggleVideo(index)}
+                  >
+                    Play Animation
+                  </Button>
                   <VideoPlayer
                     sx={{
                       border: '1px solid #ffffff',
                       borderRadius: '8px',
                       width: '373px',
                     }}
-                    playOnHover={true}
+                    playOnLoop={false}
+                    ref={(el: any) => (videoPlayerRefs.current[index] = el)} // Assign ref to the current index
                     videoSrc={videoSrc}
                     thumbnailSrc={thumbnailSrc}
+                    onPlay={() => togglePlayState(index, true)}
+                    onPause={() => togglePlayState(index, false)}
                   />
                 </Box>
               ))}
@@ -208,7 +263,6 @@ const DynamicRewards: React.FC = () => {
                 }}
               >
                 <VideoPlayer
-                  playOnHover={false}
                   videoSrc={'/videos/bo-dynamic-rewards.mov'}
                   videoBorderRadius="33px"
                 />
