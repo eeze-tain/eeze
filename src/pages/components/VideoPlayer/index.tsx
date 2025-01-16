@@ -1,4 +1,4 @@
-import { useRef, useEffect, forwardRef, useImperativeHandle, useState } from 'react';
+import { useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { Box, SxProps, Theme } from '@mui/material';
 
 interface VideoPlayerProps {
@@ -21,7 +21,6 @@ const VideoPlayer = forwardRef(({
   onPause,
 }: VideoPlayerProps, ref) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isStarted, setIsStarted] = useState(false);
 
   // Expose video control methods to parent
   useImperativeHandle(ref, () => ({
@@ -31,7 +30,6 @@ const VideoPlayer = forwardRef(({
 
   // Attach event listeners for play and pause
   const handlePlay = () => {
-    setIsStarted(true); // Video has started playing
     onPlay?.();
   }
   const handlePause = () => onPause?.();
@@ -55,28 +53,13 @@ const VideoPlayer = forwardRef(({
         ...sx,
       }}
     >
-      {/* Thumbnail */}
-      {!isStarted &&  thumbnailSrc && (
-        <img
-          src={thumbnailSrc}
-          alt="Video Thumbnail"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            zIndex: 1,
-          }}
-        />
-      )}
 
       {/* Video Element */}
       <video
         ref={videoRef}
         muted
         loop={playOnLoop}
+        poster={thumbnailSrc}
         style={{
           width: '100%',
           height: '100%',
@@ -85,6 +68,8 @@ const VideoPlayer = forwardRef(({
         }}
         onPlay={handlePlay}
         onPause={handlePause}
+        controls
+        controlsList="nofullscreen nodownload noremoteplayback"
       >
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.

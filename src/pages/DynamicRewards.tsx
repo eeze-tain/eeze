@@ -195,7 +195,7 @@ const DynamicRewards: React.FC = () => {
                         }}
                       />
                     }
-                    onClick={() =>handleToggleVideo(index)}
+                    onClick={() => handleToggleVideo(index)}
                   >
                     Play Animation
                   </Button>
@@ -263,6 +263,7 @@ const DynamicRewards: React.FC = () => {
                 }}
               >
                 <VideoPlayer
+                  playOnLoop={false}
                   videoSrc={'/videos/bo-dynamic-rewards.mov'}
                   videoBorderRadius="33px"
                 />
