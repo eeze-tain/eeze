@@ -56,7 +56,7 @@ const typographyStyles = {
     lineHeight: '36px',
     fontFamily: 'Raleway, serif',
     color: '#FFFFFF',
-    '& span': { fontWeight: 700 },
+    '& b': { fontWeight: 700 },
   },
   callToAction: {
     fontFamily: '"Raleway", serif',
@@ -147,7 +147,7 @@ const Roadmap: React.FC = () => {
               </Typography>
             </Box>
             <Box sx={{ width: '48%', display: 'flex', alignItems: 'flex-end' }}>
-              <Typography variant="body1" sx={typographyStyles.subHeader}>
+              <Typography component="div" variant="body1" sx={typographyStyles.subHeader}>
                 Gamify your strategies with new exciting features this year
               </Typography>
             </Box>
@@ -166,25 +166,25 @@ const Roadmap: React.FC = () => {
             {
               title: 'Free Chips Campaigns',
               icon: CoinIcon,
-              description: 'Transform the ordinary Free Chips giveaway into an <span>interactive adventure,</span> enhancing retention',
+              description: 'Transform the ordinary Free Chips giveaway into an <b>interactive adventure,</b> enhancing retention',
               top: '50px'
             },
             {
               title: 'Flash Tournament',
               icon: LightningIcon,
-              description: 'Drive players\' <span>excitement</span> with our Flash Tournament Mode, offering <span>fast-paced, high-stakes</span> competitions',
+              description: 'Drive players\' <b>excitement</b> with our Flash Tournament Mode, offering <b>fast-paced, high-stakes</b> competitions',
               top: '320px'
             },
             {
               title: 'Lucky Drop',
               icon: DiceIcon,
-              description: 'Offer surprise rewards and real-time prizes, <span>maximizing gameplay engagement</span> and <span>driving loyalty</span> like never before',
+              description: 'Offer surprise rewards and real-time prizes, <b>maximizing gameplay engagement</b> and <b>driving loyalty</b> like never before',
               top: '50px'
             },
             {
               title: 'Lucky Wheel',
               icon: LuckyWheelIcon,
-              description: 'Offer a gamified experience where players can win <span>diverse rewards,</span> while fostering long-term connections and <span>boosting</span> daily player <span>activity</span>',
+              description: 'Offer a gamified experience where players can win <b>diverse rewards,</b> while fostering long-term connections and <b>boosting</b> daily player <b>activity</b>',
               top: '320px'
             }
           ].map((item, index) => (
@@ -240,7 +240,7 @@ const Roadmap: React.FC = () => {
                   {item.title}
                 </Typography>
                 <Typography sx={typographyStyles.roadmapDescription}>
-                  <div dangerouslySetInnerHTML={{ __html: item.description }} />
+                  <span dangerouslySetInnerHTML={{ __html: item.description }} />
                 </Typography>
               </CardContent>
             </Grid2>

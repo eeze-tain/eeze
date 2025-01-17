@@ -61,13 +61,12 @@ const Home: React.FC = () => {
                     fontFamily: 'Raleway',
                     fontSize: '90px',
                     fontWeight: '800',
-                    // marginTop: '-14rem',
                     lineHeight: '100%',
                   }}
                   color="#D3B1FF"
                 >
                   <Typography
-                    variant="h3"
+                    component="span"
                     sx={{
                       fontFamily: 'Raleway',
                       fontSize: '90px',

@@ -91,7 +91,7 @@ const TournamentSelectorPreview = ({
               color: btnTextColor,
               height: '12px',
               padding: '2px 6px',
-              backgroundColor: secondaryColor,
+              backgroundColor: '#6D03F7',
               width: '62px',
               borderRadius: '12px',
               textAlign: 'center',

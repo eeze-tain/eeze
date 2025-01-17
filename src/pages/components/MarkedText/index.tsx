@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
 import { Box, SxProps, Theme, Typography } from '@mui/material';
+import { ReactNode } from 'react';
 
 interface MarkedTextProps {
   children?: ReactNode;
@@ -24,12 +24,13 @@ const MarkedText = ({ children, sx }: MarkedTextProps) => {
       </Box>
       <Box sx={{ width: 'fit-content' }}>
         <Typography
+          component="div"
           sx={{
             fontFamily: '"Raleway", serif',
             fontWeight: 400,
             fontSize: '26px',
             lineHeight: '42px',
-            '& span': {
+            '& b': {
               fontWeight: 700,
             },
           }}
