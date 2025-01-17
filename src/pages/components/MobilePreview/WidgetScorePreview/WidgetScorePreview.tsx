@@ -66,7 +66,7 @@ const WidgetScorePreview = ({
   fontColor = 'white',
   secColor = '#000',
   secBgColor = 'linear-gradient(93deg, #1D62D9 -30.37%, #1A9AE8 26.72%, #25B9B8 51.66%, #2BC7A2 68.57%, #2ED093 87.14%)',
-  widgetSecBgColor = '#33FFBD',
+  widgetSecBgColor = 'linear-gradient(93deg, #1D62D9 -30.37%, #1A9AE8 26.72%, #25B9B8 51.66%, #2BC7A2 68.57%, #2ED093 87.14%)', //'#33FFBD',
 }: any) => {
   return (
     <Box sx={containerStyles(bgColor)}>
@@ -108,7 +108,7 @@ const WidgetScorePreview = ({
       >
         1269
       </Typography>
-      <Box sx={timeBoxStyles( widgetSecBgColor)}>2h 48m</Box>
+      <Box sx={timeBoxStyles(widgetSecBgColor)}>2h 48m</Box>
     </Box>
   );
 };

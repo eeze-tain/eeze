@@ -133,7 +133,7 @@ const ThemeCustomisation: React.FC = (props: any) => {
     'data.widget.backgroundColor': '#2D1D48',
     'data.logo.backgroundColor': '#2D1D48',
     'data.main.secondaryColor': '#6D03F7',
-    'data.widget.secondaryBackgroundColor': '#33FFBD',
+    // 'data.widget.secondaryBackgroundColor': '#33FFBD',
     'data.main.primaryColor': '#31D887',
   });
 
@@ -467,7 +467,10 @@ const ThemeCustomisation: React.FC = (props: any) => {
                               colors['data.main.backgroundColor']
                             }
                           >
-                            <LogoPreview logoUrl={logoUrl} />
+                            <LogoPreview
+                              logoUrl={logoUrl}
+                              bgColor={colors['data.main.backgroundColor']}
+                            />
                           </MobilePreview>
                         </Box>
                         <Box marginRight={'0%'}>

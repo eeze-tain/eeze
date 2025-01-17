@@ -6,11 +6,10 @@ import eezeIcon from '../asset/logo-circle.svg';
 
 interface LogoPreviewProps {
   logoUrl?: string;
+  bgColor?: string;
 }
 
-const LogoPreview = ({ logoUrl }: LogoPreviewProps) => {
-  const bgColor = '#12122A';
-
+const LogoPreview = ({ logoUrl, bgColor = '#12122A' }: LogoPreviewProps) => {
   if (!logoUrl) return <img src={eezeIcon} alt="eeze icon" width="42" height="42" />;
 
   return (
