@@ -16,7 +16,7 @@ const LeaderboardPreview = ({ primaryColor, secondaryColor, backgroundColor, log
       <Box style={{ position: 'relative', marginBottom: '10px' }}>
         <PrizePreview backgroundColor={backgroundColor} />
       </Box>
-      <TablePreview secondaryColor={primaryColor} />
+      <TablePreview secondaryColor={secondaryColor} />
     </Box>
   );
 };
