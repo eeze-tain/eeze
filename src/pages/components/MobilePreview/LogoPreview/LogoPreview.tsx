@@ -1,4 +1,3 @@
-
 import { Box } from '@mui/material';
 
 import { customLogoBg, dotSvgSmall } from '../asset';
@@ -10,13 +9,6 @@ interface LogoPreviewProps {
 }
 
 const LogoPreview = ({ logoUrl }: LogoPreviewProps) => {
-  // const { watch } = useFormContext();
-  // const formData = watch('data.logo');
-
-  // const bgColor = formData?.backgroundColor || '#12122A';
-  // const logoUrl = formData?.url;
-
-  // ACTIVE COLOR VALUE
   const bgColor = '#12122A';
 
   if (!logoUrl) return <img src={eezeIcon} alt="eeze icon" width="42" height="42" />;

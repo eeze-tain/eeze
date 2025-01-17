@@ -31,6 +31,7 @@ const CarouselThemeCustomasationPage = ({
                 width: '330px',
                 height: '600px',
               }}
+              alt={`image_${index}`}
             />
           );
         })}

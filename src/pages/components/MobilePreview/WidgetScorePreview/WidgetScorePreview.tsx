@@ -1,4 +1,3 @@
-
 import { Box, Typography } from '@mui/material';
 
 // Common styles
