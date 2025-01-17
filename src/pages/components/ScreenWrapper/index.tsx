@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
+import { ReactNode } from 'react';
 import VideoPlayer from '../VideoPlayer';
 
 interface ScreenWrapperProps {
@@ -40,6 +40,7 @@ const ScreenWrapper = ({ children, title, imageSrc, videoSrc }: ScreenWrapperPro
                         marginBottom: '40px'
                     }}>
                         <Typography
+                            component="div"
                             sx={{
                                 fontFamily: '"Raleway", serif',
                                 fontWeight: 700,
@@ -47,7 +48,7 @@ const ScreenWrapper = ({ children, title, imageSrc, videoSrc }: ScreenWrapperPro
                                 lineHeight: '50.4px',
                                 textAlign: 'center',
                             }}>
-                            <div dangerouslySetInnerHTML={{ __html: title }} />
+                            <span dangerouslySetInnerHTML={{ __html: title }} />
                         </Typography>
                         {/* Images */}
                         {imageSrc &&

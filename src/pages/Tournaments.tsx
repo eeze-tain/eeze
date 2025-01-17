@@ -94,24 +94,24 @@ const Tournaments = () => {
             {
               title: 'Customisable <br/> Tournament Mechanics',
               texts: [
-                'Customisable score <span>calculation</span> & <span>round qualification strategies</span>',
-                'Keep players <span>engaged</span> with diverse mechanics',
+                'Customisable score <b>calculation</b> & <b>round qualification strategies</b>',
+                'Keep players <b>engaged</b> with diverse mechanics',
               ],
               imageSrc: '/images/tournament-rules.png'
             },
             {
               title: 'Limited Player Spots',
               texts: [
-                'Host tournaments on a <span>first-come, first-served</span> basis with <span>limited player spots</span>',
-                'Foster a sense of <span>urgency</span> and enhance <span>player excitement</span>',
+                'Host tournaments on a <b>first-come, first-served</b> basis with <b>limited player spots</b>',
+                'Foster a sense of <b>urgency</b> and enhance <b>player excitement</b>',
               ],
               videoSrc: '/videos/limited-seats.mp4'
             },
             {
               title: 'Diverse Reward Types',
               texts: [
-                'Leverage <span>various reward types</span> from cash to physical prizes',
-                'Motivate players and <span>boost participation</span>',
+                'Leverage <b>various reward types</b> from cash to physical prizes',
+                'Motivate players and <b>boost participation</b>',
               ],
               imageSrc: '/images/tournament-reward.png'
             },
@@ -126,11 +126,11 @@ const Tournaments = () => {
                 {texts.map((text, index) => (
                   <MarkedText key={index}
                     sx={{
-                      '& p': {
-                        fontSize: '25px'
+                      '& span': {
+                        fontSize: '26px'
                       }
                     }}
-                  >{<div dangerouslySetInnerHTML={{ __html: text }} />}</MarkedText>
+                  >{<span dangerouslySetInnerHTML={{ __html: text }} />}</MarkedText>
                 ))}
               </Box>
             </ScreenWrapper>
